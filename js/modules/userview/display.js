@@ -34,10 +34,10 @@ function showUser(user){
 			<p>${(user["competitive"])?"Konkurrencesvømmer":"Motionist"}</p>
 		</div>
 		<div class="user-btns">
-			<button class="add-competitiontime-btn" data-id="${user["id"]}">Tilføj konkurrence tid</button>
+			<button class="add-competitiontime-btn" data-id="${user["id"]}">Tilføj stævne tid</button>
 			<button class="add-trainingtime-btn" data-id="${user["id"]}">Tilføj trænings tid</button>
-			<button class="delete-user-btn" data-id="${user["id"]}">Slet</button>
-			<button class="edit-user-btn" data-id="${user["id"]}">Redigér</button>
+			<button class="delete-user-btn" data-id="${user["id"]}">Slet bruger</button>
+			<button class="edit-user-btn" data-id="${user["id"]}">Redigér bruger</button>
 		</div>
 	</article>
 	`;
