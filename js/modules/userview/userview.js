@@ -6,7 +6,6 @@ async function main(){
     setEventListeners();
 }
 
-
 function setEventListeners() {
   document
     .querySelector("#btn_submit")
@@ -21,19 +20,15 @@ function setEventListeners() {
     });
 }
 
-
 async function btnSendData() {
   const disciplin = document.getElementById("disciplin").value;
   const datetime = document.getElementById("date-time").value;
   const seconds = document.getElementById("seconds").value;
-
-  const time = new Date(datetime).getTime() + parseInt(seconds);
-
-  const newTrainingTime = {disciplin, time};
-  const url = `trainingtimes`;
-
+  const newTrainingTime = {disciplin, datetime, seconds};
+  const url = `trainingtimes/${disciplin}.json`;
   const res = await sendFetchToDB(url, 'POST', newTrainingTime);
   const data = await res.json();
-
+    console.info('info sendt');
   return data;
+
 }
