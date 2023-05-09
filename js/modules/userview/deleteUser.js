@@ -10,11 +10,14 @@ function main() {
 }
 
 async function deletePost(id) {
-  const response = await fetch(`${endpoint}/users/${id}.json`, {
+  const response = await fetch(`${endpoint}users/${id}.json`, {
     method: "DELETE",
   });
   if (response.ok) {
     console.log("Det er slettet");
+    updateUserGrid();
+  } else {
+    console.error(`bad response : ${response.status} ${response.statusText}`);
   }
   // update the post grid to display posts
 }
@@ -22,15 +25,17 @@ async function deletePost(id) {
 export function showDeleteDialog(event) {
   const deleteBtn = event.target;
 
-  console.log("hello");
   const userId = deleteBtn.dataset.id;
+
+  console.log(userId);
 
   document.querySelector("#dialog_delete_user").showModal();
 
   document.querySelector("#form_delete_post").addEventListener("submit", submitDelete);
-  document.querySelector("#form_delete_post").addEventListener("click", closeDelete);
+  document.querySelector("#deleteCanceled").addEventListener("click", closeDelete);
 
   function submitDelete(event) {
+    console.log("Hej");
     event.preventDefault();
     document.querySelector("#form_delete_post").removeEventListener("submit", submitDelete);
 
@@ -39,12 +44,10 @@ export function showDeleteDialog(event) {
     document.querySelector("#dialog_delete_user").close();
 
     console.log("Det virker her til");
-
-    // to do
   }
 
   function closeDelete() {
-    document.querySelector("form_delete_post").removeEventListener("submit", closeDelete);
+    document.querySelector("#form_delete_post").removeEventListener("submit", submitDelete);
 
     document.querySelector("#dialog_delete_user").close();
   }
