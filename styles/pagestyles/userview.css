@@ -1,0 +1,15 @@
+#post_user_dialog {
+    margin-top: 30vh;
+}
+
+#post_user_form {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+#post_user_dialog_open {
+    position:fixed;
+    top:30%;
+    right:15%;
+}
