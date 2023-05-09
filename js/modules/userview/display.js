@@ -16,6 +16,7 @@ export async function updateUserGrid(){
 }
 
 export function showUsers(users){
+	document.querySelector("#userGrid").innerHTML = "";
 	for(const user of users){
 		showUser(user);
 	}
