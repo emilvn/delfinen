@@ -29,15 +29,19 @@ function showUser(user){
 			<h3>${user["name"]}</h3>
 			<p>Email: ${user["email"]}</p>
 			<p>${(user["phone"])?`Telefon: ${user["phone"]}`:""}</p>
-			<p>${user["age"]}</p>
+			<p>${user["age"]} år</p>
 			<p>Medlemskab: ${(user["membershipPassive"])?"Passiv":"Aktiv"}</p>
 			<p>${(user["competitive"])?"Konkurrencesvømmer":"Motionist"}</p>
 		</div>
 		<div class="user-btns">
-			<button class="add-competitiontime-btn" data-id="${user["id"]}">Tilføj stævne tid</button>
-			<button class="add-trainingtime-btn" data-id="${user["id"]}">Tilføj trænings tid</button>
-			<button class="delete-user-btn" data-id="${user["id"]}">Slet bruger</button>
-			<button class="edit-user-btn" data-id="${user["id"]}">Redigér bruger</button>
+			<div>		
+				<button class="edit-user-btn" data-id="${user["id"]}">Redigér bruger</button>
+				<button class="add-competitiontime-btn" data-id="${user["id"]}">Tilføj stævne tid</button>
+			</div>
+			<div>
+				<button class="delete-user-btn" data-id="${user["id"]}">Slet bruger</button>
+				<button class="add-trainingtime-btn" data-id="${user["id"]}">Tilføj trænings tid</button>
+			</div>
 		</div>
 	</article>
 	`;

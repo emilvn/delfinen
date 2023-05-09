@@ -17,11 +17,14 @@
 #userGrid .user-btns{
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
     gap: 0.5em;
 }
+#userGrid .user-btns div{
+    display: flex;
+    justify-content: space-between;
+}
 #userGrid button{
-    min-width: 6em;
+    width: 9em;
     min-height: 3em;
     background-color: #6CB4EE;
     border-radius: 5px;
