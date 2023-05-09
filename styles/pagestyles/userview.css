@@ -57,9 +57,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5em;
-    top: 6.5em;
-    background-color: #6CB4EE;
-    padding: 0.5em 1em 0.5em 0;
+    top: 10vh;
+    background-color: rgb(108, 180, 238);
+    padding: 0 0.5em 0.5em 0;
     max-width: 100vw;
     border-radius: 0 1em 1em 0;
     z-index: 999;
