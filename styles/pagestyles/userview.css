@@ -59,15 +59,25 @@
     gap: 0.5em;
     top: 14vh;
     background-color: rgb(108, 180, 238);
-    padding: 0 0.5em 0.5em 0;
+    padding: 0.5em 0.5em 0.5em 0;
     max-width: 100vw;
     border-radius: 0 0 1em 0;
     z-index: 999;
     filter: drop-shadow(0 0 2px black);
 }
+@media (max-width: 500px) {
+    #user-search-div{
+        grid-template-columns: 1fr;
+        width: 100%;
+        border-radius: 0;
+    }
+    #user-search-div>div:last-child{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
 #user-search-div div:first-child{
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 #userCompetitiveFilter{
