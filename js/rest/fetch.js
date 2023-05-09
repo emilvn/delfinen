@@ -11,7 +11,7 @@ async function sendFetchToDB(url, method, data) {
 
     const response = await fetch(endpoint + url, options);
 
-    return response;  
+    return response;
 }
 
 export {sendFetchToDB};
