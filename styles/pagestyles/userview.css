@@ -1,3 +1,4 @@
+/* ========== USER GRID STYLING ========== */
 #userGrid{
     margin: 6em 1em 1em 1em;
     display: grid;
@@ -5,15 +6,32 @@
     gap: 1em;
 }
 #userGrid article{
-    background-color: #6CB4EE;
-    border-radius: 1em;
+    background-color: white;
+    border: 1px solid gray;
+    filter: drop-shadow(0 0 1px black);
     padding: 1em;
+}
+#userGrid article h3{
+    text-align: center;
 }
 #userGrid .user-btns{
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr;
     gap: 0.5em;
+}
+#userGrid button{
+    min-width: 6em;
+    min-height: 3em;
+    background-color: #6CB4EE;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid black;
+    filter: drop-shadow(0 0 2px black);
+}
+#userGrid button:hover{
+    scale: 101%;
 }
 @media (min-width: 600px) {
     #userGrid{
