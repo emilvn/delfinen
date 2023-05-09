@@ -27,21 +27,30 @@ function showUser(user){
 		<div>
 			<h3>${user["name"]}</h3>
 			<p>Email: ${user["email"]}</p>
-			<p>${(user["phone"].length > 0)?`Telefon: ${user["phone"]}`:""}</p>
+			<p>${(user["phone"])?`Telefon: ${user["phone"]}`:""}</p>
 			<p>${user["age"]}</p>
 			<p>Medlemskab: ${(user["membershipPassive"])?"Passiv":"Aktiv"}</p>
 			<p>${(user["competitive"])?"Konkurrencesvømmer":"Motionist"}</p>
 		</div>
-		<div>
-			<button class="add-competitiontime-btn">Tilføj konkurrence tid</button>
-			<button class="add-trainingtime-btn">Tilføj trænings tid</button>
-			<button class="delete-user-btn">Slet</button>
-			<button class="edit-user-btn">Redigér</button>
+		<div class="user-btns">
+			<button class="add-competitiontime-btn" data-id="${user["id"]}">Tilføj konkurrence tid</button>
+			<button class="add-trainingtime-btn" data-id="${user["id"]}">Tilføj trænings tid</button>
+			<button class="delete-user-btn" data-id="${user["id"]}">Slet</button>
+			<button class="edit-user-btn" data-id="${user["id"]}">Redigér</button>
 		</div>
 	</article>
 	`;
 	const usersGrid = document.querySelector("#userGrid");
 	usersGrid.insertAdjacentHTML("beforeend", myHTML);
 
+	/*Current user article*/
+	const currentUserArticle = usersGrid.querySelector("article:last-child");
+	/*current buttons*/
+	const deleteBtn = currentUserArticle.querySelector(".delete-user-btn");
+	const updateBtn = currentUserArticle.querySelector(".edit-user-btn");
+	const competitionBtn = currentUserArticle.querySelector("add-competitiontime-btn");
+	const trainingBtn = currentUserArticle.querySelector("add-trainingtime-btn");
+
+	/*Event listeners*/
 	/*todo: add event listeners for buttons*/
 }

@@ -1,4 +1,32 @@
 #userGrid{
+    margin: 6em 1em 1em 1em;
     display: grid;
-    grid-template-columns: ;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+#userGrid article{
+    background-color: #6CB4EE;
+    border-radius: 1em;
+    padding: 1em;
+}
+#userGrid .user-btns{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+}
+@media (min-width: 600px) {
+    #userGrid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 900px){
+    #userGrid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 1200px) {
+    #userGrid{
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
