@@ -1,7 +1,7 @@
 import {sendFetchToDB} from "../../rest/fetch.js";
 import {prepareData} from "../preparation/preparedata.js";
 
-let userArr;
+export let userArr;
 
 export async function updateUserGrid(){
 	const response = await sendFetchToDB("users.json", "GET");
