@@ -1,6 +1,6 @@
 const endpoint = "https://delfinen-4e935-default-rtdb.europe-west1.firebasedatabase.app/"; 
 
-async function sendFetchToDB(url, method, data) {
+async function sendFetchToDB(uri, method, data) {
     const options = {
         method,
     }
@@ -9,7 +9,7 @@ async function sendFetchToDB(url, method, data) {
         options.body = JSON.stringify(data);
     }
 
-    const response = await fetch(endpoint + url, options);
+    const response = await fetch(endpoint + uri, options);
 
     return response;  
 }
