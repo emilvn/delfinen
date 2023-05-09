@@ -62,3 +62,19 @@ function showUser(user){
 //	competitionBtn.addEventListener("click", showCompetitionDialog);
 //	trainingBtn.addEventListener("click", showTrainingDialog)
 }
+
+/* ========== FILTER ========== */
+export async function filterUsers(event){
+	const filterSelect = event.target;
+	await updateUserGrid();
+	if(filterSelect.value === "competitive"){
+		userArr = userArr.filter(user => user["competitive"]);
+	}
+	else if(filterSelect.value === "junior"){
+		userArr = userArr.filter(user => user["age"] < 18);
+	}
+	else if(filterSelect.value === "senior"){
+		userArr = userArr.filter(user => user["age"] >= 18);
+	}
+	showUsers(userArr);
+}
