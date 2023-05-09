@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Svømmeklubben Delfinen - Brugere</title>
         <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/pagestyles/userview.css">
         <link rel="shortcut icon" href="#" type="image/x-icon">
     </head>
     <body>
@@ -43,8 +44,20 @@
         </nav>
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main></main>
+        <main>
+             <dialog id="dialog_delete_user">
+            <h2>Vil du slette denne bruger:</h2>
+            <p id="dialog_delete_user_title">Title of post</p>
+            <form method="dialog" id="form_delete_post">
+            <button type="button" class="btn-cancel">Nej</button>
+            <button>Ja</button>
+            </form>
+            </dialog>
+        </main>
+
+       
     </body>
     <!--main script-->
     <script type="module" src="../js/main.js"></script>
+    <script type="module" src="/js/modules/userview/deleteUser.js"></script>
 </html>
