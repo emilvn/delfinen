@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Svømmeklubben Delfinen - Brugere</title>
         <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/pagestyles/userview.css">
         <link rel="shortcut icon" href="#" type="image/x-icon">
     </head>
     <body>
@@ -43,8 +44,31 @@
         </nav>
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main></main>
+        <main>
+            <dialog open id="add_training_time">
+                <label for="type">Vælg en disciplin:</label>
+                    <select name="disciplin" id="disciplin" form="disciplin_form">
+                    <option value="Crawl">Crawl</option>
+                    <option value="Butterfly">Butterfly</option>
+                    <option value="Brystsvøming">Brystsvøming</option>
+                    <option value="rygcrawl">rygcrawl</option>
+                    </select>
+                    <br>
+
+                <label for="date-time">Select date and time:</label>
+                <input type="datetime-local" id="date-time" name="date-time">
+
+                <br>
+                    
+                    <label for="seconds">Sekunder:</label>
+                    <input type="seconds" id="seconds" name="seconds">
+                             
+                <br>
+                <button id="btn_submit">submit</button>
+            </dialog>
+        </main>
     </body>
     <!--main script-->
     <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/modules/userview/userview.js"></script>
 </html>
