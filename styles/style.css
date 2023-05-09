@@ -21,7 +21,7 @@ nav{
     justify-content: space-between;
     background-color: var(--header-blue);
     align-items: center;
-    padding: 1em 0 1em 0;
+    padding: 2vh 0 2vh 0;
     border-bottom: 1px solid black;
     color: white;
     z-index: 9999;
