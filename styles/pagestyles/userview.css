@@ -54,12 +54,18 @@
 /* ========== SEARCH BAR ========== */
 #user-search-div{
     position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
     top: 6.5em;
     background-color: #6CB4EE;
     padding: 0.5em 1em 0.5em 0;
-    max-width: 15em;
+    max-width: 100vw;
     border-radius: 0 1em 1em 0;
     z-index: 999;
+}
+#userFilter{
+    height: 2.5em;
 }
 #userSearch{
     height: 2.5em;
