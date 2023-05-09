@@ -1,6 +1,6 @@
 /* ========== USER GRID STYLING ========== */
 #userGrid{
-    margin: 6em 1em 1em 1em;
+    margin: 10em 1em 1em 1em;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1em;
@@ -50,4 +50,18 @@
     #userGrid{
         grid-template-columns: repeat(4, 1fr);
     }
+}
+/* ========== SEARCH BAR ========== */
+#user-search-div{
+    position: fixed;
+    top: 6.5em;
+    background-color: #6CB4EE;
+    padding: 0.5em 1em 0.5em 0;
+    max-width: 15em;
+    border-radius: 0 1em 1em 0;
+    z-index: 999;
+}
+#userSearch{
+    height: 2.5em;
+    width: 15em;
 }
