@@ -1,0 +1,55 @@
+{
+  "users":{
+    "aefaefaef": {
+      "name": "Jørgen",
+      "email": "test@test.com",
+      "phone": "20202020",
+      "age": 20,
+      "membershipPassive": false,
+      "competitive": true
+    }
+  },
+  "coaches": {
+    "ipfiamipaefm": {
+      "image": "https://example.com",
+      "name": "Søren",
+      "email": "test@test.com",
+      "phone": "20202020",
+      "age": 20,
+      "about": "lorem ipsum...",
+      "team": "junior"
+    }
+},
+  "trainingtimes": {
+    "crawl": {
+      "24124124" : {
+        "date": "21/7/2020",
+        "time": 50,
+        "uid": "aqfaefeafae"
+      }
+    }
+  },
+  "competitiontimes": {
+    "Aarhus Open 2023": {
+      "crawl": {
+        "00": {
+          "uid": "aefaefafae",
+          "time": 50,
+          "position": 4
+        }
+      }
+    }
+  },
+  "memberships": {
+    "under18": 1000,
+    "over18": 1600,
+    "over60": 1200,
+    "passive": 500
+  },
+  "payments" : {
+    "2023": {
+      "uid": "iohaefjobneof",
+      "payment": 10000
+    }
+  }
+}
