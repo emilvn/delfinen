@@ -52,5 +52,8 @@ function showUser(user){
 	const trainingBtn = currentUserArticle.querySelector("add-trainingtime-btn");
 
 	/*Event listeners*/
-	/*todo: add event listeners for buttons*/
+//	deleteBtn.addEventListener("click", showDeleteDialog);
+//	updateBtn.addEventListener("click", showUpdateDialog);
+//	competitionBtn.addEventListener("click", showCompetitionDialog);
+//	trainingBtn.addEventListener("click", showTrainingDialog)
 }
