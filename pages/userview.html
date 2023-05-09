@@ -14,14 +14,18 @@
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
         <main>
             <section id="user-search-div">
-                <label for="userSearch">Søg:</label>
-                <input type="search" id="userSearch" name="search" placeholder="Søg efter navn">
-                <label for="userFilter">Filtrér</label>
-                <select name="filter" id="userFilter">
-                    <option value="competitive">Konkurrencesvømmere</option>
-                    <option value="junior">Junior svømmere</option>
-                    <option value="senior">Senior svømmere</option>
-                </select>
+                <div>
+                    <label for="userSearch">Søg:</label>
+                    <input type="search" id="userSearch" name="search" placeholder="Søg efter navn">
+                </div>
+                <div>
+                    <label for="userFilter">Filtrér</label>
+                    <select name="filter" id="userFilter">
+                        <option value="competitive">Konkurrencesvømmere</option>
+                        <option value="junior">Junior svømmere</option>
+                        <option value="senior">Senior svømmere</option>
+                    </select>
+                </div>
             </section>
             <!--Insert users here with js-->
             <section id="userGrid"></section>
