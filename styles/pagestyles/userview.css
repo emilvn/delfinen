@@ -65,8 +65,17 @@
     z-index: 999;
     filter: drop-shadow(0 0 5px black);
 }
-#userFilter{
-    height: 2.5em;
+#user-search-div div:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#userCompetitiveFilter{
+    height: 1.5em;
+    width: 1.5em;
+}
+#userTeamFilter{
+    height: 1.5em;
 }
 #userSearch{
     height: 2.5em;

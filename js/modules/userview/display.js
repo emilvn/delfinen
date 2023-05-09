@@ -64,16 +64,17 @@ function showUser(user){
 }
 
 /* ========== FILTER ========== */
-export async function filterUsers(event){
-	const filterSelect = event.target;
+export async function filterUsers(){
+	const teamFilter = document.querySelector("#userTeamFilter");
+	const competitionFilter = document.querySelector("#userCompetitiveFilter");
 	await updateUserGrid();
-	if(filterSelect.value === "competitive"){
+	if(competitionFilter.checked){
 		userArr = userArr.filter(user => user["competitive"]);
 	}
-	else if(filterSelect.value === "junior"){
+	if(teamFilter.value === "junior"){
 		userArr = userArr.filter(user => user["age"] < 18);
 	}
-	else if(filterSelect.value === "senior"){
+	else if(teamFilter.value === "senior"){
 		userArr = userArr.filter(user => user["age"] >= 18);
 	}
 	showUsers(userArr);

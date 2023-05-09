@@ -14,5 +14,6 @@ function setEventListeners(){
 	searchBar.addEventListener("keyup", inputSearchChanged);
 	searchBar.addEventListener("search", inputSearchChanged);
 	/* Filter */
-	document.querySelector("#userFilter").addEventListener("change", filterUsers);
+	document.querySelector("#userTeamFilter").addEventListener("change", filterUsers);
+	document.querySelector("#userCompetitiveFilter").addEventListener("change", filterUsers);
 }

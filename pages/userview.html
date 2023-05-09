@@ -19,13 +19,16 @@
                     <input type="search" id="userSearch" name="search" placeholder="Søg efter navn">
                 </div>
                 <div>
-                    <label for="userFilter">Filtrér</label>
-                    <select name="filter" id="userFilter">
+                    <div>
+                        <input type="checkbox" name="competitiveFilter" id="userCompetitiveFilter">
+                        <label for="userCompetitiveFilter">Vis kun konkurrencesvømmere</label>
+                    </div>
+                    <select name="filter" id="userTeamFilter">
                         <option value="all" selected>Alle</option>
-                        <option value="competitive">Konkurrencesvømmere</option>
-                        <option value="junior">Junior svømmere</option>
-                        <option value="senior">Senior svømmere</option>
+                        <option value="junior">Junior</option>
+                        <option value="senior">Senior</option>
                     </select>
+                    <label for="userTeamFilter">Hold</label>
                 </div>
             </section>
             <!--Insert users here with js-->
