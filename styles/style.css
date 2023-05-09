@@ -95,3 +95,7 @@ a:hover{
         padding-left: 1em;
     }
 }
+/* ========== MAIN ========== */
+main{
+    margin-top: 10vh;
+}
