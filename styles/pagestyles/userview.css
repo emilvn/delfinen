@@ -14,6 +14,13 @@
     top:30%;
     right:15%;
 }
+/* ========== POST COMPETITIVE FORM STYLING ========== */
+#post_competitive_form {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
 /* ========== USER GRID STYLING ========== */
 #userGrid{
     margin: 10em 1em 1em 1em;
