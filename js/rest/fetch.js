@@ -14,4 +14,11 @@ async function sendFetchToDB(uri, method, data) {
     return response;  
 }
 
-export {sendFetchToDB};
+async function createUser(userData) {
+    const postUserURL = `users.json`
+
+    const userResponse = await sendFetchToDB(postUserURL, "POST", userData);
+    return userResponse;
+}
+
+export {createUser};
