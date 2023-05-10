@@ -46,7 +46,8 @@
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
         <main>
             <dialog open id="add_training_time">
-                <label for="type">Vælg en disciplin:</label>
+                <form id="add_training_time_form">
+                    <label for="type">Vælg en disciplin:</label>
                     <select name="disciplin" id="disciplin" form="disciplin_form">
                     <option value="Crawl">Crawl</option>
                     <option value="Butterfly">Butterfly</option>
@@ -55,16 +56,18 @@
                     </select>
                     <br>
 
-                <label for="date-time">Select date and time:</label>
-                <input type="datetime-local" id="date-time" name="date-time">
+                    <label for="date-time">Select date and time:</label>
+                    <input type="datetime-local" id="date-time" name="date-time">
 
-                <br>
+                    <br>
                     
                     <label for="seconds">Sekunder:</label>
-                    <input type="seconds" id="seconds" name="seconds">
-                             
-                <br>
-                <button id="btn_submit">submit</button>
+                    <input type="seconds" id="seconds" name="seconds" required>
+                            
+                    <br>
+                    <input type="submit" id="btn_submit" value="Opret tid">
+                </form>
+                
             </dialog>
         </main>
     </body>

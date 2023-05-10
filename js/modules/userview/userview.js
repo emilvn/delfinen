@@ -8,27 +8,28 @@ async function main(){
 
 function setEventListeners() {
   document
-    .querySelector("#btn_submit")
-    .addEventListener("mouseup", btnSendData);
+    .querySelector("#add_training_time_form")
+    .addEventListener("submit", async function (event) {submitNewTrainingTime(event)});
 
   document
-    .querySelector("#add_training_time")
-    .addEventListener("keydown", function (event) {
+    .querySelector("#add_training_time_form")
+    .addEventListener("keydown", async function (event) {
       if (event.keyCode === 13) {
-        btnSendData();
+        await submitNewTrainingTime(event);
       }
     });
 }
 
-async function btnSendData() {
-  const disciplin = document.getElementById("disciplin").value;
-  const datetime = document.getElementById("date-time").value;
-  const seconds = document.getElementById("seconds").value;
-  const newTrainingTime = {disciplin, datetime, seconds};
-  const url = `trainingtimes/${disciplin}.json`;
-  const res = await sendFetchToDB(url, 'POST', newTrainingTime);
-  const data = await res.json();
-    console.info('info sendt');
-  return data;
-
-}
+async function submitNewTrainingTime(event) {
+    event.preventDefault();
+    const disciplin = document.getElementById("disciplin").value;
+    const datetime = document.getElementById("date-time").value;
+    const seconds = document.getElementById("seconds").value;
+    const newTrainingTime = {disciplin, datetime, seconds};
+    const url = `trainingtimes/${disciplin}.json`;
+    const res = await sendFetchToDB(url, 'POST', newTrainingTime);
+    if(res.ok) {
+        const data = await res.json();
+        return data;
+  }
+} 
