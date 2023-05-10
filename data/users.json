@@ -1,0 +1,273 @@
+{
+  "member1": {
+    "name": "Hans Nielsen",
+    "email": "hansnielsen@example.com",
+    "phone": "22334455",
+    "age": 25,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member2": {
+    "name": "Lone Jensen",
+    "email": "lonejensen@example.com",
+    "phone": "11223344",
+    "age": 30,
+    "membershipPassive": false,
+    "competitive": false
+  },
+  "member3": {
+    "name": "Mikkel Pedersen",
+    "email": "mikkelpedersen@example.com",
+    "phone": "99887766",
+    "age": 18,
+    "membershipPassive": true,
+    "competitive": false
+  },
+  "member4": {
+    "name": "Sofie Larsen",
+    "email": "sofielarsen@example.com",
+    "phone": "55443322",
+    "age": 23,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member5": {
+    "name": "Andreas Christensen",
+    "email": "andreasc@example.com",
+    "phone": "77665544",
+    "age": 28,
+    "membershipPassive": true,
+    "competitive": true
+  },
+  "member6": {
+    "name": "Mads Petersen",
+    "email": "madspetersen@example.com",
+    "age": 26,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member7": {
+    "name": "Julie Andersen",
+    "email": "julieandersen@example.com",
+    "phone": "11223344",
+    "age": 29,
+    "membershipPassive": false,
+    "competitive": false
+  },
+  "member8": {
+    "name": "Nikolaj Hansen",
+    "email": "nikolajhansen@example.com",
+    "age": 21,
+    "membershipPassive": true,
+    "competitive": false
+  },
+  "member9": {
+    "name": "Laura Sørensen",
+    "email": "laurasorensen@example.com",
+    "phone": "55443322",
+    "age": 24,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member10": {
+    "name": "Emilie Christensen",
+    "email": "emiliec@example.com",
+    "phone": "77665544",
+    "age": 27,
+    "membershipPassive": true,
+    "competitive": true
+  },
+  "member11": {
+    "name": "Sara Jensen",
+    "email": "sarajensen@example.com",
+    "phone": "22334455",
+    "age": 25,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member12": {
+    "name": "Anders Nielsen",
+    "email": "andersnielsen@example.com",
+    "phone": "11223344",
+    "age": 30,
+    "membershipPassive": false,
+    "competitive": false
+  },
+  "member13": {
+    "name": "Maria Pedersen",
+    "email": "mariapedersen@example.com",
+    "age": 18,
+    "membershipPassive": true,
+    "competitive": false
+  },
+  "member14": {
+    "name": "Daniel Larsen",
+    "email": "daniellarsen@example.com",
+    "phone": "55443322",
+    "age": 23,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member15": {
+    "name": "Sofia Christensen",
+    "email": "sofiachristensen@example.com",
+    "phone": "77665544",
+    "age": 28,
+    "membershipPassive": true,
+    "competitive": true
+  },
+  "member16": {
+    "name": "Erik Larsen",
+    "email": "eriklarsen@example.com",
+    "phone": "22334455",
+    "age": 66,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member17": {
+    "name": "Ingrid Hansen",
+    "email": "ingridhansen@example.com",
+    "phone": "11223344",
+    "age": 74,
+    "membershipPassive": false,
+    "competitive": false
+  },
+  "member18": {
+    "name": "Ole Pedersen",
+    "email": "olepedersen@example.com",
+    "age": 62,
+    "membershipPassive": true,
+    "competitive": false
+  },
+  "member19": {
+    "name": "Else Christensen",
+    "email": "elsechristensen@example.com",
+    "phone": "55443322",
+    "age": 71,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member20": {
+    "name": "Niels Jensen",
+    "email": "nielsjensen@example.com",
+    "phone": "77665544",
+    "age": 67,
+    "membershipPassive": true,
+    "competitive": true
+  },
+  "member21": {
+    "name": "Greta Nielsen",
+    "email": "gretanielsen@example.com",
+    "phone": "11223344",
+    "age": 78,
+    "membershipPassive": false,
+    "competitive": false
+  },
+  "member22": {
+    "name": "Børge Sørensen",
+    "email": "børgesørensen@example.com",
+    "age": 64,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member23": {
+    "name": "Gerda Christensen",
+    "email": "gerdachristensen@example.com",
+    "phone": "55443322",
+    "age": 73,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member24": {
+    "name": "Jens Hansen",
+    "email": "jenshansen@example.com",
+    "phone": "77665544",
+    "age": 68,
+    "membershipPassive": true,
+    "competitive": true
+  },
+  "member25": {
+    "name": "Marie Nielsen",
+    "email": "marienielsen@example.com",
+    "age": 70,
+    "membershipPassive": true,
+    "competitive": false
+  },
+  "member26": {
+    "name": "Liam Jensen",
+    "email": "liamjensen@example.com",
+    "phone": "11223344",
+    "age": 16,
+    "membershipPassive": false,
+    "competitive": false
+  },
+  "member27": {
+    "name": "Emma Nielsen",
+    "email": "emmanielsen@example.com",
+    "phone": "22334455",
+    "age": 15,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member28": {
+    "name": "Noah Andersen",
+    "email": "noahandersen@example.com",
+    "age": 14,
+    "membershipPassive": true,
+    "competitive": false
+  },
+  "member29": {
+    "name": "Mia Christensen",
+    "email": "miachristensen@example.com",
+    "phone": "55443322",
+    "age": 13,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member30": {
+    "name": "William Pedersen",
+    "email": "williampedersen@example.com",
+    "phone": "77665544",
+    "age": 17,
+    "membershipPassive": true,
+    "competitive": true
+  },
+  "member31": {
+    "name": "Sophia Larsen",
+    "email": "sophialarsen@example.com",
+    "phone": "11223344",
+    "age": 16,
+    "membershipPassive": false,
+    "competitive": false
+  },
+  "member32": {
+    "name": "Oliver Madsen",
+    "email": "olivermadsen@example.com",
+    "age": 14,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member33": {
+    "name": "Ella Jensen",
+    "email": "ellajensen@example.com",
+    "phone": "55443322",
+    "age": 13,
+    "membershipPassive": false,
+    "competitive": true
+  },
+  "member34": {
+    "name": "Lucas Andersen",
+    "email": "lucasandersen@example.com",
+    "phone": "77665544",
+    "age": 17,
+    "membershipPassive": true,
+    "competitive": true
+  },
+  "member35": {
+    "name": "Freya Christensen",
+    "email": "freyachristensen@example.com",
+    "age": 15,
+    "membershipPassive": true,
+    "competitive": false
+  }
+}
