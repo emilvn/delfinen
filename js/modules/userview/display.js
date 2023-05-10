@@ -1,19 +1,11 @@
-import {sendFetchToDB} from "../../rest/fetch.js";
-import {prepareData} from "../preparation/preparedata.js";
-import { showDeleteDialog } from "./deleteUser.js";
+import {getAllUsers} from "../../rest/fetch.js";
+import { showDeleteDialog } from "./dialogs.js";
 
 export let userArr;
 
 export async function updateUserGrid(){
-	const response = await sendFetchToDB("users.json", "GET");
-	if(response.ok){
-		const usersObj = await response.json();
-		userArr = prepareData(usersObj);
-		showUsers(userArr);
-	}
-	else{
-		throw new Error(`Bad response at updateUserGrid: ${response.status} ${response.statusText}.`);
-	}
+	userArr = await getAllUsers();
+	showUsers(userArr);
 }
 
 export function showUsers(users){

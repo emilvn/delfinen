@@ -1,4 +1,4 @@
-import { createUser } from "../../rest/fetch.js";
+import {createUser, deleteUser} from "../../rest/fetch.js";
 
 async function submitUser(event) {
     const userData = {
@@ -11,6 +11,15 @@ async function submitUser(event) {
     }
 
     createUser(userData);
-} 
+}
 
-export {submitUser}
+function submitDelete(event) {
+    event.preventDefault();
+    const deleteForm = event.target;
+    const userID = deleteForm.dataset.id;
+    deleteForm.removeEventListener("submit", submitDelete);
+    deleteUser(userID);
+    document.querySelector("#dialog_delete_user").close();
+}
+
+export {submitUser, submitDelete}

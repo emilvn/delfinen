@@ -1,4 +1,4 @@
-import { submitUser } from "./postuser.js";
+import { submitUser } from "./submit.js";
 import {filterUsers, updateUserGrid} from "./display.js";
 import {inputSearchChanged} from "./search.js";
 
