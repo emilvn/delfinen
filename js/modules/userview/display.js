@@ -1,5 +1,5 @@
 import {getAllUsers} from "../../rest/fetch.js";
-import { showDeleteDialog } from "./dialogs.js";
+import {showDeleteDialog, showUpdateDialog} from "./dialogs.js";
 
 export let userArr;
 
@@ -51,7 +51,7 @@ function showUser(user){
 
 	/*Event listeners*/
 	deleteBtn.addEventListener("click", showDeleteDialog);
-//	updateBtn.addEventListener("click", showUpdateDialog);
+	updateBtn.addEventListener("click", showUpdateDialog);
 //	competitionBtn.addEventListener("click", showCompetitionDialog);
 //	trainingBtn.addEventListener("click", showTrainingDialog)
 }

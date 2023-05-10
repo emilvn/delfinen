@@ -1,5 +1,5 @@
 "use strict";
-import {submitDelete} from "./submit.js";
+import {submitDelete, submitUpdate} from "./submit.js";
 import {getOneUser} from "../../rest/fetch.js";
 
 export function showDeleteDialog(event) {
@@ -44,5 +44,5 @@ async function fillUpdateForm(uid){
   form["phone"].value = user["phone"]?user["phone"]:"";
   form["age"].value = user["age"];
   form["competitive"].checked = user["competitive"];
-  form["membershippassive"].checked = user["membershippassive"];
+  form["membershippassive"].checked = user["membershipPassive"];
 }

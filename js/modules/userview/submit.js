@@ -33,10 +33,10 @@ function submitUpdate(event){
 
     const uid = form.dataset.id;
     const user = {
-        name: form["name"],
-        email: form["email"],
-        phone: form["phone"],
-        age: Number(form["age"]),
+        name: form["name"].value,
+        email: form["email"].value,
+        phone: form["phone"].value,
+        age: Number(form["age"].value),
         competitive: form["competitive"].checked,
         membershipPassive: form["membershippassive"].checked
     }
