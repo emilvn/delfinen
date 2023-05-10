@@ -45,14 +45,15 @@
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
         <main>
-            <dialog open id="add_training_time">
-                <form id="add_training_time_form">
+             <dialog open id="add_training_time">
+                 <button id="close_button">X</button>
+                 <form id="add_training_time_form">
                     <label for="type">Vælg en disciplin:</label>
                     <select name="disciplin" id="disciplin" form="disciplin_form">
-                    <option value="Crawl">Crawl</option>
-                    <option value="Butterfly">Butterfly</option>
-                    <option value="Brystsvøming">Brystsvøming</option>
-                    <option value="rygcrawl">rygcrawl</option>
+                        <option value="Crawl">Crawl</option>
+                        <option value="Butterfly">Butterfly</option>
+                        <option value="Brystsvøming">Brystsvøming</option>
+                        <option value="rygcrawl">rygcrawl</option>
                     </select>
                     
                     <label for="date-time">Select date and time:</label>
@@ -62,6 +63,7 @@
                     <input type="seconds" id="seconds" name="seconds" required>
                             
                     <input type="submit" id="btn_submit" value="Opret tid">
+
                 </form>
                 
             </dialog>

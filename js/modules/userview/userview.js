@@ -18,6 +18,13 @@ function setEventListeners() {
          submitNewTrainingTime(event);
       }
     });
+
+     document
+      .querySelector("#close_button")
+      .addEventListener("click", function () {
+        const dialog = document.getElementById("add_training_time");
+        dialog.close();
+      });
 }
 
  function checkTrainingTimeFields(disciplin, datetime, seconds) {
