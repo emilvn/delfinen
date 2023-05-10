@@ -59,6 +59,23 @@
                 </form>
             </dialog>
         </main>
+          <!-- competitive time dialog -->
+            <dialog open id="post_competitive_dialog">
+                <form id="post_competitive_form">
+                    <label for="competitive_event">Stævne: </label><input type="text" id="competitive_event" name="competitive_event" required>
+                    <label for="competitive_discipline">Disciplin: </label>
+                    <select type="email" id="competitive_discipline" name="competitive_discipline" required>
+                        <option value="breaststroke">Brystsvømning</option>
+                        <option value="butterfly">Butterfly</option>
+                        <option value="crawl">Crawl</option>
+                        <option value="back_crawl">Rygcrawl</option>
+                    </select>
+                    <label for="competitive_time">Tid: </label><input type="text" id="competitive_time" name="competitive_time" placeholder="i sekunder">
+                    <label for="competitive_placement">Placering: </label><input type="text" id="competitive_placement" name="competitive_placement" maxlength="2">
+                    <input type="submit" id="competitive_event" value="Opret Bruger">
+                    <input type="reset" value="Clear form">
+                </form>
+            </dialog>
     </body>
     <!--main script-->
     <script type="module" src="../js/main.js"></script>
