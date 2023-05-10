@@ -60,7 +60,7 @@
             </dialog>
         </main>
           <!-- competitive time dialog -->
-            <dialog open id="post_competitive_dialog">
+            <dialog id="post_competitive_dialog">
                 <form id="post_competitive_form">
                     <label for="competitive_event">Stævne: </label><input type="text" id="competitive_event" name="competitive_event" required>
                     <label for="competitive_discipline">Disciplin: </label>
@@ -71,9 +71,9 @@
                         <option value="back_crawl">Rygcrawl</option>
                     </select>
                     <label for="competitive_time">Tid: </label><input type="text" id="competitive_time" name="competitive_time" placeholder="i sekunder">
-                    <label for="competitive_placement">Placering: </label><input type="text" id="competitive_placement" name="competitive_placement" maxlength="2">
-                    <input type="submit" id="competitive_event" value="Opret Bruger">
-                    <input type="reset" value="Clear form">
+                    <label for="competitive_position">Placering: </label><input type="text" id="competitive_position" name="competitive_position" maxlength="2">
+                    <input type="submit" value="Opret Tid">
+                     <input type="button" id="competitive_close_btn" value="Close">
                 </form>
             </dialog>
     </body>
