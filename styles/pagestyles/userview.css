@@ -11,8 +11,26 @@
 
 #post_user_dialog_open {
     position:fixed;
-    top:30%;
-    right:15%;
+    top:15vh;
+    right:0;
+    z-index: 999;
+    background-color: #6CB4EE;
+    height: 3em;
+    width: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 3px black);
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+@media (max-width: 650px) {
+    #post_user_dialog_open{
+        top: unset;
+        bottom: 1vh;
+    }
 }
 /* ========== USER GRID STYLING ========== */
 #userGrid{
