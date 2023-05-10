@@ -1,5 +1,5 @@
 function generateNavHTML() {
-    const navHTML = /* html */ `
+	const navHTML = /* html */ `
         <nav>
             <div class="siteTitle">
                 <div class="siteLogo"></div>
@@ -31,7 +31,7 @@ function generateNavHTML() {
             </div>
         </nav>
     `;
-    document.querySelector("body").insertAdjacentHTML("afterbegin", navHTML);
+	document.querySelector("body").insertAdjacentHTML("afterbegin", navHTML);
 }
 
 export { generateNavHTML };
