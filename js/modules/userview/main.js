@@ -1,10 +1,19 @@
-import {updateUserGrid} from "./display.js";
-import { showDeleteDialog } from "./deleteUser.js";
+import {filterUsers, updateUserGrid} from "./display.js";
+import {inputSearchChanged} from "./search.js";
 
 window.addEventListener("load", main);
 
 async function main(){
 	await updateUserGrid();
+	setEventListeners();
+}
 
-	  document.querySelector(".delete-user-btn").addEventListener("click", showDeleteDialog);
+function setEventListeners(){
+	/* Search */
+	const searchBar = document.querySelector("#userSearch");
+	searchBar.addEventListener("keyup", inputSearchChanged);
+	searchBar.addEventListener("search", inputSearchChanged);
+	/* Filter */
+	document.querySelector("#userTeamFilter").addEventListener("change", filterUsers);
+	document.querySelector("#userCompetitiveFilter").addEventListener("change", filterUsers);
 }

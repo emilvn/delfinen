@@ -1,31 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Svømmeklubben Delfinen - Brugere</title>
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/pagestyles/userview.css" />
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
-  </head>
-  <body>
-    <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-    <main>
-      <!--Insert users here with js--> 
-      <section id="userGrid"></section>
-
-      <dialog id="dialog_delete_user">
-        <h2>Er Du Sikker at du gerne vil slette denne bruger:</h2>
-        <form id="form_delete_post">
-          <button id="deleteCanceled" type="button" class="btn-cancel">Nej</button>
-          <button>Ja</button>
-        </form>
-      </dialog>
-    </main>
-  </body>
-  <!--main script-->
-  <script type="module" src="../js/main.js"></script>
-  <script type="module" src="../js/modules/userview/main.js"></script>
-  <script type="module" src="../js/modules/userview/deleteUser.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Svømmeklubben Delfinen - Brugere</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/pagestyles/userview.css">
+        <link rel="shortcut icon" href="#" type="image/x-icon">
+    </head>
+    <body>
+        <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
+        <main>
+            <section id="user-search-div">
+                <div>
+                    <label for="userSearch">Søg:</label>
+                    <input type="search" id="userSearch" name="search" placeholder="Søg efter navn">
+                </div>
+                <div>
+                    <div>
+                        <input type="checkbox" name="competitiveFilter" id="userCompetitiveFilter">
+                        <label for="userCompetitiveFilter">Konkurrencesvømmere</label>
+                    </div>
+                    <div>
+                        <select name="filter" id="userTeamFilter">
+                            <option value="all" selected>Alle</option>
+                            <option value="junior">Junior</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                        <label for="userTeamFilter">Hold</label>
+                    </div>
+                </div>
+            </section>
+            <!--Insert users here with js-->
+            <section id="userGrid"></section>
+        </main>
+    </body>
+    <!--main script-->
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/modules/userview/main.js"></script>
 </html>
