@@ -1,5 +1,72 @@
 #add_training_time{
     position: absolute;
-    top: 50%;
+    top: 30%;
 }
 
+form.invalid {
+  box-shadow: 0 0 0 1px red;
+  animation: shake .5s ease;
+}
+
+form.valid {
+  box-shadow: 0 0 0 1px green;
+  animation: pulse .5s ease;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(10px); }
+  40% { transform: translateX(-10px); }
+  60% { transform: translateX(10px); }
+  80% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+main {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  grid-row-gap: 1rem;
+  grid-column-gap: 2rem;
+}
+
+label {
+  grid-column: 1 / 1;
+  margin-bottom: 0.25rem;
+}
+
+select, input {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 1px #ccc;
+  font-size: 1rem;
+  grid-column: 2 / -1;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+}
+
+input[type=submit]:hover {
+  background-color: #3e8e41;
+}
