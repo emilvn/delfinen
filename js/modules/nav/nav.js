@@ -1,16 +1,5 @@
-!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Svømmeklubben Delfinen - Betalinger</title>
-        <link rel="stylesheet" href="../styles/style.css">
-        <link rel="shortcut icon" href="#" type="image/x-icon">
-    </head>
-    <body>
-        <!--KEEP THIS ON ALL PAGES-->
+function generateNavHTML() {
+	const navHTML = /* html */ `
         <nav>
             <div class="siteTitle">
                 <div class="siteLogo"></div>
@@ -41,10 +30,8 @@
                 </div>
             </div>
         </nav>
+    `;
+	document.querySelector("body").insertAdjacentHTML("afterbegin", navHTML);
+}
 
-        <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main></main>
-        <!--main script-->
-        <script type="module" src="../js/main.js"></script>
-    </body>
-</html>
+export { generateNavHTML };
