@@ -1,6 +1,7 @@
 import {createUser, deleteUser} from "../../rest/fetch.js";
 
 async function submitUser(event) {
+    event.preventDefault();
     const userData = {
         name: event.target.post_user_name.value,
         email: event.target.post_user_email.value,
@@ -9,8 +10,8 @@ async function submitUser(event) {
         membershipPassive: false,
         competitive: event.target.post_user_competitive.checked,
     }
-
     createUser(userData);
+    event.target.parentElement.close();
 }
 
 function submitDelete(event) {

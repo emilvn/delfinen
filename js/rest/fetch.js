@@ -23,15 +23,20 @@ async function getAllUsers(){
         return prepareData(await response.json());
     }
     else {
-        console.error(`Bad response at getAllUsers: ${response.status} ${response.statusText}`);
+        throw new Error(`Bad response at getAllUsers: ${response.status} ${response.statusText}`);
     }
 }
 
 async function createUser(userData) {
-    const postUserURL = `users.json`
-
-    const userResponse = await sendFetchToDB(postUserURL, "POST", userData);
-    return userResponse;
+    const postUserURI = `users.json`
+    const response = await sendFetchToDB(postUserURI, "POST", userData);
+    if(response.ok){
+        console.log("User created successfully!");
+        updateUserGrid();
+    }
+    else{
+        console.error(`Bad response at createUser: ${response.status} ${response.statusText}`);
+    }
 }
 async function deleteUser(uid) {
     const response = await sendFetchToDB(`users/${uid}.json`, "DELETE")
@@ -44,8 +49,7 @@ async function deleteUser(uid) {
 }
 
 async function updateUser(uid, userData){
-    const jsonUserData = JSON.stringify(userData);
-    const response = await sendFetchToDB(`users/${uid}.json`, "PUT", jsonUserData);
+    const response = await sendFetchToDB(`users/${uid}.json`, "PUT", userData);
     if(response.ok){
         console.log("User updated successfully!");
         updateUserGrid();
