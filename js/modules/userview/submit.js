@@ -1,7 +1,10 @@
-import {createUser, deleteUser} from "../../rest/fetch.js";
+import {createUser, deleteUser, updateUser} from "../../rest/fetch.js";
 
 async function submitUser(event) {
     event.preventDefault();
+    const form = event.target;
+    form.removeEventListener("submit", submitUser);
+
     const userData = {
         name: event.target.post_user_name.value,
         email: event.target.post_user_email.value,
@@ -23,4 +26,22 @@ function submitDelete(event) {
     document.querySelector("#dialog_delete_user").close();
 }
 
-export {submitUser, submitDelete}
+function submitUpdate(event){
+    event.preventDefault();
+    const form = event.target;
+    form.removeEventListener("submit", submitUpdate);
+
+    const uid = form.dataset.id;
+    const user = {
+        name: form["name"],
+        email: form["email"],
+        phone: form["phone"],
+        age: Number(form["age"]),
+        competitive: form["competitive"].checked,
+        membershipPassive: form["membershippassive"].checked
+    }
+    updateUser(uid, user);
+    form.parentElement.close();
+}
+
+export {submitUser, submitDelete, submitUpdate}
