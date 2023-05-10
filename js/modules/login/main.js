@@ -1,35 +1,33 @@
-function main() {
+"use strict";
 
-    document.querySelector("#login_form").addEventListener("submit", login);
-}
+window.addEventListener("load", getLocalStorage);
 
+// function main() {
+//   console.log("Hello");
+// }
 
-function login(e) {
-    e.preventDefault();
-    setLocaleStorage();
+// function login(event) {
+//   event.preventDefault();
+//   getLocalStorage();
+// }
 
-}
+function getLocalStorage() {
+  const form = document.querySelector("#login_form");
 
-
-function setLocaleStorage(event) {
-    console.log("Kører før Locale Storage")
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
-    const userName = document.querySelector("#user_name").value;
-    const password = document.queryselector("#password").value;
 
-     setLocaleStorage("username", password);
-     setLocaleStorage("password", password);
+    const username = document.querySelector("#user_name").value;
+    const passW = document.querySelector("#password").value;
 
-     console.log("kører efter Locale St")
-
-    
-
-    
-
-    
-
+    if (username === "admin" || username === "træner") {
+      if (passW === username) {
+        localStorage.setItem("admin", username);
+      }
+    }
+  });
 }
 
-function reDirect() {
-    window.location = "/userview.html"
-}
+// function reDirect() {
+//     window.location = ""
+// }
