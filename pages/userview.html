@@ -27,6 +27,28 @@
                     <input type="reset" value="Clear form">
                 </form>
             </dialog>
+
+            <!--Update user dialog-->
+            <dialog id="update_user_dialog">
+                <form id="update_user_form">
+                    <label for="update_user_name">Navn:</label>
+                    <input type="text" id="update_user_name" name="name" required>
+                    <label for="update_user_email">E-mail:</label>
+                    <input type="email" id="update_user_email" name="email" required>
+                    <label for="update_user_phone">Tlf nr.:</label>
+                    <input type="text" id="update_user_phone" name="phone">
+                    <label for="update_user_age">Alder:</label>
+                    <input type="text" id="update_user_age" name="age">
+                    <label for="update_user_competitive">Konkurrencesvømmer: </label>
+                    <input type="checkbox" id="update_user_competitive" name="competitive">
+                    <label for="update_user_membershippassive">Ændr medlemskab til passivt</label>
+                    <input type="checkbox" id="update_user_membershippassive" name="membershippassive">
+                    <input type="submit" id="update_user_btn_submit" value="Opret Bruger">
+                    <input type="reset" value="Clear form">
+                </form>
+            </dialog>
+
+            <!--search and filter-->
             <section id="user-search-div">
                 <div>
                     <label for="userSearch">Søg:</label>
@@ -53,7 +75,7 @@
             <!--delete dialog-->
             <dialog id="dialog_delete_user">
                 <h2>Er du sikker på at du vil slette</h2>
-                <form id="form_delete_post">
+                <form id="form_delete_user">
                     <button id="deleteCanceled" type="button" class="btn-cancel">No</button>
                     <button>Yes</button>
                 </form>

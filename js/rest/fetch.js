@@ -27,6 +27,16 @@ async function getAllUsers(){
     }
 }
 
+async function getOneUser(uid){
+    const response = await sendFetchToDB(`users/${uid}.json`, "GET");
+    if(response.ok){
+        return await response.json();
+    }
+    else {
+        throw new Error(`Bad response at getOneUser: ${response.status} ${response.statusText}`);
+    }
+}
+
 async function createUser(userData) {
     const postUserURI = `users.json`
     const response = await sendFetchToDB(postUserURI, "POST", userData);
@@ -59,4 +69,4 @@ async function updateUser(uid, userData){
     }
 }
 
-export {createUser, deleteUser, getAllUsers};
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser};

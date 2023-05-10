@@ -1,9 +1,9 @@
 /* ========== POST USER STYLING ========== */
-#post_user_dialog {
+#post_user_dialog, #update_user_dialog {
     margin-top: 30vh;
 }
 
-#post_user_form {
+#post_user_form, #update_user_form {
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
@@ -16,7 +16,7 @@
     z-index: 999;
     background-color: #6CB4EE;
     height: 3em;
-    width: 8em;
+    width: 7em;
     display: flex;
     justify-content: center;
     align-items: center;

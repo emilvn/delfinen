@@ -6,7 +6,7 @@ async function submitUser(event) {
         name: event.target.post_user_name.value,
         email: event.target.post_user_email.value,
         phone: event.target.post_user_phone.value,
-        age: event.target.post_user_age.value,
+        age: Number(event.target.post_user_age.value),
         membershipPassive: false,
         competitive: event.target.post_user_competitive.checked,
     }
