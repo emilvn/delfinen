@@ -11,7 +11,7 @@ async function sendFetchToDB(uri, method, data) {
 
     const response = await fetch(endpoint + uri, options);
 
-    return response;
+    return response;  
 }
 
 export {sendFetchToDB};
