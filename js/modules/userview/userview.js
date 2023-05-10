@@ -2,25 +2,25 @@ import { sendFetchToDB } from "../../rest/fetch.js";
 
 window.addEventListener('load', main)
 
-async function main(){
+function main(){
     setEventListeners();
 }
 
 function setEventListeners() {
   document
     .querySelector("#add_training_time_form")
-    .addEventListener("submit", async function (event) {submitNewTrainingTime(event)});
+    .addEventListener("submit", function (event) {submitNewTrainingTime(event)});
 
   document
     .querySelector("#add_training_time_form")
-    .addEventListener("keydown", async function (event) {
+    .addEventListener("keydown",  function (event) {
       if (event.keyCode === 13) {
-        await submitNewTrainingTime(event);
+         submitNewTrainingTime(event);
       }
     });
 }
 
-async function checkTrainingTimeFields(disciplin, datetime, seconds) {
+ function checkTrainingTimeFields(disciplin, datetime, seconds) {
   if (!disciplin || !datetime || !seconds) {
     const completedMessage = document.querySelector("#add_training_time_form");
     completedMessage.classList.remove('valid');
@@ -51,7 +51,6 @@ async function submitNewTrainingTime(event) {
   const res = await sendFetchToDB(url, 'POST', newTrainingTime);
 
   if (res.ok) {
-    console.info('sendt');
     const data = await res.json();
     return data;
   }
