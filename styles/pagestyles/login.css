@@ -1,0 +1,17 @@
+#login_form {
+    display: grid;
+    position: absolute;
+    grid-template-columns: 1fr ;
+    margin: 0;
+    padding: 25px;
+    width: 500px;
+    border: solid black 2px;
+    gap: 15px;
+    top: 20%;
+    left: 50%;
+    align-items: center;
+}
+
+p {
+    text-align: center;
+}
