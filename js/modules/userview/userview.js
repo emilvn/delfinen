@@ -31,7 +31,6 @@ function setEventListeners() {
   .querySelector("#open_training_time_dialog_button")
   .addEventListener("click", showTrainingTimeDialog);
 
-
 }
 
  function checkTrainingTimeFields(disciplin, datetime, seconds) {

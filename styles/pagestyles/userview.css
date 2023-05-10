@@ -92,6 +92,6 @@ input[type=submit]:hover {
 }
 
 #close_button:hover {
-  background-color: #d50000;
-  color: black;
+  background-color: #6c0202;
+  color: white;
 }
