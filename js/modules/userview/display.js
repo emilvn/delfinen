@@ -1,5 +1,6 @@
 import {sendFetchToDB} from "../../rest/fetch.js";
 import {prepareData} from "../preparation/preparedata.js";
+import { showDeleteDialog } from "./deleteUser.js";
 
 export let userArr;
 
@@ -57,7 +58,7 @@ function showUser(user){
 	const trainingBtn = currentUserArticle.querySelector("add-trainingtime-btn");
 
 	/*Event listeners*/
-//	deleteBtn.addEventListener("click", showDeleteDialog);
+	deleteBtn.addEventListener("click", showDeleteDialog);
 //	updateBtn.addEventListener("click", showUpdateDialog);
 //	competitionBtn.addEventListener("click", showCompetitionDialog);
 //	trainingBtn.addEventListener("click", showTrainingDialog)
