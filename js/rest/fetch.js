@@ -21,4 +21,11 @@ async function createUser(userData) {
     return userResponse;
 }
 
-export {createUser};
+async function postCompetitiveTime(eventName, discipline, timeData) {
+    const postCompetitiveTimeURL = `competitiontimes/${eventName}/${discipline}.json`;
+
+    const eventResponse = await sendFetchToDB(postCompetitiveTimeURL, "POST", timeData);
+    return eventResponse;
+}
+
+export {sendFetchToDB, createUser, postCompetitiveTime};
