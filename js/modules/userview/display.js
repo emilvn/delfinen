@@ -1,6 +1,7 @@
 import {sendFetchToDB} from "../../rest/fetch.js";
 import {prepareData} from "../preparation/preparedata.js";
 import { showDeleteDialog } from "./deleteUser.js";
+import { showCompetitionDialog } from "./competitiondialog.js";
 
 export let userArr;
 
@@ -54,13 +55,13 @@ function showUser(user){
 	/*current buttons*/
 	const deleteBtn = currentUserArticle.querySelector(".delete-user-btn");
 	const updateBtn = currentUserArticle.querySelector(".edit-user-btn");
-	const competitionBtn = currentUserArticle.querySelector("add-competitiontime-btn");
-	const trainingBtn = currentUserArticle.querySelector("add-trainingtime-btn");
+	const competitionBtn = currentUserArticle.querySelector(".add-competitiontime-btn");
+	const trainingBtn = currentUserArticle.querySelector(".add-trainingtime-btn");
 
 	/*Event listeners*/
 	deleteBtn.addEventListener("click", showDeleteDialog);
 //	updateBtn.addEventListener("click", showUpdateDialog);
-//	competitionBtn.addEventListener("click", showCompetitionDialog);
+	competitionBtn.addEventListener("click", showCompetitionDialog);
 //	trainingBtn.addEventListener("click", showTrainingDialog)
 }
 
