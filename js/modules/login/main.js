@@ -1,35 +1,35 @@
-
-window.addEventListener("load", main)
-
-
 function main() {
-    console.log("Hello");
 
-    
+    document.querySelector("#login_form").addEventListener("submit", login);
 }
 
 
-function loginAdminOrCoach() {
-   
-    const username = document.querySelector("#user_name").value;
+function login(e) {
+    e.preventDefault();
+    setLocaleStorage();
 
-    const passW = document.querySelector("#password").value;
+}
 
-    const results = document.querySelector("#result")
 
-    const user = localStorage.getItem(username)
-    const data = JSON.parse(user)
-    console.log(data)
+function setLocaleStorage(event) {
+    console.log("Kører før Locale Storage")
+    event.preventDefault();
+    const userName = document.querySelector("#user_name").value;
+    const password = document.queryselector("#password").value;
 
-    if (user == null) {
-        results.innerHTML = "Forkert Brugernavn"
-    } else if (username == data.username && passW == data.password) {
-        console.log(username);
-        results.innerHTML = "Logget ind";
-    } else {
-        results.innerHTML = "Forkert Password";
-    }
+     setLocaleStorage("username", password);
+     setLocaleStorage("password", password);
 
-   
+     console.log("kører efter Locale St")
 
+    
+
+    
+
+    
+
+}
+
+function reDirect() {
+    window.location = "/userview.html"
 }
