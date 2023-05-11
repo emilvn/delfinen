@@ -1,20 +1,3 @@
-/* #income-grid {
-    display: grid;
-    grid-template-columns: 40em 20em;
-}
-
-#income-grid div {
-    padding:10px;
-}
-
-.income-grid__border-left {
-    border-left: 1px black solid;
-}
-
-.income-grid__border-top {
-    border-top: 1px black solid;
-} */
-
 h1 {
     padding: 1em;
 }
@@ -31,11 +14,14 @@ h1 {
   padding: 1em; 
 }
 
-.income-grid__right {
+.income-grid__border-right {
   border-left: 1px solid #333; 
+}
+
+.income-grid__hover {
   transition: background-color 0.2s ease;
 }
-.income-grid__right:hover {
+.income-grid__hover:hover {
   background-color: #eee; 
 }
 
@@ -61,4 +47,12 @@ h1 {
 #sum-amount {
   font-weight: bold; 
   font-size: 1.2em; 
+}
+
+.income-grid__tooltip {
+    display: none;
+    position: absolute;
+    background-color: #cbcbcb;
+    border: 1px #333 solid;
+    margin-left:10em;
 }

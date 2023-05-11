@@ -15,11 +15,27 @@
         <main>
             <h1>Forventet årlig kontingent</h1>
             <section id="income-grid">
-                <div id="under18-text"></div><div class="income-grid__right" id="under18-amount"></div>
-                <div id="over18-text"></div><div class="income-grid__right" id="over18-amount"></div>  
-                <div id="over60-text"></div><div class="income-grid__right" id="over60-amount"></div>
-                <div id="passive-text"></div><div class="income-grid__right" id="passive-amount"></div>
-                <div id="sum-text" class="income-grid__border-top">sum</div><div class="income-grid__right income-grid__border-top" id="sum-amount"></div>
+                <div id="under18-text"></div>
+                <div class="income-grid__border-right income-grid__hover" id="under18-amount-container">
+                    <span id="under18-amount"></span>
+                    <div class="income-grid__tooltip"></div>
+                </div>
+                <div id="over18-text"></div>
+                <div class="income-grid__border-right income-grid__hover" id="over18-amount-container">
+                    <span id="over18-amount"></span>
+                    <div class="income-grid__tooltip"></div>
+                </div>  
+                <div id="over60-text"></div>
+                <div class="income-grid__border-right income-grid__hover" id="over60-amount-container">
+                    <span id="over60-amount"></span>
+                    <div class="income-grid__tooltip"></div>
+                </div>
+                <div id="passive-text"></div>
+                <div class="income-grid__border-right income-grid__hover" id="passive-amount-container">
+                    <span id="passive-amount"></span>
+                    <div class="income-grid__tooltip"></div>
+                </div>
+                <div id="sum-text" class="income-grid__border-top">sum</div><div class="income-grid__border-right income-grid__border-top" id="sum-amount"></div>
             </section>
         </main>
         <!--main script-->

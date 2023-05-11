@@ -85,9 +85,9 @@ async function getPriceData() {
     const response = await sendFetchToDB(getPricesURI, "GET");
     
     if (response.ok) {
-        const pricesArr = await response.json();
+        const pricesData = await response.json();
 
-        return pricesArr;
+        return pricesData;
     }
 
     return [];
@@ -98,9 +98,9 @@ async function getMemberData() {
     const response = await sendFetchToDB(getMembersURI, "GET");
     
     if (response.ok) {
-        const membersArr = await response.json();
+        const membersData = await response.json();
 
-        return membersArr;
+        return membersData;
     }
 
     return [];
