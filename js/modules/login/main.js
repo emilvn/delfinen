@@ -5,7 +5,6 @@ window.addEventListener("load", main);
 function main() {
   
   document.querySelector("#login_form").addEventListener("submit", setLocaleStorage)
-  document.querySelector("#testbtn").addEventListener("click", reDirect)
 }
 
 function setLocaleStorage(event) {
