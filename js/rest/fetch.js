@@ -80,4 +80,30 @@ async function addTrainingtime (category, trainingtimeData){
     }
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime};
+async function getPriceData() {
+    const getPricesURI = `memberships.json`;
+    const response = await sendFetchToDB(getPricesURI, "GET");
+    
+    if (response.ok) {
+        const pricesArr = await response.json();
+
+        return pricesArr;
+    }
+
+    return [];
+}
+
+async function getMemberData() {
+    const getMembersURI = `users.json`;
+    const response = await sendFetchToDB(getMembersURI, "GET");
+    
+    if (response.ok) {
+        const membersArr = await response.json();
+
+        return membersArr;
+    }
+
+    return [];
+}
+
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getPriceData, getMemberData};

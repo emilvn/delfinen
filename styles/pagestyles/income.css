@@ -1,0 +1,64 @@
+/* #income-grid {
+    display: grid;
+    grid-template-columns: 40em 20em;
+}
+
+#income-grid div {
+    padding:10px;
+}
+
+.income-grid__border-left {
+    border-left: 1px black solid;
+}
+
+.income-grid__border-top {
+    border-top: 1px black solid;
+} */
+
+h1 {
+    padding: 1em;
+}
+
+#income-grid {
+  display: grid;
+  grid-template-columns: 30em 15em;
+  font-family: sans-serif; /* Use a sans-serif font for readability */
+  margin: 1em auto;
+  border-collapse: collapse; /* Collapse cell borders to avoid double borders */
+}
+
+#income-grid div {
+  padding: 1em; 
+}
+
+.income-grid__right {
+  border-left: 1px solid #333; 
+  transition: background-color 0.2s ease;
+}
+.income-grid__right:hover {
+  background-color: #eee; 
+}
+
+.income-grid__border-top {
+  border-top: 1px solid #333; 
+}
+
+#under18-text,
+#over18-text,
+#over60-text,
+#passive-text {
+  font-weight: bold; 
+}
+
+#under18-amount,
+#over18-amount,
+#over60-amount,
+#passive-amount {
+  font-style: italic; 
+}
+
+#sum-text,
+#sum-amount {
+  font-weight: bold; 
+  font-size: 1.2em; 
+}
