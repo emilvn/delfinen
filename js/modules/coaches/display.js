@@ -22,8 +22,7 @@ function showCoach(coach){
         <div class="coach-image">
             <img src="${coach["image"]}" alt="">    
         </div>
-        <div class="coach-general-info">
-            <h2>${coach["name"]} - ${capitalize(coach["team"])} træner</h2>
+        <div class="coach-contact-info">
             <div>
                 <h3>Kontaktinformation:</h3>
                 <ul>
@@ -33,6 +32,8 @@ function showCoach(coach){
             </div>
         </div>
         <div class="coach-about">
+            <h2>${coach["name"]} - ${capitalize(coach["team"])} træner</h2>
+            <h3>Om mig:</h3>
             <p>${coach["about"]}</p>
         </div>
     </article>

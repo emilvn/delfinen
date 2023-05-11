@@ -1,0 +1,44 @@
+#coach-grid{
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+#coach-grid article{
+    display: grid;
+    grid-template-areas:
+            "a b"
+            "c c";
+    height: 80vh;
+    background-color: white;
+    filter: drop-shadow(0 0 2px black);
+    width: auto;
+    position: relative;
+    border-radius: 5px;
+    overflow: clip;
+}
+.coach-image{
+    object-fit: cover;
+    height: 50vh;
+    width: 35vw;
+    overflow: clip;
+}
+.coach-image img{
+    width: 100%;
+}
+#coach-grid article:nth-child(odd) .coach-image{
+    grid-area: a;
+}
+#coach-grid article:nth-child(even) .coach-image{
+    grid-area: b;
+}
+.coach-contact-info{
+    margin: 1em;
+}
+.coach-contact-info li{
+    margin: 1em 0 1em 0;
+}
+.coach-about{
+    grid-area: c;
+    margin: 0 1em 1em 1em;
+}
