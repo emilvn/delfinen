@@ -42,7 +42,7 @@
     rotate: 180deg;
 }
 /* === MAIN SCREEN === */
-#homeMainScreen{
+/* #homeMainScreen{
     height: 90vh;
     width: 100%;
     background-image: url("../../data/images/background_home.jpeg");
@@ -52,7 +52,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-}
+} */
+
 /* === ABOUT SCREEN === */
 #homeAboutScreen{
     padding-top: 14vh;

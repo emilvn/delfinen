@@ -1,12 +1,17 @@
+/* ========== ANIMATION TEXT ========== */
+
+/* Set the position of the element with ID "homeMainScreen" to relative */
 #homeMainScreen {
     position: relative;
 }
 
+/* Set the position of elements with the class "content" to relative and move them up 20% */
 .content {
     position: relative;
     top: -20%;
 }
 
+/* Set the styling for all h2 elements inside elements with the class "content" */
 .content h2 {
     margin: 0;
     padding: 0;
@@ -18,6 +23,7 @@
     transform: translate(-50%, -50%);
 }
 
+/* Set the color to transparent and apply a stroke effect to the first, third, and fourth h2 elements */
 .content h2:nth-child(1),
 .content h2:nth-child(3),
 .content h2:nth-child(4) {
@@ -25,20 +31,22 @@
     -webkit-text-stroke: 2px #00008B;
 }
 
+/* Set the color and animation for the second and fourth h2 elements */
 .content h2:nth-child(2),
 .content h2:nth-child(4) {
     color: #0047AB;
     animation: animate 4s ease-in-out infinite;
 }
 
+/* Move the third and fourth h2 elements up by 100% of their height */
 .content h2:nth-child(3),
 .content h2:nth-child(4) {
     transform: translate(-50%, calc(-50% + 100%));
 }
 
+/* Define the keyframes for the animation */
 @keyframes animate {
-    0%,
-    100% {
+    0%, 100% {
         clip-path: polygon(
             0% 45%,
             16% 44%,
@@ -65,4 +73,25 @@
             0% 100%
         );
     }
+}
+
+/* ========== VIDEO BACKGROUND ========== */
+
+#homeMainScreen{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
