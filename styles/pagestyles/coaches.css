@@ -58,3 +58,28 @@
         grid-area: a;
     }
 }
+@media (max-width: 750px) {
+    #coach-grid article{
+        display: block;
+        height: unset;
+    }
+    .coach-image{
+        width: 100%;
+        height: 40vh;
+    }
+}
+@media (min-height: 900px) and (max-width: 1900px) {
+    #coach-grid article:nth-child(odd){
+        grid-template-areas:
+                "a a b"
+                "c c c";
+    }
+    #coach-grid article:nth-child(even){
+        grid-template-areas:
+                "b a a"
+                "c c c";
+    }
+    .coach-image{
+        width: 100%;
+    }
+}
