@@ -53,6 +53,7 @@
                 <div>
                     <label for="userSearch">Søg:</label>
                     <input type="search" id="userSearch" name="search" placeholder="Søg efter navn">
+                </div>
                 <div>
                     <div>
                         <input type="checkbox" name="competitiveFilter" id="userCompetitiveFilter">
@@ -66,17 +67,17 @@
                         </select>
                         <label for="userTeamFilter">Hold</label>
                     </div>
+                </div>
             </section>
             <!--Insert users here with js-->
             <section id="userGrid"></section>
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main>
-             <dialog open id="add_training_time">
-                 <button id="close_button">X</button>
+             <dialog id="add_training_time">
+                 <button id="training-time-close-button">X</button>
                  <form id="add_training_time_form">
-                    <label for="category">Vælg en disciplin:</label>
-                    <select name="category" id="category" >
+                    <label for="training-time-category">Vælg en disciplin:</label>
+                    <select name="category" id="training-time-category" >
                         <option value="Crawl">Crawl</option>
                         <option value="Butterfly">Butterfly</option>
                         <option value="Brystsvøming">Brystsvøming</option>
@@ -86,15 +87,14 @@
                     <label for="date-time">Select date and time:</label>
                     <input type="datetime-local" id="date-time" name="date-time">
 
-                    <label for="seconds" placeholder="Tid i sekunder">Tid</label>
-                    <input type="seconds" id="seconds" name="seconds" required placeholder="tid i sekunder">
+                    <label for="training-time-seconds" >Tid</label>
+                    <input type="seconds" id="training-time-seconds" name="seconds" required placeholder="tid i sekunder">
 
-                    <input type="submit" id="btn_submit" value="Opret tid">
+                    <input type="submit" id="training-time-submit" value="Opret tid">
 
                 </form>
 
             </dialog>
-        </main>
             <!--delete dialog-->
             <dialog id="dialog_delete_user">
                 <h2>Er du sikker på at du vil slette</h2>
@@ -107,6 +107,5 @@
     </body>
     <!--main script-->
     <script type="module" src="../js/main.js"></script>
-    <script type="module" src="../js/modules/userview/userview.js"></script>
     <script type="module" src="../js/modules/userview/main.js"></script>
 </html>

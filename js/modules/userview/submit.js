@@ -1,4 +1,5 @@
-import {createUser, deleteUser, updateUser} from "../../rest/fetch.js";
+import {addTrainingtime, createUser, deleteUser, updateUser} from "../../rest/fetch.js";
+import {checkTrainingTimeFields} from "./validate.js";
 
 async function submitUser(event) {
     event.preventDefault();
@@ -44,4 +45,29 @@ function submitUpdate(event){
     form.parentElement.close();
 }
 
-export {submitUser, submitDelete, submitUpdate}
+/* ========== Training time ========== */
+function submitNewTrainingTime(event) {
+    event.preventDefault();
+    const form = event.target;
+    const uid = form.dataset.id;
+
+
+    const category = form['category'].value;
+    const datetime = form['date-time'].value;
+    const seconds = form['seconds'].value;
+    const fieldsValid = checkTrainingTimeFields(category, datetime, seconds);
+
+    if (fieldsValid) {
+        form.removeEventListener("submit", submitNewTrainingTime);
+        const newTrainingTime = {
+            uid: uid,
+            date: datetime,
+            time: seconds
+        };
+        addTrainingtime(category, newTrainingTime);
+        form.reset();
+        form.parentElement.close();
+    }
+}
+
+export {submitUser, submitDelete, submitUpdate, submitNewTrainingTime}

@@ -1,5 +1,5 @@
 "use strict";
-import {submitDelete, submitUpdate} from "./submit.js";
+import {submitDelete, submitNewTrainingTime, submitUpdate} from "./submit.js";
 import {getOneUser} from "../../rest/fetch.js";
 
 export function showDeleteDialog(event) {
@@ -45,4 +45,23 @@ async function fillUpdateForm(uid){
   form["age"].value = user["age"];
   form["competitive"].checked = user["competitive"];
   form["membershippassive"].checked = user["membershipPassive"];
+}
+
+/* =========== Training time ========== */
+export function showTrainingTimeDialog(event) {
+  const form = document.querySelector("#add_training_time_form");
+  form.dataset.id = event.target.dataset.id;
+  const dialog = document.querySelector("#add_training_time");
+
+  form.addEventListener("submit", submitNewTrainingTime);
+  document.querySelector("#training-time-close-button").addEventListener("click", close);
+
+  function close(){
+    document.querySelector("#training-time-close-button").removeEventListener("click", close);
+    form.removeEventListener("submit", submitNewTrainingTime);
+    const dialog = document.querySelector("#add_training_time");
+    dialog.close();
+    form.reset();
+  }
+  dialog.showModal();
 }

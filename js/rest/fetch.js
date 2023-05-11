@@ -69,4 +69,15 @@ async function updateUser(uid, userData){
     }
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser};
+async function addTrainingtime (category, trainingtimeData){
+    const uri = `trainingstimes/${category}.json`;
+    const response = await sendFetchToDB(uri, 'POST', trainingtimeData);
+    if (response.ok){
+        console.log('Training time added');
+    }
+    else {
+        console.error(`Bad response at addTrainingtime: ${response.status} ${response.statusText}`)
+    }
+}
+
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime};

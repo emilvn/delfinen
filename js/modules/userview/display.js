@@ -1,5 +1,5 @@
 import {getAllUsers} from "../../rest/fetch.js";
-import {showDeleteDialog, showUpdateDialog} from "./dialogs.js";
+import {showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
 
 export let userArr;
 
@@ -46,14 +46,14 @@ function showUser(user){
 	/*current buttons*/
 	const deleteBtn = currentUserArticle.querySelector(".delete-user-btn");
 	const updateBtn = currentUserArticle.querySelector(".edit-user-btn");
-	const competitionBtn = currentUserArticle.querySelector("add-competitiontime-btn");
-	const trainingBtn = currentUserArticle.querySelector("add-trainingtime-btn");
+	const competitionBtn = currentUserArticle.querySelector(".add-competitiontime-btn");
+	const trainingBtn = currentUserArticle.querySelector(".add-trainingtime-btn");
 
 	/*Event listeners*/
 	deleteBtn.addEventListener("click", showDeleteDialog);
 	updateBtn.addEventListener("click", showUpdateDialog);
 //	competitionBtn.addEventListener("click", showCompetitionDialog);
-//	trainingBtn.addEventListener("click", showTrainingDialog)
+	trainingBtn.addEventListener("click", showTrainingTimeDialog);
 }
 
 /* ========== FILTER ========== */
