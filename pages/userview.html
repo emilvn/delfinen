@@ -11,37 +11,64 @@
         <link rel="shortcut icon" href="#" type="image/x-icon">
     </head>
     <body>
-        <!--KEEP THIS ON ALL PAGES-->
-        <nav>
-            <div class="siteTitle">
-                <div class="siteLogo"></div>
-                <a href="../index.html">Svømmeklubben <br> Delfinen</a>
-            </div>
-            <div id="navExpandButton"></div>
-            <div class="navGrid">
-                <div class="navButton">
-                    <a href="userview.html">BRUGERE</a>
-                </div>
-                <div class="navButton">
-                    <a href="payments.html">BETALING</a>
-                </div>
-                <div class="navButton">
-                    <a href="income.html">INDTJENING</a>
-                </div>
-                <div class="navButton">
-                    <a href="coaches.html">TRÆNERE</a>
-                </div>
-                <div class="navButton">
-                    <a href="trainingtimes.html">TRÆNING</a>
-                </div>
-                <div class="navButton">
-                    <a href="competitiontimes.html">KONKURRENCE</a>
-                </div>
-                <div class="navButton" id="loginButton">
-                    <a href="login.html">LOG IND</a>
-                </div>
-            </div>
-        </nav>
+        <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
+        <main>
+            <!-- Create User Button -->
+            <div id="post_user_dialog_open" class="btn">Opret bruger</div>
+            <!-- Create User Dialog -->
+            <dialog id="post_user_dialog">
+                <form id="post_user_form">
+                    <label for="post_user_name">Navn:</label><input type="text" id="post_user_name" name="post_user_name" required>
+                    <label for="post_user_email">E-mail:</label><input type="email" id="post_user_email" name="post_user_email" required>
+                    <label for="post_user_phone">Tlf nr.:</label><input type="text" id="post_user_phone" name="post_user_phone">
+                    <label for="post_user_age">Alder:</label><input type="number" id="post_user_age" name="post_user_age">
+                    <label for="post_user_competitive">Konkurrencesvømmer: </label><input type="checkbox" id="post_user_competitive" name="competitive">
+                    <input type="submit" id="post_user_btn_submit" value="Opret Bruger">
+                    <input type="reset" value="Ryd form">
+                </form>
+            </dialog>
+
+            <!--Update user dialog-->
+            <dialog id="update_user_dialog">
+                <form id="update_user_form">
+                    <label for="update_user_name">Navn:</label>
+                    <input type="text" id="update_user_name" name="name" required>
+                    <label for="update_user_email">E-mail:</label>
+                    <input type="email" id="update_user_email" name="email" required>
+                    <label for="update_user_phone">Tlf nr.:</label>
+                    <input type="text" id="update_user_phone" name="phone">
+                    <label for="update_user_age">Alder:</label>
+                    <input type="number" id="update_user_age" name="age">
+                    <label for="update_user_competitive">Konkurrencesvømmer: </label>
+                    <input type="checkbox" id="update_user_competitive" name="competitive">
+                    <label for="update_user_membershippassive">Passivt medlemskab</label>
+                    <input type="checkbox" id="update_user_membershippassive" name="membershippassive">
+                    <input type="submit" id="update_user_btn_submit" value="Opdater bruger">
+                    <input type="reset" value="Ryd form">
+                </form>
+            </dialog>
+
+            <!--search and filter-->
+            <section id="user-search-div">
+                <div>
+                    <label for="userSearch">Søg:</label>
+                    <input type="search" id="userSearch" name="search" placeholder="Søg efter navn">
+                <div>
+                    <div>
+                        <input type="checkbox" name="competitiveFilter" id="userCompetitiveFilter">
+                        <label for="userCompetitiveFilter">Konkurrencesvømmere</label>
+                    </div>
+                    <div>
+                        <select name="filter" id="userTeamFilter">
+                            <option value="all" selected>Alle</option>
+                            <option value="junior">Junior</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                        <label for="userTeamFilter">Hold</label>
+                    </div>
+            </section>
+            <!--Insert users here with js-->
+            <section id="userGrid"></section>
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
         <main>
@@ -55,21 +82,31 @@
                         <option value="Brystsvøming">Brystsvøming</option>
                         <option value="rygcrawl">rygcrawl</option>
                     </select>
-                    
+
                     <label for="date-time">Select date and time:</label>
                     <input type="datetime-local" id="date-time" name="date-time">
 
                     <label for="seconds" placeholder="Tid i sekunder">Tid</label>
                     <input type="seconds" id="seconds" name="seconds" required placeholder="tid i sekunder">
-                            
+
                     <input type="submit" id="btn_submit" value="Opret tid">
 
                 </form>
-                
+
+            </dialog>
+        </main>
+            <!--delete dialog-->
+            <dialog id="dialog_delete_user">
+                <h2>Er du sikker på at du vil slette</h2>
+                <form id="form_delete_user">
+                    <button id="deleteCanceled" type="button" class="btn-cancel">Annullér</button>
+                    <button>Ja</button>
+                </form>
             </dialog>
         </main>
     </body>
     <!--main script-->
     <script type="module" src="../js/main.js"></script>
     <script type="module" src="../js/modules/userview/userview.js"></script>
+    <script type="module" src="../js/modules/userview/main.js"></script>
 </html>
