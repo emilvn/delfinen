@@ -2,10 +2,6 @@
 
 window.addEventListener("load", getLocalStorage);
 
-// function main() {
-//   console.log("Hello");
-// }
-
 // function login(event) {
 //   event.preventDefault();
 //   getLocalStorage();
@@ -18,18 +14,18 @@ function getLocalStorage() {
     event.preventDefault();
 
     const username = document.querySelector("#user_name").value;
-    const passW = document.querySelector("#password").value;
+    const password = document.querySelector("#password").value;
 
     if (username === "admin" || username === "træner") {
-      if (passW === username) {
+      if (password === username) {
         localStorage.setItem("admin", username);
       } else {
-        document.querySelector("#result").textContent = "Error";
+        document.querySelector("#result").textContent = "Error something went wrong";
       }
     }
   });
 }
 
-// function reDirect() {
-//     window.location = ""
-// }
+function reDirect(url) {
+    window.location.href = "`$http://127.0.0.1:5501/pages/userview.html`";
+}
