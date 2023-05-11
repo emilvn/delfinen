@@ -13,7 +13,6 @@ function showTrainingTimeDialog(event) {
   dialog.showModal();
 }
 
-
 function setEventListeners() {
   
   document
@@ -66,7 +65,6 @@ function submitNewTrainingTime(event) {
     addTrainingtime(category, newTrainingTime);
   }
 }
-
 
 async function addTrainingtime (category, trainingtimeData){
   const uri = `trainingstimes/${category}.json`;
