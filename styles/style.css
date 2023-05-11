@@ -60,6 +60,10 @@ a:hover{
     background-repeat: no-repeat;
     background-size: contain;
 }
+.active {
+    background-color: rgb(66, 66, 131);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0), 0px 0px 4px rgba(0, 0, 0, 4) inset;
+}
 /* ========== NAV FOR SMALLER SCREENS ========== */
 @media (max-width: 1000px) {
     /* ===== DROPDOWN ===== */

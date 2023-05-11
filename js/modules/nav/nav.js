@@ -7,22 +7,22 @@ function generateNavHTML() {
             </div>
             <div id="navExpandButton"></div>
             <div class="navGrid">
-                <div class="navButton">
+                <div id="userview-html" class="navButton">
                     <a href="userview.html">BRUGERE</a>
                 </div>
-                <div class="navButton">
+                <div id="payments-html" class="navButton">
                     <a href="payments.html">BETALING</a>
                 </div>
-                <div class="navButton">
+                <div id="income-html" class="navButton">
                     <a href="income.html">INDTJENING</a>
                 </div>
-                <div class="navButton">
+                <div id="coaches-html" class="navButton">
                     <a href="coaches.html">TRÆNERE</a>
                 </div>
-                <div class="navButton">
+                <div id="trainingtimes-html" class="navButton">
                     <a href="trainingtimes.html">TRÆNING</a>
                 </div>
-                <div class="navButton">
+                <div id="competitiontimes-html" class="navButton">
                     <a href="competitiontimes.html">KONKURRENCE</a>
                 </div>
                 <div class="navButton" id="loginButton">
@@ -32,6 +32,9 @@ function generateNavHTML() {
         </nav>
     `;
 	document.querySelector("body").insertAdjacentHTML("afterbegin", navHTML);
+    const activePage = window.location.href.split("/")[window.location.href.split("/").length-1];
+    console.log(`#${activePage.replace(".","-")}`);
+    document.querySelector(`#${activePage.replace(".","-")}`).classList.add("active");
 }
 
 export { generateNavHTML };
