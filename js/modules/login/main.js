@@ -23,6 +23,8 @@ function getLocalStorage() {
     if (username === "admin" || username === "træner") {
       if (passW === username) {
         localStorage.setItem("admin", username);
+      } else {
+        document.querySelector("#result").textContent = "Error";
       }
     }
   });
