@@ -18,13 +18,11 @@
     overflow: clip;
 }
 .coach-image{
-    object-fit: cover;
-    height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
     width: 35vw;
-    overflow: clip;
-}
-.coach-image img{
-    width: 100%;
 }
 #coach-grid article:nth-child(odd) .coach-image{
     grid-area: a;
@@ -41,4 +39,22 @@
 .coach-about{
     grid-area: c;
     margin: 0 1em 1em 1em;
+}
+@media (max-width: 1900px) {
+    #coach-grid{
+        grid-template-columns: 1fr;
+    }
+    #coach-grid article:nth-child(odd){
+        grid-template-areas:
+                "a b"
+                "a c";
+    }
+    #coach-grid article:nth-child(even){
+        grid-template-areas:
+                "b a"
+                "c a";
+    }
+    #coach-grid article:nth-child(even) .coach-image{
+        grid-area: a;
+    }
 }

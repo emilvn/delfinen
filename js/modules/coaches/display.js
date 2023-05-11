@@ -19,9 +19,7 @@ function showCoach(coach){
     const coachContainer = document.querySelector("#coach-grid");
     const myHTML = /*html*/`
     <article>
-        <div class="coach-image">
-            <img src="${coach["image"]}" alt="">    
-        </div>
+        <div class="coach-image" style="background-image: url(${coach["image"]})"></div>
         <div class="coach-contact-info">
             <div>
                 <h3>Kontaktinformation:</h3>
