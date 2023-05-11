@@ -1,31 +1,31 @@
 "use strict";
 
-window.addEventListener("load", getLocalStorage);
+window.addEventListener("load", main);
 
-// function login(event) {
-//   event.preventDefault();
-//   getLocalStorage();
-// }
-
-function getLocalStorage() {
-  const form = document.querySelector("#login_form");
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const username = document.querySelector("#user_name").value;
-    const password = document.querySelector("#password").value;
-
-    if (username === "admin" || username === "træner") {
-      if (password === username) {
-        localStorage.setItem("admin", username);
-      } else {
-        document.querySelector("#result").textContent = "Error something went wrong";
-      }
-    }
-  });
+function main() {
+  
+  document.querySelector("#login_form").addEventListener("submit", setLocaleStorage)
+  document.querySelector("#testbtn").addEventListener("click", reDirect)
 }
 
-function reDirect(url) {
-    window.location.href = "`$http://127.0.0.1:5501/pages/userview.html`";
+function setLocaleStorage(event) {
+  event.preventDefault();
+
+  const username = document.querySelector("#user_name").value;
+  const password = document.querySelector("#password").value;
+
+   if (username === "admin" || username === "træner") {
+     if (password === username) {
+       localStorage.setItem("admin", username);
+     } else {
+       console.log("Test");
+       document.querySelector("#result").innerHTML = "Error something went wrong";
+     }
+   }
+
+   
+}
+
+function reDirect() {
+    window.location = "userview.html";
 }
