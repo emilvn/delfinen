@@ -13,7 +13,7 @@ function showCompetitionDialog(event) {
   function submitCompetitiveTime(event) {
     event.preventDefault();
 
-    const discipline = event.target.competitive_discipline.value.toLower();
+    const discipline = event.target.competitive_discipline.value;
     const eventName = event.target.competitive_event.value;
     const timeData = {
         uid: userId,
@@ -21,7 +21,7 @@ function showCompetitionDialog(event) {
         position: event.target.competitive_position.value,
     }
 
-    postCompetitiveTime(eventName, discipline, timeData);
+    postCompetitiveTime(eventName.toLowerCase(), discipline, timeData);
 
     closeDialog();
   }
