@@ -4,7 +4,9 @@ import { generateNavHTML } from "./modules/nav/nav.js";
 window.addEventListener("load", main);
 
 function main(){
-	generateNavHTML();
+	if(!document.URL.includes("index.html")){
+		generateNavHTML();
+	}
 	setEventListeners();
 }
 
