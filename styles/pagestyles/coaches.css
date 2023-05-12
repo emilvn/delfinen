@@ -17,6 +17,9 @@
     border-radius: 5px;
     overflow: clip;
 }
+#coach-grid h2, #coach-grid h3{
+    color: #5696ce;
+}
 .coach-image{
     background-size: cover;
     background-repeat: no-repeat;
