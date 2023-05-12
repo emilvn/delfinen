@@ -1,5 +1,6 @@
-import {addTrainingtime, createUser, deleteUser, updateUser} from "../../rest/fetch.js";
+import {addTrainingtime, createUser, deleteUser, postCompetitiveTime, updateUser} from "../../rest/fetch.js";
 import {checkTrainingTimeFields} from "./validate.js";
+import {closeDialog} from "./dialogs.js";
 
 async function submitUser(event) {
     event.preventDefault();
@@ -70,4 +71,21 @@ function submitNewTrainingTime(event) {
     }
 }
 
-export {submitUser, submitDelete, submitUpdate, submitNewTrainingTime}
+/* ========== Competitive time ========== */
+function submitCompetitiveTime(event) {
+    event.preventDefault();
+
+    const discipline = event.target.competitive_discipline.value;
+    const eventName = event.target.competitive_event.value;
+    const timeData = {
+        uid: event.target.dataset.id,
+        time: event.target.competitive_time.value,
+        position: event.target.competitive_position.value,
+    }
+
+    postCompetitiveTime(eventName.toLowerCase(), discipline, timeData);
+
+    closeDialog();
+}
+
+export {submitUser, submitDelete, submitUpdate, submitNewTrainingTime, submitCompetitiveTime}

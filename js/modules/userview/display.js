@@ -1,5 +1,5 @@
 import {getAllUsers} from "../../rest/fetch.js";
-import {showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
+import {showCompetitionDialog, showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
 
 export let userArr;
 

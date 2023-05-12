@@ -1,5 +1,5 @@
 "use strict";
-import {submitDelete, submitNewTrainingTime, submitUpdate} from "./submit.js";
+import {submitCompetitiveTime, submitDelete, submitNewTrainingTime, submitUpdate} from "./submit.js";
 import {getOneUser} from "../../rest/fetch.js";
 
 export function showDeleteDialog(event) {
@@ -64,4 +64,26 @@ export function showTrainingTimeDialog(event) {
     form.reset();
   }
   dialog.showModal();
+}
+
+/* ========== Comp time ========== */
+export function showCompetitionDialog(event) {
+  const competitionBtn = event.target;
+  const competitionForm = document.querySelector("#post_competitive_form");
+
+  const userId = competitionBtn.dataset.id;
+  competitionForm.dataset.id = userId;
+
+  document.querySelector("#post_competitive_dialog").showModal();
+
+  document.querySelector("#post_competitive_form").addEventListener("submit", submitCompetitiveTime);
+  document.querySelector("#competitive_close_btn").addEventListener("mouseup", closeDialog);
+}
+
+export function closeDialog() {
+  document.querySelector("#post_competitive_form").reset();
+  document.querySelector("#post_competitive_form").removeEventListener("submit", submitCompetitiveTime);
+  document.querySelector("#competitive_close_btn").removeEventListener("mouseup", closeDialog);
+
+  document.querySelector("#post_competitive_dialog").close();
 }
