@@ -1,37 +1,35 @@
-import { getPriceData, getMemberData } from "../../rest/fetch.js";
-import { prepareData } from "../preparation/preparedata.js";
+import {getPriceData, getAllUsers} from "../../rest/fetch.js";
 
 async function updateIncomeGrid() {
     const pricesData = await getPriceData();
-    const membersData = await getMemberData();
+    const usersArr = await getAllUsers();
 
-    const expectedIncomeObject = calculateExpectedIncomePerMembershipType(pricesData, membersData);
+    const expectedIncomeObject = calculateExpectedIncomePerMembershipType(pricesData, usersArr);
     showExpectedIncome(expectedIncomeObject);
     setTooltipHTML(pricesData, expectedIncomeObject);
     setTooltipEventListeners();
 }
 
-function calculateExpectedIncomePerMembershipType(pricesData, membersData) {
+function calculateExpectedIncomePerMembershipType(pricesData, userArr) {
     const expectedIncomeObject = {
         under18: 0,
         over18: 0,
         over60: 0,
         passive: 0,
     };
-    const membersArray = prepareData(membersData);
 
-    for (let i = 0; i < membersArray.length; i++) {
-        if (membersArray[i].membershipPassive) {
+    for (let i = 0; i < userArr.length; i++) {
+        if (userArr[i].membershipPassive) {
             expectedIncomeObject.passive += pricesData.passive;
         } else {
             switch (true) {
-                case (membersArray[i].age > 60):
+                case (userArr[i].age > 60):
                     expectedIncomeObject.over60 += pricesData.over60;
                     break;
-                case (membersArray[i].age > 18):
+                case (userArr[i].age > 18):
                     expectedIncomeObject.over18 += pricesData.over18;
                     break;
-                case (membersArray[i].age <= 18):
+                case (userArr[i].age <= 18):
                     expectedIncomeObject.under18 += pricesData.under18;
                     break;
                 default:
@@ -46,7 +44,7 @@ function calculateExpectedIncomePerMembershipType(pricesData, membersData) {
 function showExpectedIncome(expectedIncomeObject) {
     document.querySelector("#under18-text").innerHTML = `Medlemmer under 18 år`;
     document.querySelector("#under18-amount").innerHTML = `${expectedIncomeObject.under18},-`;
-    document.querySelector("#over18-text").innerHTML = `Medlemmer over 18 år (Formulering?)`;
+    document.querySelector("#over18-text").innerHTML = `Medlemmer på 18 år eller derover`;
     document.querySelector("#over18-amount").innerHTML = `${expectedIncomeObject.over18},-`;
     document.querySelector("#over60-text").innerHTML = `Medlemmer over 60 år`;
     document.querySelector("#over60-amount").innerHTML = `${expectedIncomeObject.over60},-`;

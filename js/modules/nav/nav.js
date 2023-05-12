@@ -33,7 +33,6 @@ function generateNavHTML() {
     `;
 	document.querySelector("body").insertAdjacentHTML("afterbegin", navHTML);
     const activePage = window.location.href.split("/")[window.location.href.split("/").length-1];
-    console.log(`#${activePage.replace(".","-")}`);
     document.querySelector(`#${activePage.replace(".","-")}`).classList.add("active");
 }
 

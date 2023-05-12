@@ -90,20 +90,7 @@ async function getPriceData() {
         return pricesData;
     }
 
-    return [];
+    return {};
 }
 
-async function getMemberData() {
-    const getMembersURI = `users.json`;
-    const response = await sendFetchToDB(getMembersURI, "GET");
-    
-    if (response.ok) {
-        const membersData = await response.json();
-
-        return membersData;
-    }
-
-    return [];
-}
-
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getPriceData, getMemberData};
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getPriceData};
