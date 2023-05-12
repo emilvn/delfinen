@@ -1,4 +1,4 @@
-#add_training_time{
+dialog{
     padding: 50px;
 }
 
@@ -26,8 +26,7 @@ form.valid {
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
-
-#add_training_time_form {
+#add_training_time_form, #update_user_form {
   display: grid;
   grid-template-columns: 20rem 1fr;
   grid-row-gap: 1rem;
@@ -39,7 +38,7 @@ form.valid {
   margin-bottom: 0.25rem;
 }
 
-#add_training_time_form select, #add_training_time_form input {
+form select, form input {
   border: none;
   padding: 0.5rem;
   border-radius: 0.25rem;
@@ -47,8 +46,11 @@ form.valid {
   font-size: 1rem;
   grid-column: 2 / -1;
 }
-
-#add_training_time_form input[type=submit] {
+form input[type=button]:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+form input[type=submit] {
   background-color: #4CAF50;
   color: white;
   padding: 0.5rem 1rem;
@@ -59,12 +61,15 @@ form.valid {
   grid-column: 1 / -1;
   margin-top: 1rem;
 }
-
-#add_training_time_form input[type=submit]:hover {
+form input[type=submit]:hover {
   background-color: #3e8e41;
 }
 
-#training-time-close-button {
+form input[type=checkbox]{
+    box-shadow: unset;
+}
+
+.close-button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -83,7 +88,7 @@ form.valid {
   z-index: 1;
 }
 
-#training-time-close-button:hover {
+.close-button:hover {
   background-color: #6c0202;
   color: white;
 }
