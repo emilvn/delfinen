@@ -22,16 +22,16 @@ function showCoach(coach){
         <div class="coach-image" style="background-image: url(${coach["image"]})"></div>
         <div class="coach-contact-info">
             <div>
-                <h3>Kontaktinformation:</h3>
+                <h3>Kontaktinformation</h3>
                 <ul>
-                    <li>Tlf: ${coach["phone"]}</li>
-                    <li>Email: ${coach["email"]}</li>
+                    <li>Tlf. - <a href="tel:+45${coach["phone"]}">${coach["phone"]}</a></li>
+                    <li>Email - <a href="mailto:${coach["email"]}">${coach["email"]}</a></li>
                 </ul>
             </div>
         </div>
         <div class="coach-about">
             <h2>${coach["name"]} - ${capitalize(coach["team"])} træner</h2>
-            <h3>Om mig:</h3>
+            <h3>Om mig</h3>
             <p>${coach["about"]}</p>
         </div>
     </article>

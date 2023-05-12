@@ -13,13 +13,17 @@
     max-height: 80vh;
     background-color: white;
     filter: drop-shadow(0 0 2px black);
-    width: auto;
     position: relative;
     border-radius: 5px;
     overflow: clip;
 }
-#coach-grid h2, #coach-grid h3{
+#coach-grid h3{
+    color: lightblue;
+    filter: drop-shadow(1px 1px 1px gray);
+}
+#coach-grid h2{
     color: #5696ce;
+    filter: drop-shadow(1px 1px 1px gray);
 }
 .coach-image{
     background-size: cover;
@@ -44,23 +48,27 @@
     grid-area: c;
     margin: 0 1em 1em 1em;
 }
+#coach-grid a{
+    color: black;
+    text-decoration: underline;
+}
+#coach-grid a:hover{
+    font-size: 1.1em;
+    text-decoration: none;
+}
 @media (max-width: 1900px) {
     #coach-grid{
         grid-template-columns: 1fr;
     }
     #coach-grid article:nth-child(odd){
         grid-template-areas:
-                "a b"
                 "a c"
-                "a c"
-                "a c";
+                "a b";
     }
     #coach-grid article:nth-child(even){
         grid-template-areas:
-                "b a"
                 "c a"
-                "c a"
-                "c a";
+                "b a";
     }
     #coach-grid article:nth-child(even) .coach-image{
         grid-area: a;
