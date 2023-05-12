@@ -1,0 +1,102 @@
+#coach-grid{
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+#coach-grid article{
+    display: grid;
+    grid-template-areas:
+            "a b"
+            "c c"
+            "c c";
+    max-height: 80vh;
+    background-color: white;
+    filter: drop-shadow(0 0 2px black);
+    position: relative;
+    border-radius: 5px;
+    overflow: clip;
+}
+#coach-grid h3{
+    color: lightblue;
+    filter: drop-shadow(1px 1px 1px gray);
+}
+#coach-grid h2{
+    color: #5696ce;
+    filter: drop-shadow(1px 1px 1px gray);
+}
+.coach-image{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    width: 35vw;
+}
+#coach-grid article:nth-child(odd) .coach-image{
+    grid-area: a;
+}
+#coach-grid article:nth-child(even) .coach-image{
+    grid-area: b;
+}
+.coach-contact-info{
+    margin: 1em;
+}
+.coach-contact-info li{
+    margin: 1em 0 1em 0;
+}
+.coach-about{
+    grid-area: c;
+    margin: 0 1em 1em 1em;
+}
+#coach-grid a{
+    color: black;
+    text-decoration: underline;
+}
+#coach-grid a:hover{
+    font-size: 1.1em;
+    text-decoration: none;
+}
+@media (max-width: 1900px) {
+    #coach-grid{
+        grid-template-columns: 1fr;
+    }
+    #coach-grid article:nth-child(odd){
+        grid-template-areas:
+                "a c"
+                "a b";
+    }
+    #coach-grid article:nth-child(even){
+        grid-template-areas:
+                "c a"
+                "b a";
+    }
+    #coach-grid article:nth-child(even) .coach-image{
+        grid-area: a;
+    }
+}
+@media (max-width: 750px) {
+    #coach-grid article{
+        display: block;
+        overflow: auto;
+        max-height: unset;
+    }
+    .coach-image{
+        width: 100%;
+        height: 40vh;
+    }
+}
+@media (min-height: 900px) and (max-width: 1900px) {
+    #coach-grid article:nth-child(odd){
+        grid-template-areas:
+                "a a b"
+                "c c c";
+    }
+    #coach-grid article:nth-child(even){
+        grid-template-areas:
+                "b a a"
+                "c c c";
+    }
+    .coach-image{
+        width: 100%;
+    }
+}
