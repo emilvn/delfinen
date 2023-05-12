@@ -8,8 +8,9 @@
     display: grid;
     grid-template-areas:
             "a b"
+            "c c"
             "c c";
-    height: 80vh;
+    max-height: 80vh;
     background-color: white;
     filter: drop-shadow(0 0 2px black);
     width: auto;
@@ -50,11 +51,15 @@
     #coach-grid article:nth-child(odd){
         grid-template-areas:
                 "a b"
+                "a c"
+                "a c"
                 "a c";
     }
     #coach-grid article:nth-child(even){
         grid-template-areas:
                 "b a"
+                "c a"
+                "c a"
                 "c a";
     }
     #coach-grid article:nth-child(even) .coach-image{
@@ -64,7 +69,8 @@
 @media (max-width: 750px) {
     #coach-grid article{
         display: block;
-        height: unset;
+        overflow: auto;
+        max-height: unset;
     }
     .coach-image{
         width: 100%;
