@@ -11,22 +11,25 @@
         <link rel="shortcut icon" href="#" type="image/x-icon">
     </head>
     <body>
-            <
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main></main>
+        <main>
+            <form id="login_form">
+                <h2>Login</h2>
+                <label for="user_name">Brugernavn</label>
+                <input type="text" id="user_name" name="user_name" placeholder="brugernavn" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="password" required>
+                <button type="submit">Login</button>
+                <input type="reset" id="btn-clearform" value="ClearForm">
+                <p id="result">Velkommen</p>
+            </form>
+
+            <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
+            <div id="toast-container"></div>
+        </main>
         <!--main script-->
-       
-        <form id="login_form">
-            <h2>Login</h2>
-            <label for="user_name">Brugernavn</label>
-            <input type="text" id="user_name" name="user_name" placeholder="brugernavn" required>
-         
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="password" required> 
-            <button type="submit">Login</button>
-            <input type="reset" id="btn-clearform" value="ClearForm">
-            <p id="result">Velkommen</p>
-        <form>
+
 
             
         <script type="module" src="../js/main.js"></script>
