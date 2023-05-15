@@ -61,8 +61,10 @@ h1 {
         grid-template-columns: auto auto;
         width: 100vw;
     }
+}
+@media (max-width: 850px) {
     .income-grid__tooltip{
         margin-left: unset;
-        left: 30%;
+        left: 35%;
     }
 }
