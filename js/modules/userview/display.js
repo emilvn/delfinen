@@ -28,12 +28,12 @@ function showUser(user){
 		</div>
 		<div class="user-btns">
 			<div>		
-				<button class="edit-user-btn" data-id="${user["id"]}">Redigér bruger</button>
+				<button class="edit-user-btn" data-id="${user["id"]}">Redigér medlem</button>
 				<div class="user-competitiontime-btn-div"></div>
 			</div>
 			<div>
-				<button class="delete-user-btn" data-id="${user["id"]}">Slet bruger</button>
-				<button class="add-trainingtime-btn" data-id="${user["id"]}">Tilføj trænings tid</button>
+				<button class="delete-user-btn" data-id="${user["id"]}">Slet medlem</button>
+				<button class="add-trainingtime-btn" data-id="${user["id"]}">Redigér trænings tider</button>
 			</div>
 		</div>
 	</article>
@@ -55,7 +55,7 @@ function showUser(user){
 	if(user["competitive"]){
 		currentUserArticle.querySelector(".user-competitiontime-btn-div")
 			.innerHTML = `
-				<button class="add-competitiontime-btn" data-id="${user[" id"]}">Tilføj stævne tid</button>
+				<button class="add-competitiontime-btn" data-id="${user[" id"]}">Redigér stævne tider</button>
 			`;
 		const competitionBtn = currentUserArticle.querySelector(".add-competitiontime-btn");
 		competitionBtn.addEventListener("click", showCompetitionDialog);

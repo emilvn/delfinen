@@ -8,7 +8,7 @@ function generateNavHTML() {
             <div id="navExpandButton"></div>
             <div class="navGrid">
                 <div id="userview-html" class="navButton">
-                    <a href="userview.html">BRUGERE</a>
+                    <a href="userview.html">MEDLEMMER</a>
                 </div>
                 <div id="payments-html" class="navButton">
                     <a href="payments.html">BETALING</a>

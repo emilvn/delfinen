@@ -14,7 +14,7 @@
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
         <main>
             <!-- Create User Button -->
-            <div id="post_user_dialog_open" class="btn">Opret bruger</div>
+            <div id="post_user_dialog_open" class="btn">Opret medlem</div>
             <!-- Create User Dialog -->
             <dialog id="post_user_dialog">
                 <button id="post-close-button" class="close-button">X</button>
@@ -24,7 +24,7 @@
                     <label for="post_user_phone">Tlf nr.:</label><input type="text" id="post_user_phone" name="post_user_phone">
                     <label for="post_user_age">Alder:</label><input type="number" id="post_user_age" name="post_user_age">
                     <label for="post_user_competitive">Konkurrencesvømmer: </label><input type="checkbox" id="post_user_competitive" name="competitive">
-                    <input type="submit" id="post_user_btn_submit" value="Opret Bruger">
+                    <input type="submit" id="post_user_btn_submit" value="Opret medlem">
                     <input type="reset" value="Ryd form">
                 </form>
             </dialog>
@@ -45,7 +45,7 @@
                     <input type="checkbox" id="update_user_competitive" name="competitive">
                     <label for="update_user_membershippassive">Passivt medlemskab</label>
                     <input type="checkbox" id="update_user_membershippassive" name="membershippassive">
-                    <input type="submit" id="update_user_btn_submit" value="Opdater bruger">
+                    <input type="submit" id="update_user_btn_submit" value="Opdater medlem">
                     <input type="reset" value="Ryd form">
                 </form>
             </dialog>
@@ -105,7 +105,6 @@
                     <input type="submit" value="Ja">
                 </form>
             </dialog>
-        </main>
           <!-- competitive time dialog -->
             <dialog id="post_competitive_dialog">
                 <button id="competitive-time-close-button" class="close-button">X</button>
@@ -123,6 +122,7 @@
                     <input type="submit" value="Opret Tid">
                 </form>
             </dialog>
+        </main>
     </body>
     <!--main script-->
     <script type="module" src="../js/main.js"></script>
