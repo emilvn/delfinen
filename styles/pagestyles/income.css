@@ -56,3 +56,13 @@ h1 {
     border: 1px #333 solid;
     margin-left:10em;
 }
+@media (max-width: 750px) {
+    #income-grid{
+        grid-template-columns: auto auto;
+        width: 100vw;
+    }
+    .income-grid__tooltip{
+        margin-left: unset;
+        left: 30%;
+    }
+}
