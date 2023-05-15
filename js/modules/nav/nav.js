@@ -25,7 +25,7 @@ function generateNavHTML() {
                 <div id="competitiontimes-html" class="navButton">
                     <a href="competitiontimes.html">KONKURRENCE</a>
                 </div>
-                <div class="navButton" id="loginButton">
+                <div class="navButton" id="login-html">
                     <a href="login.html">LOG IND</a>
                 </div>
             </div>

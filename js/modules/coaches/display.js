@@ -1,5 +1,5 @@
 import {getCoaches} from "../../rest/fetch.js";
-import {capitalize} from "../preparation/formatting.js";
+import {capitalize} from "../helpers/formatting.js";
 
 let coachArr;
 

@@ -1,5 +1,5 @@
 import {updateUserGrid} from "../modules/userview/display.js";
-import {prepareData} from "../modules/preparation/preparedata.js";
+import {prepareData} from "../modules/helpers/preparedata.js";
 
 const endpoint = "https://delfinen-4e935-default-rtdb.europe-west1.firebasedatabase.app/";
 

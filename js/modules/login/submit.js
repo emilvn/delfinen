@@ -1,4 +1,5 @@
 import {validUser} from "./validate.js";
+import {reDirect} from "../helpers/helpers.js";
 
 export function submitLogin(event) {
   event.preventDefault();
@@ -18,12 +19,4 @@ export function submitLogin(event) {
 function login(username) {
     localStorage.setItem("username", username);
     reDirect(`../index`);
-}
-
-export function resetLocalStorage(str) {
-    localStorage.removeItem(str);
-}
-
-function reDirect(pageName) {
-  window.location = `${pageName}.html`;
 }
