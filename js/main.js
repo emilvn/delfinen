@@ -1,6 +1,5 @@
 import {showNavDropdown, showFullNav} from "./modules/nav/dropdown.js";
 import { generateNavHTML } from "./modules/nav/nav.js";
-import {displayVideo} from "./modules/index/video.js";
 
 window.addEventListener("load", main);
 
@@ -9,7 +8,6 @@ function main(){
 		generateNavHTML();
 	}
 	setEventListeners();
-	displayVideo();
 }
 
 function setEventListeners() {
