@@ -167,18 +167,6 @@
     top: 20vh;
     rotate: 180deg;
 }
-/* === MAIN SCREEN === */
-/* #homeMainScreen{
-    height: 90vh;
-    width: 100%;
-    background-image: url("../../data/images/background_home.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-} */
 
 /* === ABOUT SCREEN === */
 #homeAboutScreen{
