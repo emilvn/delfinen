@@ -1,5 +1,5 @@
 import {getAllUsers} from "../../rest/fetch.js";
-import {showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
+import {showCompetitionDialog, showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
 
 export let userArr;
 
@@ -29,7 +29,7 @@ function showUser(user){
 		<div class="user-btns">
 			<div>		
 				<button class="edit-user-btn" data-id="${user["id"]}">Redigér bruger</button>
-				<button class="add-competitiontime-btn" data-id="${user["id"]}">Tilføj stævne tid</button>
+				<div class="user-competitiontime-btn-div"></div>
 			</div>
 			<div>
 				<button class="delete-user-btn" data-id="${user["id"]}">Slet bruger</button>
@@ -46,14 +46,20 @@ function showUser(user){
 	/*current buttons*/
 	const deleteBtn = currentUserArticle.querySelector(".delete-user-btn");
 	const updateBtn = currentUserArticle.querySelector(".edit-user-btn");
-	const competitionBtn = currentUserArticle.querySelector(".add-competitiontime-btn");
 	const trainingBtn = currentUserArticle.querySelector(".add-trainingtime-btn");
 
 	/*Event listeners*/
 	deleteBtn.addEventListener("click", showDeleteDialog);
 	updateBtn.addEventListener("click", showUpdateDialog);
-//	competitionBtn.addEventListener("click", showCompetitionDialog);
 	trainingBtn.addEventListener("click", showTrainingTimeDialog);
+	if(user["competitive"]){
+		currentUserArticle.querySelector(".user-competitiontime-btn-div")
+			.innerHTML = `
+				<button class="add-competitiontime-btn" data-id="${user[" id"]}">Tilføj stævne tid</button>
+			`;
+		const competitionBtn = currentUserArticle.querySelector(".add-competitiontime-btn");
+		competitionBtn.addEventListener("click", showCompetitionDialog);
+	}
 }
 
 /* ========== FILTER ========== */

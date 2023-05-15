@@ -1,0 +1,70 @@
+h1 {
+    padding: 1em;
+}
+
+#income-grid {
+  display: grid;
+  grid-template-columns: 30em 15em;
+  font-family: sans-serif; /* Use a sans-serif font for readability */
+  margin: 1em auto;
+  border-collapse: collapse; /* Collapse cell borders to avoid double borders */
+}
+
+#income-grid div {
+  padding: 1em; 
+}
+
+.income-grid__border-right {
+  border-left: 1px solid #333; 
+}
+
+.income-grid__hover {
+  transition: background-color 0.2s ease;
+}
+.income-grid__hover:hover {
+  background-color: #eee; 
+}
+
+.income-grid__border-top {
+  border-top: 1px solid #333; 
+}
+
+#under18-text,
+#over18-text,
+#over60-text,
+#passive-text {
+  font-weight: bold; 
+}
+
+#under18-amount,
+#over18-amount,
+#over60-amount,
+#passive-amount {
+  font-style: italic; 
+}
+
+#sum-text,
+#sum-amount {
+  font-weight: bold; 
+  font-size: 1.2em; 
+}
+
+.income-grid__tooltip {
+    display: none;
+    position: absolute;
+    background-color: #cbcbcb;
+    border: 1px #333 solid;
+    margin-left:10em;
+}
+@media (max-width: 750px) {
+    #income-grid{
+        grid-template-columns: auto auto;
+        width: 100vw;
+    }
+}
+@media (max-width: 850px) {
+    .income-grid__tooltip{
+        margin-left: unset;
+        left: 35%;
+    }
+}

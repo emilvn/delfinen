@@ -1,0 +1,20 @@
+{
+"coach1": {
+  "image": "https://images.pexels.com/photos/8688523/pexels-photo-8688523.jpeg",
+  "name": "Søren Jespersen",
+  "email": "SørenJ@example.com",
+  "phone": "20202020",
+  "age": 35,
+  "about": "Jeg er en erfaren svømmetræner med mere end 5 års erfaring. Jeg er dedikeret til at hjælpe mine svømmere med at nå deres fulde potentiale, uanset om de er begyndere eller erfarne konkurrencesvømmere. Mit fokus er på teknik, styrke og udholdenhedstræning, så mine svømmere kan blive bedre og stærkere svømmere.",
+  "team": "junior"
+},
+"coach2": {
+  "image": "https://visionrcl.org.uk/wp-content/uploads/2021/07/shutterstock_388033162-1-1024x682.jpg",
+  "name": "Mette Andersen",
+  "email": "metteA@example.com",
+  "phone": "30303030",
+  "age": 32,
+  "about": "Jeg har været en del af svømmeverdenen i mere end 15 år. Som tidligere konkurrencesvømmer, ved jeg, hvad det kræver at træne og konkurrere på højt niveau. Som træner fokuserer jeg på at hjælpe mine svømmere med at forbedre deres teknik og mental tilstand, så de kan opnå deres mål. Mit motto er at træne smartere, ikke hårdere.",
+  "team": "senior"
+}
+}

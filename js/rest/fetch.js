@@ -17,6 +17,7 @@ async function sendFetchToDB(uri, method, data) {
     return response;  
 }
 
+/* ========== USERVIEW ========== */
 async function getAllUsers(){
     const response = await sendFetchToDB("users.json", "GET");
     if (response.ok){
@@ -26,7 +27,6 @@ async function getAllUsers(){
         throw new Error(`Bad response at getAllUsers: ${response.status} ${response.statusText}`);
     }
 }
-
 async function getOneUser(uid){
     const response = await sendFetchToDB(`users/${uid}.json`, "GET");
     if(response.ok){
@@ -36,7 +36,6 @@ async function getOneUser(uid){
         throw new Error(`Bad response at getOneUser: ${response.status} ${response.statusText}`);
     }
 }
-
 async function createUser(userData) {
     const postUserURI = `users.json`
     const response = await sendFetchToDB(postUserURI, "POST", userData);
@@ -57,7 +56,6 @@ async function deleteUser(uid) {
         console.error(`Bad response at deleteUser: ${response.status} ${response.statusText}`);
     }
 }
-
 async function updateUser(uid, userData){
     const response = await sendFetchToDB(`users/${uid}.json`, "PUT", userData);
     if(response.ok){
@@ -68,7 +66,6 @@ async function updateUser(uid, userData){
         console.error(`Bad response at updateUser: ${response.status} ${response.statusText}`);
     }
 }
-
 async function addTrainingtime (category, trainingtimeData){
     const uri = `trainingstimes/${category}.json`;
     const response = await sendFetchToDB(uri, 'POST', trainingtimeData);
@@ -80,4 +77,39 @@ async function addTrainingtime (category, trainingtimeData){
     }
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime};
+
+/* ======== COACHES ========== */
+async function getCoaches(){
+    const uri = "coaches.json";
+    const response = await sendFetchToDB(uri, "GET");
+    if(response.ok){
+        console.log("Coaches retrieved successfully!");
+        return prepareData(await response.json());
+    }
+    else{
+        throw new Error(`Bad response at getCoaches: ${response.status} ${response.statusText}`);
+    }
+}
+
+async function postCompetitiveTime(eventName, discipline, timeData) {
+    const postCompetitiveTimeURL = `competitiontimes/${eventName}/${discipline}.json`;
+
+    const eventResponse = await sendFetchToDB(postCompetitiveTimeURL, "POST", timeData);
+    return eventResponse;
+}
+
+
+async function getPriceData() {
+    const getPricesURI = `memberships.json`;
+    const response = await sendFetchToDB(getPricesURI, "GET");
+
+    if (response.ok) {
+        const pricesData = await response.json();
+
+        return pricesData;
+    }
+
+    return {};
+}
+
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData};
