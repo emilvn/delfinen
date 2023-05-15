@@ -1,3 +1,5 @@
+import {validUser} from "./validate.js";
+
 export function submitLogin(event) {
   event.preventDefault();
 
@@ -18,12 +20,8 @@ function login(username) {
     reDirect(`../index`);
 }
 
-function validUser(username) {
-    return username === "admin" || username === "træner";
-}
-
-export function resetLocalStorage() {
-    localStorage.removeItem("username");
+export function resetLocalStorage(str) {
+    localStorage.removeItem(str);
 }
 
 function reDirect(pageName) {
