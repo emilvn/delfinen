@@ -1,5 +1,6 @@
 import {updateUserGrid} from "../modules/userview/display.js";
 import {prepareData} from "../modules/helpers/preparedata.js";
+import {showToastMessage} from "../modules/helpers/toastmessages.js";
 
 const endpoint = "https://delfinen-4e935-default-rtdb.europe-west1.firebasedatabase.app/";
 
@@ -41,29 +42,35 @@ async function createUser(userData) {
     const response = await sendFetchToDB(postUserURI, "POST", userData);
     if(response.ok){
         console.log("User created successfully!");
+        showToastMessage("Medlem oprettet!", "success");
         updateUserGrid();
     }
     else{
         console.error(`Bad response at createUser: ${response.status} ${response.statusText}`);
+        showToastMessage(`Kunne ikke oprette medlem. ${response.status} ${response.statusText}`, "error");
     }
 }
 async function deleteUser(uid) {
     const response = await sendFetchToDB(`users/${uid}.json`, "DELETE")
     if (response.ok) {
         console.log("User deleted successfully!");
+        showToastMessage("Medlem slettet.", "success");
         updateUserGrid();
     } else {
         console.error(`Bad response at deleteUser: ${response.status} ${response.statusText}`);
+        showToastMessage(`Kunne ikke slette medlem. ${response.status} ${response.statusText}`, "error");
     }
 }
 async function updateUser(uid, userData){
     const response = await sendFetchToDB(`users/${uid}.json`, "PUT", userData);
     if(response.ok){
         console.log("User updated successfully!");
+        showToastMessage("Medlem opdateret!", "success");
         updateUserGrid();
     }
     else{
         console.error(`Bad response at updateUser: ${response.status} ${response.statusText}`);
+        showToastMessage(`Kunne ikke opdatere medlem. ${response.status} ${response.statusText}`, "error");
     }
 }
 async function addTrainingtime (category, trainingtimeData){
@@ -71,9 +78,11 @@ async function addTrainingtime (category, trainingtimeData){
     const response = await sendFetchToDB(uri, 'POST', trainingtimeData);
     if (response.ok){
         console.log('Training time added');
+        showToastMessage("Trænings tid tilføjet!", "success");
     }
     else {
-        console.error(`Bad response at addTrainingtime: ${response.status} ${response.statusText}`)
+        console.error(`Bad response at addTrainingtime: ${response.status} ${response.statusText}`);
+        showToastMessage(`Kunne ikke tilføje træningstid. ${response.status} ${response.statusText}`, "error");
     }
 }
 
