@@ -7,13 +7,39 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Svømmeklubben Delfinen - Indtjening</title>
         <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/pagestyles/income.css">
         <link rel="shortcut icon" href="#" type="image/x-icon">
     </head> 
     <body>
-
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main></main>
+        <main>
+            <h1>Forventet årlig kontingent</h1>
+            <section id="income-grid">
+                <div id="under18-text"></div>
+                <div class="income-grid__border-right income-grid__hover" id="under18-amount-container">
+                    <span id="under18-amount"></span>
+                    <div class="income-grid__tooltip"></div>
+                </div>
+                <div id="over18-text"></div>
+                <div class="income-grid__border-right income-grid__hover" id="over18-amount-container">
+                    <span id="over18-amount"></span>
+                    <div class="income-grid__tooltip"></div>
+                </div>  
+                <div id="over60-text"></div>
+                <div class="income-grid__border-right income-grid__hover" id="over60-amount-container">
+                    <span id="over60-amount"></span>
+                    <div class="income-grid__tooltip"></div>
+                </div>
+                <div id="passive-text"></div>
+                <div class="income-grid__border-right income-grid__hover" id="passive-amount-container">
+                    <span id="passive-amount"></span>
+                    <div class="income-grid__tooltip"></div>
+                </div>
+                <div id="sum-text" class="income-grid__border-top">sum</div><div class="income-grid__border-right income-grid__border-top" id="sum-amount"></div>
+            </section>
+        </main>
         <!--main script-->
         <script type="module" src="../js/main.js"></script>
+        <script type="module" src="../js/modules/income/main.js"></script>
     </body>
 </html>

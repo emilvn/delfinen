@@ -1,0 +1,188 @@
+/* ========== ANIMATION TEXT ========== */
+
+/* Set the position of the element with ID "homeMainScreen" to relative */
+#homeMainScreen {
+    position: relative;
+}
+
+/* Set the position of elements with the class "content" to relative and move them up 20% */
+.content {
+    position: relative;
+    top: -20%;
+}
+
+/* Set the styling for all h2 elements inside elements with the class "content" */
+.content h2 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 8em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+}
+
+/* Set the color to transparent and apply a stroke effect to the first, third, and fourth h2 elements */
+.content h2:nth-child(1),
+.content h2:nth-child(3),
+.content h2:nth-child(4) {
+    color: transparent;
+    -webkit-text-stroke: 2px #00008B;
+}
+
+/* Set the color and animation for the second and fourth h2 elements */
+.content h2:nth-child(2),
+.content h2:nth-child(4) {
+    color: #0047AB;
+    animation: animate 4s ease-in-out infinite;
+}
+
+/* Move the third and fourth h2 elements up by 100% of their height */
+.content h2:nth-child(3),
+.content h2:nth-child(4) {
+    transform: translate(-50%, calc(-50% + 100%));
+}
+
+/* Define the keyframes for the animation */
+@keyframes animate {
+    0%, 100% {
+        clip-path: polygon(
+            0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+        );
+    }
+
+    50% {
+        clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+        );
+    }
+}
+
+/* Responsive Styles */
+
+/* For screens with a maximum width of 700px */
+@media only screen and (max-width: 700px) {
+    .content h2 {
+        font-size: 4em;
+    }
+}
+
+/* For screens with a minimum width of 601px and a maximum width of 1100px */
+@media only screen and (min-width: 701px) and (max-width: 1100px) {
+    .content h2 {
+        font-size: 5em;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+
+    /* Set the font-size of all h2 elements to 3em */
+    .content h2 {
+        font-size: 3em;
+    }
+
+}
+
+
+/* ========== VIDEO BACKGROUND ========== */
+
+#homeMainScreen{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+/* ========== HOME PAGE STYLING ========== */
+
+/* === HEADERS === */
+.homeHeader{
+    font-size: 4em;
+    user-select: none;
+}
+@media (max-width: 1280px) {
+    .homeHeader{
+        font-size: 3em;
+    }
+}
+@media (max-width: 800px) {
+    .homeHeader{
+        font-size: 2em;
+    }
+}
+/* === NAV ARROWS === */
+.aboutArrows{
+    position: absolute;
+}
+.aboutArrows:hover{
+    height: 6em;
+    width: 6em;
+    border: 2px solid black;
+    border-radius: 1em;
+}
+.goToAbout, .goBackFromAbout{
+    display: block;
+    background-image: url("../../data/images/arrow_icon.png");
+    min-height: 7em;
+    min-width: 7em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 5px black);
+}
+.goToAbout{
+    bottom: 1em;
+}
+.goBackFromAbout{
+    top: 20vh;
+    rotate: 180deg;
+}
+
+/* === ABOUT SCREEN === */
+#homeAboutScreen{
+    padding-top: 14vh;
+    height: 90vh;
+    background-color: var(--header-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.homeAboutDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.homeAboutText{
+    max-width: 40vw;
+    margin: 1em;
+}

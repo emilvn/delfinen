@@ -17,16 +17,40 @@
             <div id="post_user_dialog_open" class="btn">Opret bruger</div>
             <!-- Create User Dialog -->
             <dialog id="post_user_dialog">
+                <button id="post-close-button" class="close-button">X</button>
                 <form id="post_user_form">
                     <label for="post_user_name">Navn:</label><input type="text" id="post_user_name" name="post_user_name" required>
                     <label for="post_user_email">E-mail:</label><input type="email" id="post_user_email" name="post_user_email" required>
                     <label for="post_user_phone">Tlf nr.:</label><input type="text" id="post_user_phone" name="post_user_phone">
-                    <label for="post_user_age">Alder:</label><input type="text" id="post_user_age" name="post_user_age">
+                    <label for="post_user_age">Alder:</label><input type="number" id="post_user_age" name="post_user_age">
                     <label for="post_user_competitive">Konkurrencesvømmer: </label><input type="checkbox" id="post_user_competitive" name="competitive">
                     <input type="submit" id="post_user_btn_submit" value="Opret Bruger">
-                    <input type="reset" value="Clear form">
+                    <input type="reset" value="Ryd form">
                 </form>
             </dialog>
+
+            <!--Update user dialog-->
+            <dialog id="update_user_dialog">
+                <button id="update-close-button" class="close-button">X</button>
+                <form id="update_user_form">
+                    <label for="update_user_name">Navn:</label>
+                    <input type="text" id="update_user_name" name="name" required>
+                    <label for="update_user_email">E-mail:</label>
+                    <input type="email" id="update_user_email" name="email" required>
+                    <label for="update_user_phone">Tlf nr.:</label>
+                    <input type="text" id="update_user_phone" name="phone">
+                    <label for="update_user_age">Alder:</label>
+                    <input type="number" id="update_user_age" name="age">
+                    <label for="update_user_competitive">Konkurrencesvømmer: </label>
+                    <input type="checkbox" id="update_user_competitive" name="competitive">
+                    <label for="update_user_membershippassive">Passivt medlemskab</label>
+                    <input type="checkbox" id="update_user_membershippassive" name="membershippassive">
+                    <input type="submit" id="update_user_btn_submit" value="Opdater bruger">
+                    <input type="reset" value="Ryd form">
+                </form>
+            </dialog>
+
+            <!--search and filter-->
             <section id="user-search-div">
                 <div>
                     <label for="userSearch">Søg:</label>
@@ -50,15 +74,55 @@
             <!--Insert users here with js-->
             <section id="userGrid"></section>
 
+        <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
+             <dialog id="add_training_time">
+                 <button id="training-time-close-button" class="close-button">X</button>
+                 <form id="add_training_time_form">
+                    <label for="training-time-category">Vælg en disciplin:</label>
+                    <select name="category" id="training-time-category" >
+                        <option value="Crawl">Crawl</option>
+                        <option value="Butterfly">Butterfly</option>
+                        <option value="Brystsvøming">Brystsvøming</option>
+                        <option value="rygcrawl">rygcrawl</option>
+                    </select>
+
+                    <label for="date-time">Select date and time:</label>
+                    <input type="datetime-local" id="date-time" name="date-time">
+
+                    <label for="training-time-seconds" >Tid</label>
+                    <input type="seconds" id="training-time-seconds" name="seconds" required placeholder="tid i sekunder">
+
+                    <input type="submit" id="training-time-submit" value="Opret tid">
+
+                </form>
+
+            </dialog>
             <!--delete dialog-->
             <dialog id="dialog_delete_user">
                 <h2>Er du sikker på at du vil slette</h2>
-                <form id="form_delete_post">
-                    <button id="deleteCanceled" type="button" class="btn-cancel">No</button>
-                    <button>Yes</button>
+                <form id="form_delete_user">
+                    <input id="deleteCanceled" type="button" class="btn-cancel" value="Annullér">
+                    <input type="submit" value="Ja">
                 </form>
             </dialog>
         </main>
+          <!-- competitive time dialog -->
+            <dialog id="post_competitive_dialog">
+                <button id="competitive-time-close-button" class="close-button">X</button>
+                <form id="post_competitive_form">
+                    <label for="competitive_event">Stævne: </label><input type="text" id="competitive_event" name="competitive_event" required>
+                    <label for="competitive_discipline">Disciplin: </label>
+                    <select type="email" id="competitive_discipline" name="competitive_discipline" required>
+                        <option value="breaststroke">Brystsvømning</option>
+                        <option value="butterfly">Butterfly</option>
+                        <option value="crawl">Crawl</option>
+                        <option value="back_crawl">Rygcrawl</option>
+                    </select>
+                    <label for="competitive_time">Tid: </label><input type="text" id="competitive_time" name="competitive_time" placeholder="i sekunder" required>
+                    <label for="competitive_position">Placering: </label><input type="text" id="competitive_position" name="competitive_position" maxlength="2" required>
+                    <input type="submit" value="Opret Tid">
+                </form>
+            </dialog>
     </body>
     <!--main script-->
     <script type="module" src="../js/main.js"></script>

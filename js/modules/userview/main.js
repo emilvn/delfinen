@@ -1,6 +1,6 @@
-import { submitUser } from "./postuser.js";
 import {filterUsers, updateUserGrid} from "./display.js";
 import {inputSearchChanged} from "./search.js";
+import {showCreateDialog} from "./dialogs.js";
 
 window.addEventListener("load", main);
 
@@ -18,6 +18,5 @@ function setEventListeners(){
 	document.querySelector("#userTeamFilter").addEventListener("change", filterUsers);
 	document.querySelector("#userCompetitiveFilter").addEventListener("change", filterUsers);
 	/* Create */
-	document.querySelector("#post_user_form").addEventListener("submit", event => {submitUser(event)});
-	document.querySelector("#post_user_dialog_open").addEventListener("mouseup", () => { document.querySelector("#post_user_dialog").showModal() });
+	document.querySelector("#post_user_dialog_open").addEventListener("click", showCreateDialog);
 }
