@@ -21,6 +21,7 @@
     font-size: 8em;
     position: absolute;
     transform: translate(-50%, -50%);
+    max-width: 90vw;
 }
 
 /* Set the color to transparent and apply a stroke effect to the first, third, and fourth h2 elements */
@@ -77,21 +78,21 @@
 
 /* Responsive Styles */
 
-/* For screens with a maximum width of 600px */
-@media only screen and (max-width: 600px) {
+/* For screens with a maximum width of 700px */
+@media only screen and (max-width: 700px) {
     .content h2 {
         font-size: 4em;
     }
 }
 
-/* For screens with a minimum width of 601px and a maximum width of 900px */
-@media only screen and (min-width: 601px) and (max-width: 900px) {
+/* For screens with a minimum width of 601px and a maximum width of 1100px */
+@media only screen and (min-width: 701px) and (max-width: 1100px) {
     .content h2 {
-        font-size: 6em;
+        font-size: 5em;
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 580px) {
 
     /* Set the font-size of all h2 elements to 3em */
     .content h2 {
@@ -120,4 +121,80 @@
     width: 100%;
     object-fit: cover;
     z-index: -1;
+}
+
+
+/* ========== HOME PAGE STYLING ========== */
+
+/* === HEADERS === */
+.homeHeader{
+    font-size: 4em;
+    user-select: none;
+}
+@media (max-width: 1280px) {
+    .homeHeader{
+        font-size: 3em;
+    }
+}
+@media (max-width: 800px) {
+    .homeHeader{
+        font-size: 2em;
+    }
+}
+/* === NAV ARROWS === */
+.aboutArrows{
+    position: absolute;
+}
+.aboutArrows:hover{
+    height: 6em;
+    width: 6em;
+    border: 2px solid black;
+    border-radius: 1em;
+}
+.goToAbout, .goBackFromAbout{
+    display: block;
+    background-image: url("../../data/images/arrow_icon.png");
+    min-height: 7em;
+    min-width: 7em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 5px black);
+}
+.goToAbout{
+    bottom: 1em;
+}
+.goBackFromAbout{
+    top: 20vh;
+    rotate: 180deg;
+}
+/* === MAIN SCREEN === */
+/* #homeMainScreen{
+    height: 90vh;
+    width: 100%;
+    background-image: url("../../data/images/background_home.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+} */
+
+/* === ABOUT SCREEN === */
+#homeAboutScreen{
+    padding-top: 14vh;
+    height: 90vh;
+    background-color: var(--header-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.homeAboutDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.homeAboutText{
+    max-width: 40vw;
+    margin: 1em;
 }
