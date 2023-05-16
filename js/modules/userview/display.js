@@ -18,6 +18,7 @@ export function showUsers(users){
 
 function showUser(user){
 	const userAge = calculateAge(user["birthdate"]);
+	const categoryHTML = generateCategoryHTML(user["categories"]);
 	const myHTML = /*html*/`
 	<article>
 		<div>
@@ -27,6 +28,7 @@ function showUser(user){
 			<p>${userAge} år</p>
 			<p>Medlemskab: ${(user["membershipPassive"])?"Passiv":"Aktiv"}</p>
 			<p>${(user["competitive"])?"Konkurrencesvømmer":"Motionist"}</p>
+			${categoryHTML?? ""} 
 		</div>
 		<div class="user-btns">
 			<div>		
@@ -61,6 +63,18 @@ function showUser(user){
 			`;
 		const competitionBtn = currentUserArticle.querySelector(".add-competitiontime-btn");
 		competitionBtn.addEventListener("click", showCompetitionDialog);
+	}
+}
+
+function generateCategoryHTML(categories) {
+	if(categories) {
+		let categoryHTML = /* html */ `<p>Aktive discipliner: </p>`
+		for (const category in categories) {
+			categoryHTML += /* html */ `
+				<p>${category}</p>
+			`
+		}
+		return categoryHTML;
 	}
 }
 

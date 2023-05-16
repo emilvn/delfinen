@@ -1,6 +1,6 @@
 import {addTrainingtime, createUser, deleteUser, postCompetitiveTime, updateUser} from "../../rest/fetch.js";
 import {checkTrainingTimeFields} from "./validate.js";
-import {closeCompetitiveDialog} from "./dialogs.js";
+import {closeCompetitiveDialog, closeCreateDialog} from "./dialogs.js";
 
 async function submitUser(event) {
     event.preventDefault();
@@ -15,8 +15,20 @@ async function submitUser(event) {
         membershipPassive: false,
         competitive: event.target.post_user_competitive.checked,
     }
+
+    if (event.target.post_user_competitive.checked) {
+        const categories = document.querySelectorAll("input[name='post_user_categories']");
+        userData.categories = {};
+        for (let i = 0; i < categories.length; i++) {
+            if (categories[i].checked) {
+                const category = categories[i].value;
+                userData.categories[`${category}`] = category;
+            }
+        }
+    }
+
     createUser(userData);
-    event.target.parentElement.close();
+    closeCreateDialog();
 }
 
 function submitDelete(event) {
@@ -41,6 +53,16 @@ function submitUpdate(event){
         birthdate: form["birthdate"].value,
         competitive: form["competitive"].checked,
         membershipPassive: form["membershippassive"].checked
+    }
+    if (form["competitive"].checked) {
+        const categories = form.querySelectorAll("input[name='categories']");
+        user.categories = {};
+        for (let i = 0; i < categories.length; i++) {
+            if (categories[i].checked) {
+                const category = categories[i].value;
+                user.categories[`${category}`] = category;
+            }
+        }
     }
     updateUser(uid, user);
     form.parentElement.close();

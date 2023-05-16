@@ -1,6 +1,6 @@
 import {filterUsers, updateUserGrid} from "./display.js";
 import {inputSearchChanged} from "./search.js";
-import {showCreateDialog} from "./dialogs.js";
+import {showCreateDialog, toggleCategoryFieldset} from "./dialogs.js";
 import {setTodayAsMaxDate} from "../helpers/helpers.js";
 
 window.addEventListener("load", main);
@@ -21,6 +21,8 @@ function setEventListeners(){
 	document.querySelector("#userCompetitiveFilter").addEventListener("change", filterUsers);
 	/* Create */
 	document.querySelector("#post_user_dialog_open").addEventListener("click", showCreateDialog);
+	document.querySelector("#post_user_competitive").addEventListener("change", toggleCategoryFieldset)
+	document.querySelector("#update_user_competitive").addEventListener("change", toggleCategoryFieldset)
 }
 
 function setMaxDates(){
