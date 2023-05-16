@@ -29,7 +29,6 @@ async function calculateAndDisplayPayments(users) {
     }
 }
 
-
 function calculatePayment(birthdate, membershipPassive, pricesData) {
     if (membershipPassive) {
         return pricesData.passive;
