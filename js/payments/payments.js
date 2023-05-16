@@ -13,19 +13,19 @@ function displayUsers(users) {
         const html = /*html*/`
             <tr class="name"> 
                 <td> ${user.name}: </td> 
-                <td>  <input type="number" class="restance" name="restance"> </td>   
+                <td>  <input type="number" class="restance" name="restance" data-user="${user.name}"> </td>   
             </tr>
         `;
         document.querySelector('#user-name').insertAdjacentHTML('beforeend', html);
     }
 }
 
-
 async function calculateAndDisplayPayments(users) {
     const prices = await getPriceData();
     for (const user of users) {
         const payment = calculatePayment(user.birthdate, user.membershipPassive, prices);
-        console.log(`User: ${user.name}, Payment: ${payment}`);
+        const inputElement = document.querySelector(`input[name="restance"][data-user="${user.name}"]`);
+        inputElement.value = payment;
     }
 }
 
