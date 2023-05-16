@@ -19,3 +19,16 @@ export function calculateAge(birthdate){
 	}
 	return age;
 }
+
+export function setTodayAsMaxDate(inputId){
+	const inputField = document.querySelector(`#${inputId}`);
+
+	const today = new Date();
+	/* Formatting */
+	const yyyy = today.getFullYear();
+	const mm = String(today.getMonth() + 1).padStart(2, "0");//adding 1 to get correct month
+	const dd = String(today.getDate()).padStart(2, "0");
+	const formattedDate = `${yyyy}-${mm}-${dd}`;
+
+	inputField.setAttribute("max", formattedDate);
+}
