@@ -70,7 +70,7 @@ async function fillUpdateForm(uid){
     form["name"].value = user["name"];
     form["email"].value = user["email"];
     form["phone"].value = user["phone"]?user["phone"]:"";
-    form["age"].value = user["age"];
+    form["birthdate"].value = user["birthdate"];
     form["competitive"].checked = user["competitive"];
     form["membershippassive"].checked = user["membershipPassive"];
 }

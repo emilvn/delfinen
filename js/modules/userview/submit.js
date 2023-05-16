@@ -11,7 +11,7 @@ async function submitUser(event) {
         name: event.target.post_user_name.value,
         email: event.target.post_user_email.value,
         phone: event.target.post_user_phone.value,
-        age: Number(event.target.post_user_age.value),
+        birthdate: event.target.post_user_birthdate.value,
         membershipPassive: false,
         competitive: event.target.post_user_competitive.checked,
     }
@@ -38,7 +38,7 @@ function submitUpdate(event){
         name: form["name"].value,
         email: form["email"].value,
         phone: form["phone"].value,
-        age: Number(form["age"].value),
+        birthdate: form["birthdate"].value,
         competitive: form["competitive"].checked,
         membershipPassive: form["membershippassive"].checked
     }
