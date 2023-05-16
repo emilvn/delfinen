@@ -1,19 +1,47 @@
-import { getAllUsers } from "../rest/fetch.js";
-import { prepareData } from "../modules/helpers/preparedata.js";
+import { getAllUsers, getPriceData } from "../rest/fetch.js";
 
 window.addEventListener('load', main);
 
 async function main(){
     const users = await getAllUsers();
     displayUsers(users);
-    console.log(users);
+    calculateAndDisplayPayments(users);
 }
 
-function displayUsers (users){
-    for(const user of users){
+function displayUsers(users) {
+    for (const user of users) {
         const html = /*html*/`
-        <div>${user.name}</div>
-        `
-        document.querySelector('body').insertAdjacentHTML('beforeend', html)
+            <tr class="name"> 
+                <td> ${user.name}: </td> 
+                <td>  <input type="number" class="restance" name="restance"> </td>   
+            </tr>
+        `;
+        document.querySelector('#user-name').insertAdjacentHTML('beforeend', html);
+    }
+}
+
+
+async function calculateAndDisplayPayments(users) {
+    const prices = await getPriceData();
+    for (const user of users) {
+        const payment = calculatePayment(user.birthdate, user.membershipPassive, prices);
+        console.log(`User: ${user.name}, Payment: ${payment}`);
+    }
+}
+
+function calculatePayment(birthdate, membershipPassive, pricesData) {
+    if (membershipPassive) {
+        return pricesData.passive;
+    }
+    const currentDate = new Date();
+    const dateOfBirth = new Date(birthdate);
+    const age = currentDate.getFullYear() - dateOfBirth.getFullYear();
+
+    if(age > 60){
+        return pricesData.over60
+    } else if(age >= 18){
+        return pricesData.over18
+    } else{
+        return pricesData.under18
     }
 }
