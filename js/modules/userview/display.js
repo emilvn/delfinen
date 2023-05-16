@@ -1,5 +1,6 @@
 import {getAllUsers} from "../../rest/fetch.js";
 import {showCompetitionDialog, showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
+import {calculateAge} from "../helpers/helpers.js";
 
 export let userArr;
 
@@ -16,13 +17,14 @@ export function showUsers(users){
 }
 
 function showUser(user){
+	const userAge = calculateAge(user["birthdate"]);
 	const myHTML = /*html*/`
 	<article>
 		<div>
 			<h3>${user["name"]}</h3>
 			<p>Email: ${user["email"]}</p>
 			<p>${(user["phone"])?`Telefon: ${user["phone"]}`:""}</p>
-			<p>${user["age"]} år</p>
+			<p>${userAge} år</p>
 			<p>Medlemskab: ${(user["membershipPassive"])?"Passiv":"Aktiv"}</p>
 			<p>${(user["competitive"])?"Konkurrencesvømmer":"Motionist"}</p>
 		</div>
