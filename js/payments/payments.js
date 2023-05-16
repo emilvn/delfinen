@@ -4,6 +4,7 @@ window.addEventListener('load', main);
 
 async function main(){
     const users = await getAllUsers();
+    sortUsersNameAlphabetically(users);
     displayUsers(users);
     calculateAndDisplayPayments(users);
 }
@@ -44,4 +45,8 @@ function calculatePayment(birthdate, membershipPassive, pricesData) {
     } else{
         return pricesData.under18
     }
+}
+
+function sortUsersNameAlphabetically(users) {
+  users.sort((a, b) => a.name.localeCompare(b.name));
 }
