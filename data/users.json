@@ -3,7 +3,7 @@
     "name": "Hans Nielsen",
     "email": "hansnielsen@example.com",
     "phone": "22334455",
-    "age": 25,
+    "birthdate": "1998-06-17",
     "membershipPassive": false,
     "competitive": true
   },
@@ -11,7 +11,7 @@
     "name": "Lone Jensen",
     "email": "lonejensen@example.com",
     "phone": "11223344",
-    "age": 30,
+    "birthdate": "1992-12-13",
     "membershipPassive": false,
     "competitive": false
   },
@@ -19,7 +19,7 @@
     "name": "Mikkel Pedersen",
     "email": "mikkelpedersen@example.com",
     "phone": "99887766",
-    "age": 18,
+    "birthdate": "2004-11-12",
     "membershipPassive": true,
     "competitive": false
   },
@@ -27,7 +27,7 @@
     "name": "Sofie Larsen",
     "email": "sofielarsen@example.com",
     "phone": "55443322",
-    "age": 23,
+    "birthdate": "2000-04-08",
     "membershipPassive": false,
     "competitive": true
   },
@@ -35,14 +35,14 @@
     "name": "Andreas Christensen",
     "email": "andreasc@example.com",
     "phone": "77665544",
-    "age": 28,
+    "birthdate": "1996-08-26",
     "membershipPassive": true,
     "competitive": true
   },
   "member6": {
     "name": "Mads Petersen",
     "email": "madspetersen@example.com",
-    "age": 26,
+    "birthdate": "1997-05-16",
     "membershipPassive": false,
     "competitive": true
   },
@@ -50,14 +50,14 @@
     "name": "Julie Andersen",
     "email": "julieandersen@example.com",
     "phone": "11223344",
-    "age": 29,
+    "birthdate": "1993-02-21",
     "membershipPassive": false,
     "competitive": false
   },
   "member8": {
     "name": "Nikolaj Hansen",
     "email": "nikolajhansen@example.com",
-    "age": 21,
+    "birthdate": "2001-01-20",
     "membershipPassive": true,
     "competitive": false
   },
@@ -65,7 +65,7 @@
     "name": "Laura Sørensen",
     "email": "laurasorensen@example.com",
     "phone": "55443322",
-    "age": 24,
+    "birthdate": "1998-06-17",
     "membershipPassive": false,
     "competitive": true
   },
@@ -73,7 +73,7 @@
     "name": "Emilie Christensen",
     "email": "emiliec@example.com",
     "phone": "77665544",
-    "age": 27,
+    "birthdate": "1995-08-26",
     "membershipPassive": true,
     "competitive": true
   },
@@ -81,7 +81,7 @@
     "name": "Sara Jensen",
     "email": "sarajensen@example.com",
     "phone": "22334455",
-    "age": 25,
+    "birthdate": "1998-06-17",
     "membershipPassive": false,
     "competitive": true
   },
@@ -89,14 +89,14 @@
     "name": "Anders Nielsen",
     "email": "andersnielsen@example.com",
     "phone": "11223344",
-    "age": 30,
+    "birthdate": "1992-12-13",
     "membershipPassive": false,
     "competitive": false
   },
   "member13": {
     "name": "Maria Pedersen",
     "email": "mariapedersen@example.com",
-    "age": 18,
+    "birthdate": "2004-11-12",
     "membershipPassive": true,
     "competitive": false
   },
@@ -104,7 +104,7 @@
     "name": "Daniel Larsen",
     "email": "daniellarsen@example.com",
     "phone": "55443322",
-    "age": 23,
+    "birthdate": "2000-04-08",
     "membershipPassive": false,
     "competitive": true
   },
@@ -112,7 +112,7 @@
     "name": "Sofia Christensen",
     "email": "sofiachristensen@example.com",
     "phone": "77665544",
-    "age": 28,
+    "birthdate": "1996-08-26",
     "membershipPassive": true,
     "competitive": true
   },
@@ -120,7 +120,7 @@
     "name": "Erik Larsen",
     "email": "eriklarsen@example.com",
     "phone": "22334455",
-    "age": 66,
+    "birthdate": "1957-05-16",
     "membershipPassive": false,
     "competitive": true
   },
@@ -128,14 +128,14 @@
     "name": "Ingrid Hansen",
     "email": "ingridhansen@example.com",
     "phone": "11223344",
-    "age": 74,
+    "birthdate": "1949-02-21",
     "membershipPassive": false,
     "competitive": false
   },
   "member18": {
     "name": "Ole Pedersen",
     "email": "olepedersen@example.com",
-    "age": 62,
+    "birthdate": "1961-01-20",
     "membershipPassive": true,
     "competitive": false
   },
@@ -143,7 +143,7 @@
     "name": "Else Christensen",
     "email": "elsechristensen@example.com",
     "phone": "55443322",
-    "age": 71,
+    "birthdate": "1952-06-17",
     "membershipPassive": false,
     "competitive": true
   },
@@ -151,7 +151,7 @@
     "name": "Niels Jensen",
     "email": "nielsjensen@example.com",
     "phone": "77665544",
-    "age": 67,
+    "birthdate": "1956-08-26",
     "membershipPassive": true,
     "competitive": true
   },
@@ -159,14 +159,14 @@
     "name": "Greta Nielsen",
     "email": "gretanielsen@example.com",
     "phone": "11223344",
-    "age": 78,
+    "birthdate": "1945-02-21",
     "membershipPassive": false,
     "competitive": false
   },
   "member22": {
     "name": "Børge Sørensen",
     "email": "børgesørensen@example.com",
-    "age": 64,
+    "birthdate": "1959-05-16",
     "membershipPassive": false,
     "competitive": true
   },
@@ -174,7 +174,7 @@
     "name": "Gerda Christensen",
     "email": "gerdachristensen@example.com",
     "phone": "55443322",
-    "age": 73,
+    "birthdate": "1948-06-17",
     "membershipPassive": false,
     "competitive": true
   },
@@ -182,14 +182,14 @@
     "name": "Jens Hansen",
     "email": "jenshansen@example.com",
     "phone": "77665544",
-    "age": 68,
+    "birthdate": "1953-08-26",
     "membershipPassive": true,
     "competitive": true
   },
   "member25": {
     "name": "Marie Nielsen",
     "email": "marienielsen@example.com",
-    "age": 70,
+    "birthdate": "1951-05-16",
     "membershipPassive": true,
     "competitive": false
   },
@@ -197,7 +197,7 @@
     "name": "Liam Jensen",
     "email": "liamjensen@example.com",
     "phone": "11223344",
-    "age": 16,
+    "birthdate": "2007-05-16",
     "membershipPassive": false,
     "competitive": false
   },
@@ -205,14 +205,14 @@
     "name": "Emma Nielsen",
     "email": "emmanielsen@example.com",
     "phone": "22334455",
-    "age": 15,
+    "birthdate": "2008-06-17",
     "membershipPassive": false,
     "competitive": true
   },
   "member28": {
     "name": "Noah Andersen",
     "email": "noahandersen@example.com",
-    "age": 14,
+    "birthdate": "2009-08-26",
     "membershipPassive": true,
     "competitive": false
   },
@@ -220,7 +220,7 @@
     "name": "Mia Christensen",
     "email": "miachristensen@example.com",
     "phone": "55443322",
-    "age": 13,
+    "birthdate": "2010-05-16",
     "membershipPassive": false,
     "competitive": true
   },
@@ -228,7 +228,7 @@
     "name": "William Pedersen",
     "email": "williampedersen@example.com",
     "phone": "77665544",
-    "age": 17,
+    "birthdate": "2006-04-08",
     "membershipPassive": true,
     "competitive": true
   },
@@ -236,14 +236,14 @@
     "name": "Sophia Larsen",
     "email": "sophialarsen@example.com",
     "phone": "11223344",
-    "age": 16,
+    "birthdate": "2007-05-16",
     "membershipPassive": false,
     "competitive": false
   },
   "member32": {
     "name": "Oliver Madsen",
     "email": "olivermadsen@example.com",
-    "age": 14,
+    "birthdate": "2009-08-26",
     "membershipPassive": false,
     "competitive": true
   },
@@ -251,7 +251,7 @@
     "name": "Ella Jensen",
     "email": "ellajensen@example.com",
     "phone": "55443322",
-    "age": 13,
+    "birthdate": "2010-05-16",
     "membershipPassive": false,
     "competitive": true
   },
@@ -259,14 +259,14 @@
     "name": "Lucas Andersen",
     "email": "lucasandersen@example.com",
     "phone": "77665544",
-    "age": 17,
+    "birthdate": "2006-04-08",
     "membershipPassive": true,
     "competitive": true
   },
   "member35": {
     "name": "Freya Christensen",
     "email": "freyachristensen@example.com",
-    "age": 15,
+    "birthdate": "2008-06-17",
     "membershipPassive": true,
     "competitive": false
   }
