@@ -13,7 +13,7 @@ function displayUsers(users) {
         const html = /*html*/`
             <tr class="name"> 
                 <td> ${user.name}: </td> 
-                <td>  <input type="number" class="restance" name="restance" data-user="${user.name}"> </td>   
+                <td>  <input type="number" class="restance" name="restance" data-user="${user.id}"> </td>   
             </tr>
         `;
         document.querySelector('#user-name').insertAdjacentHTML('beforeend', html);
@@ -24,10 +24,11 @@ async function calculateAndDisplayPayments(users) {
     const prices = await getPriceData();
     for (const user of users) {
         const payment = calculatePayment(user.birthdate, user.membershipPassive, prices);
-        const inputElement = document.querySelector(`input[name="restance"][data-user="${user.name}"]`);
+        const inputElement = document.querySelector(`input[name="restance"][data-user="${user.id}"]`);
         inputElement.value = payment;
     }
 }
+
 
 function calculatePayment(birthdate, membershipPassive, pricesData) {
     if (membershipPassive) {
