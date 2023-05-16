@@ -7,8 +7,7 @@ window.addEventListener("load", main);
 
 async function main(){
 	await updateUserGrid();
-	setTodayAsMaxDate("post_user_birthdate");
-	setTodayAsMaxDate("update_user_birthdate");
+	setMaxDates()
 	setEventListeners();
 }
 
@@ -22,4 +21,12 @@ function setEventListeners(){
 	document.querySelector("#userCompetitiveFilter").addEventListener("change", filterUsers);
 	/* Create */
 	document.querySelector("#post_user_dialog_open").addEventListener("click", showCreateDialog);
+}
+
+function setMaxDates(){
+	/* Update and create forms */
+	setTodayAsMaxDate("post_user_birthdate");
+	setTodayAsMaxDate("update_user_birthdate");
+	/* training time form */
+	setTodayAsMaxDate("date-time");
 }
