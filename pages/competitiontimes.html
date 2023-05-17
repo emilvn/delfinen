@@ -7,14 +7,19 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Svømmeklubben Delfinen - Konkurrence</title>
         <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/pagestyles/competition.css">
         <link rel="shortcut icon" href="#" type="image/x-icon">
     </head>
     <body>
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
         <main>
-            <div>
-                <select name="" id="competition-select__category">
+            <header>
+                <h1 id="competition-category__header"></h1>
+            </header>
+            <div id="competition-category__div">
+                <label for="competition-category__select">Disciplin</label>
+                <select name="category" id="competition-category__select">
                     <option value="crawl" selected>Crawl</option>
                     <option value="breaststroke">Brystsvømning</option>
                     <option value="backcrawl">Rygcrawl</option>

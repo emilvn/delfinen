@@ -1,0 +1,22 @@
+#competition-category__div{
+    position: fixed;
+    gap: 0.5em;
+    top: 14vh;
+    background-color: rgb(108, 180, 238);
+    padding: 1em;
+    max-width: 100vw;
+    border-radius: 0 0 1em 0;
+    z-index: 999;
+    filter: drop-shadow(0 0 2px black);
+    color: white;
+}
+#competition-category__select{
+    width: 15em;
+    height: 2em;
+}
+@media (max-width: 500px) {
+    #competition-category__div{
+        width: 100%;
+        border-radius: 0;
+    }
+}
