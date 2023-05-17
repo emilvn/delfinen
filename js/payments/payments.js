@@ -1,12 +1,13 @@
-import { getAllUsers, getPriceData } from "../rest/fetch.js";
+import { getAllUsers, getPriceData, getAlreadyExistingUserPayments} from "../rest/fetch.js";
 
 window.addEventListener('load', main);
 
 async function main(){
     const users = await getAllUsers();
+    const payments = await getAlreadyExistingUserPayments();
     sortUsersNameAlphabetically(users);
     displayUsers(users);
-    calculateAndDisplayPayments(users);
+    calculateAndDisplayPayments(users, payments);
 }
 
 function displayUsers(users) {
@@ -21,16 +22,17 @@ function displayUsers(users) {
     }
 }
 
-async function calculateAndDisplayPayments(users) {
+async function calculateAndDisplayPayments(users, payments) {
     const prices = await getPriceData();
     for (const user of users) {
-        const payment = calculatePayment(user.birthdate, user.membershipPassive, prices);
+        const userPrice = calculateUserPrice(user.birthdate, user.membershipPassive, prices);
         const inputElement = document.querySelector(`input[name="restance"][data-user="${user.id}"]`);
-        inputElement.value = payment;
+        const userPayment = payments[user.id] ? payments[user.id]["payment"] : 0;
+        inputElement.value = userPrice - userPayment;   
     }
 }
 
-function calculatePayment(birthdate, membershipPassive, pricesData) {
+function calculateUserPrice(birthdate, membershipPassive, pricesData) {
     if (membershipPassive) {
         return pricesData.passive;
     }
@@ -50,3 +52,7 @@ function calculatePayment(birthdate, membershipPassive, pricesData) {
 function sortUsersNameAlphabetically(users) {
   users.sort((a, b) => a.name.localeCompare(b.name));
 }
+
+
+
+
