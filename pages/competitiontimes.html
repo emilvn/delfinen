@@ -18,12 +18,20 @@
                 <h1 id="competition-category__header"></h1>
             </div>
             <div id="competition-category__div">
-                <label for="competition-competition__select">Stævne</label>
-                <select name="competition" id="competition-competition__select">
-                </select>
-                <label for="competition-category__select">Disciplin</label>
-                <select name="category" id="competition-category__select" disabled>
-                </select>
+                <div>
+                    <label for="competition-competition__select">Stævne</label>
+                    <select name="competition" id="competition-competition__select"></select>
+                </div>
+                <div>
+                    <label for="competition-category__select">Disciplin</label>
+                    <select name="category" id="competition-category__select" disabled></select>
+                </div>
+                <form id="competition-team-select">
+                    <label for="competition-team-select__junior">Junior</label>
+                    <input type="radio" name="teamselect" id="competition-team-select__junior" value="junior" disabled>
+                    <label for="competition-team-select__senior">Senior</label>
+                    <input type="radio" name="teamselect" id="competition-team-select__senior" value="senior" checked>
+                </form>
             </div>
             <div id="competition-times-container">
                 <div id="competitor-number-5">

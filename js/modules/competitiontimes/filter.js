@@ -1,16 +1,17 @@
 import {getAllUsers} from "../../rest/fetch.js";
 import {competitionsObj} from "./options.js";
+import {calculateAge, getTeamFromAge} from "../helpers/helpers.js";
 
 
-export async function findTop5Competitors(category, competition){
-    const competitors = await getCompetitorsInCompetition(category, competition);
+export async function findTop5Competitors(category, competition, team){
+    const competitors = await getCompetitorsInCompetition(category, competition, team);
     competitors.sort((a,b) => a.position - b.position);
     competitors.splice(5);
     return competitors;
 }
 
 
-async function getCompetitorsInCompetition(category, competition){
+async function getCompetitorsInCompetition(category, competition, team){
     const members = await getAllUsers();
     const memberIdsInCompetition = [];
     const competitionCategory = competitionsObj[competition][category];
@@ -24,5 +25,8 @@ async function getCompetitorsInCompetition(category, competition){
         competitor["position"] = competitorCompetitionData["position"];
         competitor["time"] = competitorCompetitionData["time"];
     }
-    return competitors;
+    return competitors.filter(competitor => {
+            const competitorAge = calculateAge(competitor["birthdate"]);
+            return getTeamFromAge(competitorAge) === team;
+        });
 }

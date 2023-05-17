@@ -20,6 +20,13 @@ export function calculateAge(birthdate){
 	return age;
 }
 
+export function getTeamFromAge(age){
+	if(age < 18){
+		return "junior";
+	}
+	return "senior";
+}
+
 export function setTodayAsMaxDate(inputId){
 	const inputField = document.querySelector(`#${inputId}`);
 

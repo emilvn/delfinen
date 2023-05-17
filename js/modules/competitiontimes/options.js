@@ -30,6 +30,8 @@ export function competitionSelectChanged(event){
         for(let i = 1; i<6; i++){
             document.querySelector(`#competitor-number-${i}__competitor`).innerHTML = "";
         }
+        document.querySelector("#competition-team-select__junior").disabled = true;
+        document.querySelector("#competition-team-select__senior").checked = true;
     }
 }
 
@@ -37,12 +39,14 @@ export function competitionSelectChanged(event){
 function generateCategoryOptions(competition){
     const categories =  competitionsObj[competition];
     const categorySelect = document.querySelector("#competition-category__select");
+    const team = document.querySelector("#competition-team-select").teamselect.value;
     categorySelect.disabled = false;
     categorySelect.innerHTML = "";
+    document.querySelector("#competition-team-select__junior").disabled = false;
     for(const category in categories){
         generateCategoryOption(category);
     }
-    displayTop5Competitors(categorySelect.value, competition);
+    displayTop5Competitors(categorySelect.value, competition, team);
 }
 
 function generateCategoryOption(category){
@@ -54,5 +58,16 @@ function generateCategoryOption(category){
 export function categorySelectChanged(event){
     const category = event.target.value;
     const competition = document.querySelector("#competition-competition__select").value;
-    displayTop5Competitors(category, competition);
+    const team = document.querySelector("#competition-team-select").teamselect.value;
+    displayTop5Competitors(category, competition, team);
+    document.querySelector("#competition-team-select__junior").disabled = false;
+}
+
+/* =========== TEAM SELECT =========== */
+export function teamSelectChanged(){
+    const team = document.querySelector("#competition-team-select").teamselect.value;
+    const category = document.querySelector("#competition-category__select").value;
+    const competition = document.querySelector("#competition-competition__select").value;
+
+    displayTop5Competitors(category, competition, team);
 }

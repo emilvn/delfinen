@@ -14,6 +14,9 @@
     z-index: 999;
     filter: drop-shadow(0 0 2px black);
     color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    user-select: none;
 }
 #competition-category__select, #competition-competition__select{
     width: 15em;
