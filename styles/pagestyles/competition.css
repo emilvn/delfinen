@@ -1,3 +1,4 @@
+/* ========== SELECT BAR ========== */
 #competition-category__div{
     position: fixed;
     gap: 0.5em;
@@ -18,5 +19,78 @@
     #competition-category__div{
         width: 100%;
         border-radius: 0;
+    }
+}
+
+
+/* ========== COMPETITOR DISPLAY ========== */
+#competition-times-container{
+    min-height: 86vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: last baseline;
+}
+/* pedestals */
+.pedestal{
+    background-color: #5696ce;
+    width: 100%;
+    outline: 1px solid white;
+}
+#competitor-number-1__pedestal{
+    height: 50vh;
+    background-image: url("../../data/images/one.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#competitor-number-2__pedestal{
+    height: 45vh;
+    background-image: url("../../data/images/two.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#competitor-number-3__pedestal{
+    height: 40vh;
+    background-image: url("../../data/images/three.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#competitor-number-4__pedestal{
+    height: 35vh;
+    background-image: url("../../data/images/four.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#competitor-number-5__pedestal{
+    height: 30vh;
+    background-image: url("../../data/images/five.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@media (max-width: 1000px) {
+    #competition-times-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    #competitor-number-1__pedestal,
+    #competitor-number-2__pedestal,
+    #competitor-number-3__pedestal,
+    #competitor-number-4__pedestal,
+    #competitor-number-5__pedestal{
+        height: 15vh;
+    }
+    #competitor-number-1__pedestal{
+        width: 50vw;
+    }
+    #competitor-number-2__pedestal{
+        width: 45vw;
+    }
+    #competitor-number-3__pedestal{
+        width: 40vw;
+    }
+    #competitor-number-4__pedestal{
+        width: 35vw;
+    }
+    #competitor-number-5__pedestal{
+        width: 30vw;
     }
 }
