@@ -103,7 +103,7 @@ export function showTrainingTimeDialog(event) {
     const dialog = document.querySelector("#add_training_time");
 
     form.addEventListener("submit", submitNewTrainingTime);
-    document.querySelector("#trainingtimes-time-close-button").addEventListener("click", closeTrainingDialog);
+    document.querySelector("#training-time-close-button").addEventListener("click", closeTrainingDialog);
     window.addEventListener("keydown", event => {
         if(event.key === "Escape") closeTrainingDialog();
     });
@@ -111,7 +111,7 @@ export function showTrainingTimeDialog(event) {
 }
 function closeTrainingDialog(){
     const form = document.querySelector("#add_training_time_form");
-    document.querySelector("#trainingtimes-time-close-button").removeEventListener("click", closeTrainingDialog);
+    document.querySelector("#training-time-close-button").removeEventListener("click", closeTrainingDialog);
     form.removeEventListener("submit", submitNewTrainingTime);
     form.parentElement.close();
     form.reset();
