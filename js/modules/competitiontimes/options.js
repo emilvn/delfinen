@@ -26,6 +26,10 @@ export function competitionSelectChanged(event){
     else{
         categorySelect.disabled = true;
         categorySelect.innerHTML = "";
+        document.querySelector("#competition-category__header").textContent ="";
+        for(let i = 1; i<6; i++){
+            document.querySelector(`#competitor-number-${i}__competitor`).innerHTML = "";
+        }
     }
 }
 

@@ -1,9 +1,11 @@
 import {findTop5Competitors} from "./filter.js";
+import {capitalize} from "../helpers/formatting.js";
 
 
 export async function displayTop5Competitors(category, competition){
     const competitors = await findTop5Competitors(category, competition);
-
+    document.querySelector("#competition-category__header")
+        .textContent = capitalize(competition) + " - " + capitalize(category)
     for(let i = 0; i<competitors.length; i++){
         document.querySelector(`#competitor-number-${i+1}__competitor`)
             .innerHTML = /*html*/`

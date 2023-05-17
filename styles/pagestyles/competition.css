@@ -1,3 +1,7 @@
+#competition-main{
+    min-height: 100%;
+}
+
 /* ========== SELECT BAR ========== */
 #competition-category__div{
     position: fixed;
@@ -21,11 +25,18 @@
         border-radius: 0;
     }
 }
-
+.competition-header{
+    width: 100%;
+    text-align: center;
+    margin-top: 25vh;
+}
 
 /* ========== COMPETITOR DISPLAY ========== */
 #competition-times-container{
-    min-height: 86vh;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    min-height: 60vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-items: flex-end;
@@ -75,7 +86,7 @@
         grid-template-rows: auto auto auto auto auto;
         align-items: unset;
         justify-content: right;
-        margin-top: 20vh;
+        margin-top: 5vh;
     }
     #competitor-number-1__pedestal,
     #competitor-number-2__pedestal,
