@@ -118,11 +118,16 @@
     #competition-times-container>div{
         display: grid;
         width: 100%;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr auto;
         justify-items: right;
     }
     .competitor{
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 530px) {
+    .competition-header{
+        margin-top: 30vh;
     }
 }
