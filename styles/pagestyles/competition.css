@@ -49,6 +49,7 @@
     background-color: #5696ce;
     width: 100%;
     outline: 1px solid white;
+    background-size: contain;
 }
 #competitor-number-1__pedestal{
     height: 50vh;
