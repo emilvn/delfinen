@@ -18,12 +18,11 @@
                 <h1 id="competition-category__header"></h1>
             </header>
             <div id="competition-category__div">
+                <label for="competition-competition__select">Stævne</label>
+                <select name="competition" id="competition-competition__select">
+                </select>
                 <label for="competition-category__select">Disciplin</label>
-                <select name="category" id="competition-category__select">
-                    <option value="crawl" selected>Crawl</option>
-                    <option value="breaststroke">Brystsvømning</option>
-                    <option value="backcrawl">Rygcrawl</option>
-                    <option value="butterfly">Butterfly</option>
+                <select name="category" id="competition-category__select" disabled>
                 </select>
             </div>
             <div id="competition-times-container"></div>
@@ -32,6 +31,6 @@
         </main>
         <!--main script-->
         <script type="module" src="../js/main.js"></script>
-        <script src="../js/modules/competitiontimes/main.js"></script>
+        <script type="module" src="../js/modules/competitiontimes/main.js"></script>
     </body>
 </html>

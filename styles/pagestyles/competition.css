@@ -10,7 +10,7 @@
     filter: drop-shadow(0 0 2px black);
     color: white;
 }
-#competition-category__select{
+#competition-category__select, #competition-competition__select{
     width: 15em;
     height: 2em;
 }

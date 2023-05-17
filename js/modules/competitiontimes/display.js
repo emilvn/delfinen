@@ -1,16 +1,28 @@
-import {getCompetitionTimesByCategory} from "../../rest/fetch.js";
+import {getAllUsers} from "../../rest/fetch.js";
+import {competitionsObj} from "./options.js";
 
-export let competitionTimes;
 
-async function updateCompetitionTimesView(){
-    competitionTimes = await getCompetitionTimesByCategory();
-    showTop5CompetitionTimes(competitionTimes);
+export async function displayTop5Competitors(category, competition){
+    const competitors = await getCompetitorsInCompetition(category, competition);
+    competitors.sort((a,b) => a.position - b.position);
+    competitors.splice(5);
+    console.log(competitors);
 }
 
-function showTop5CompetitionTimes(competitionTimes){
 
-}
+async function getCompetitorsInCompetition(category, competition){
+    const members = await getAllUsers();
+    const memberIdsInCompetition = [];
+    const competitionCategory = competitionsObj[competition][category];
 
-function sortCompetitionTimesByTime(competitionTimes){
-    competitionTimes.sort((a, b) => b.time - a.time)
+    for(const memberID in competitionCategory){
+        memberIdsInCompetition.push(memberID);
+    }
+    const competitors = members.filter(member => memberIdsInCompetition.includes(member.id));
+    for(const competitor of competitors){
+        const competitorCompetitionData = competitionCategory[competitor["id"]];
+        competitor["position"] = competitorCompetitionData["position"];
+        competitor["time"] = competitorCompetitionData["time"];
+    }
+    return competitors;
 }

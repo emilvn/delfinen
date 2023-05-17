@@ -110,12 +110,12 @@ async function postCompetitiveTime(eventName, discipline, timeData, id) {
     return eventResponse;
 }
 
-async function getCompetitionTimesByCategory(category){
-    const uri = `competitiontimes/${category}.json`;
+async function getCompetitionData(){
+    const uri = `competitiontimes.json`;
     const response = await sendFetchToDB(uri, "GET");
     if(response.ok){
-        console.log("competition times retrieved successfully!");
-        return prepareData(await response.json());
+        console.log("competition data retrieved successfully!");
+        return await response.json();
     }
     else {
         throw new Error(`Bad response at getCompetitionTimes: ${response.status} ${response.statusText}`);
@@ -136,4 +136,4 @@ async function getPriceData() {
     return {};
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getCompetitionTimesByCategory};
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getCompetitionData};
