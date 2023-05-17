@@ -28,7 +28,10 @@
     min-height: 86vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    align-items: last baseline;
+    align-items: flex-end;
+}
+#competition-times-container h3{
+    text-align: center;
 }
 /* pedestals */
 .pedestal{
@@ -69,14 +72,18 @@
 @media (max-width: 1000px) {
     #competition-times-container{
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto;
+        align-items: unset;
+        justify-content: right;
+        margin-top: 20vh;
     }
     #competitor-number-1__pedestal,
     #competitor-number-2__pedestal,
     #competitor-number-3__pedestal,
     #competitor-number-4__pedestal,
     #competitor-number-5__pedestal{
-        height: 15vh;
+        height: 12vh;
+        background-size: contain;
     }
     #competitor-number-1__pedestal{
         width: 50vw;
@@ -92,5 +99,15 @@
     }
     #competitor-number-5__pedestal{
         width: 30vw;
+    }
+    #competition-times-container>div{
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto auto;
+        justify-items: right;
+    }
+    .competitor{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
