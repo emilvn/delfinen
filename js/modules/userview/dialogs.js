@@ -117,6 +117,11 @@ function closeTrainingDialog(){
     form.reset();
 }
 
+function showMembersTrainingTimeInDialog(category, newTrainingTime) {
+    const html = /*html*/ `
+    `;
+}
+
 /* ========== Comp time ========== */
 export function showCompetitionDialog(event) {
     const competitionBtn = event.target;

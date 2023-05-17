@@ -121,4 +121,15 @@ async function getPriceData() {
     return {};
 }
 
+async function getTrainingTime(category, id) {
+    const uri = `trainingtimes/${category}/${id}.json`;
+    const response = await sendFetchToDB(uri, "PUT");
+
+    if (response.ok) {
+        console.log("training time read");
+    } else {
+        console.log("training time not read");
+    }
+}
+
 export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData};
