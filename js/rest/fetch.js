@@ -73,9 +73,9 @@ async function updateUser(uid, userData){
         showToastMessage(`Kunne ikke opdatere medlem. ${response.status} ${response.statusText}`, "error");
     }
 }
-async function addTrainingtime (category, trainingtimeData){
-    const uri = `trainingstimes/${category}.json`;
-    const response = await sendFetchToDB(uri, 'POST', trainingtimeData);
+async function addTrainingtime (category, trainingtimeData, id){
+    const uri = `trainingstimes/${category}/${id}.json`;
+    const response = await sendFetchToDB(uri, 'PUT', trainingtimeData);
     if (response.ok){
         console.log('Training time added');
         showToastMessage("Trænings tid tilføjet!", "success");
@@ -100,10 +100,10 @@ async function getCoaches(){
     }
 }
 
-async function postCompetitiveTime(eventName, discipline, timeData) {
-    const postCompetitiveTimeURL = `competitiontimes/${eventName}/${discipline}.json`;
+async function postCompetitiveTime(eventName, discipline, timeData, id) {
+    const postCompetitiveTimeURL = `competitiontimes/${eventName}/${discipline}/${id}.json`;
 
-    const eventResponse = await sendFetchToDB(postCompetitiveTimeURL, "POST", timeData);
+    const eventResponse = await sendFetchToDB(postCompetitiveTimeURL, "PUT", timeData);
     return eventResponse;
 }
 

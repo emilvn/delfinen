@@ -59,7 +59,7 @@ function showUser(user){
 	if(user["competitive"]){
 		currentUserArticle.querySelector(".user-competitiontime-btn-div")
 			.innerHTML = `
-				<button class="add-competitiontime-btn" data-id="${user[" id"]}">Redigér stævne tider</button>
+				<button class="add-competitiontime-btn" data-id="${user["id"]}">Redigér stævne tider</button>
 			`;
 		const competitionBtn = currentUserArticle.querySelector(".add-competitiontime-btn");
 		competitionBtn.addEventListener("click", showCompetitionDialog);

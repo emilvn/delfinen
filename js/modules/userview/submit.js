@@ -83,11 +83,10 @@ function submitNewTrainingTime(event) {
     if (fieldsValid) {
         form.removeEventListener("submit", submitNewTrainingTime);
         const newTrainingTime = {
-            uid: uid,
             date: datetime,
             time: seconds
         };
-        addTrainingtime(category, newTrainingTime);
+        addTrainingtime(category, newTrainingTime, uid);
         form.reset();
         form.parentElement.close();
     }
@@ -100,12 +99,11 @@ function submitCompetitiveTime(event) {
     const discipline = event.target.competitive_discipline.value;
     const eventName = event.target.competitive_event.value;
     const timeData = {
-        uid: event.target.dataset.id,
         time: event.target.competitive_time.value,
         position: event.target.competitive_position.value,
     }
-
-    postCompetitiveTime(eventName.toLowerCase(), discipline, timeData);
+    console.log(event.target.dataset.id);
+    postCompetitiveTime(eventName.toLowerCase(), discipline, timeData, event.target.dataset.id);
 
     closeCompetitiveDialog();
 }
