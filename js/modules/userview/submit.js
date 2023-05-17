@@ -1,6 +1,6 @@
 import {addTrainingtime, createUser, deleteUser, postCompetitiveTime, updateUser} from "../../rest/fetch.js";
 import {checkTrainingTimeFields} from "./validate.js";
-import {closeCompetitiveDialog, closeCreateDialog} from "./dialogs.js";
+import {closeCompetitiveDialog, closeCreateDialog, showMembersTrainingTime} from "./dialogs.js";
 
 async function submitUser(event) {
     event.preventDefault();

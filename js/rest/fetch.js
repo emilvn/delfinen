@@ -122,14 +122,18 @@ async function getPriceData() {
 }
 
 async function getTrainingTime(category, id) {
+    id = document.querySelector("#id").dataset.id;
+
     const uri = `trainingtimes/${category}/${id}.json`;
-    const response = await sendFetchToDB(uri, "PUT");
+    const response = await sendFetchToDB(uri, "GET");
 
     if (response.ok) {
         console.log("training time read");
-    } else {
-        console.log("training time not read");
-    }
+        const trainingTimeMember = await response.json()
+        return trainingTimeMember;
+    } 
+
+    
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData};
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getTrainingTime};
