@@ -18,7 +18,7 @@ async function sendFetchToDB(uri, method, data) {
     return response;  
 }
 
-/* ========== USERVIEW ========== */
+/* ========== MEMBERS ========== */
 async function getAllUsers(){
     const response = await sendFetchToDB("users.json", "GET");
     if (response.ok){
@@ -73,6 +73,8 @@ async function updateUser(uid, userData){
         showToastMessage(`Kunne ikke opdatere medlem. ${response.status} ${response.statusText}`, "error");
     }
 }
+
+/* ========== TRAINING TIMES ========== */
 async function addTrainingtime (category, trainingtimeData, id){
     const uri = `trainingstimes/${category}/${id}.json`;
     const response = await sendFetchToDB(uri, 'PUT', trainingtimeData);
@@ -100,6 +102,7 @@ async function getCoaches(){
     }
 }
 
+/* ========== COMPETITIVE TIMES ========== */
 async function postCompetitiveTime(eventName, discipline, timeData, id) {
     const postCompetitiveTimeURL = `competitiontimes/${eventName}/${discipline}/${id}.json`;
 
@@ -107,7 +110,19 @@ async function postCompetitiveTime(eventName, discipline, timeData, id) {
     return eventResponse;
 }
 
+async function getCompetitionTimes(){
+    const uri = `competitiontimes.json`;
+    const response = await sendFetchToDB(uri, "GET");
+    if(response.ok){
+        console.log("competition times retrieved successfully!");
+        return await response.json();
+    }
+    else {
+        throw new Error(`Bad response at getCompetitionTimes: ${response.status} ${response.statusText}`);
+    }
+}000000000
 
+/* ========== PRICE AND PAYMENT ========== */
 async function getPriceData() {
     const getPricesURI = `memberships.json`;
     const response = await sendFetchToDB(getPricesURI, "GET");
@@ -121,4 +136,4 @@ async function getPriceData() {
     return {};
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData};
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getCompetitionTimes};

@@ -13,11 +13,20 @@
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
         <main>
-
+            <div>
+                <select name="" id="competition-select__category">
+                    <option value="crawl" selected>Crawl</option>
+                    <option value="breaststroke">Brystsvømning</option>
+                    <option value="">Rygcrawl</option>
+                    <option value="">Butterfly</option>
+                </select>
+            </div>
+            <div id="competition-times-container"></div>
             <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
             <div id="toast-container"></div>
         </main>
         <!--main script-->
         <script type="module" src="../js/main.js"></script>
+        <script src="../js/modules/trainingtimes/main.js"></script>
     </body>
 </html>
