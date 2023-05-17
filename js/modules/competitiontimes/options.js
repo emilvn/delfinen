@@ -4,6 +4,13 @@ import {displayTop5Competitors} from "./display.js";
 
 export let competitionsObj;
 
+export const categoriesInDanish = {
+    breaststroke: "brystsvømning",
+    crawl: "crawl",
+    backcrawl: "rygcrawl",
+    butterfly: "fly"
+}
+
 /* =========== COMPETITION SELECT =========== */
 export async function generateCompetitionOptions(){
     competitionsObj = await getCompetitionData();
@@ -26,7 +33,7 @@ export function competitionSelectChanged(event){
     else{
         categorySelect.disabled = true;
         categorySelect.innerHTML = "";
-        document.querySelector("#competition-category__header").textContent ="";
+        document.querySelector("#competition-category__header").textContent ="Vælg et stævne";
         for(let i = 1; i<6; i++){
             document.querySelector(`#competitor-number-${i}__competitor`).innerHTML = "";
         }
@@ -50,7 +57,7 @@ function generateCategoryOptions(competition){
 }
 
 function generateCategoryOption(category){
-    const myHTML = /*html*/`<option value="${category}">${capitalize(category)}</option>"`;
+    const myHTML = /*html*/`<option value="${category}">${capitalize(categoriesInDanish[category])}</option>"`;
     const categorySelect = document.querySelector("#competition-category__select");
     categorySelect.insertAdjacentHTML("beforeend", myHTML);
 }
