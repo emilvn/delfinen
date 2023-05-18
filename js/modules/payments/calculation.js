@@ -1,4 +1,5 @@
 import {getPriceData} from "../../rest/fetch.js";
+import {calculateAge} from "../helpers/helpers.js";
 
 
 export async function calculateAndDisplayPayments(users, payments) {
@@ -15,9 +16,7 @@ function calculateUserPrice(birthdate, membershipPassive, pricesData) {
     if (membershipPassive) {
         return pricesData.passive;
     }
-    const currentDate = new Date();
-    const dateOfBirth = new Date(birthdate);
-    const age = currentDate.getFullYear() - dateOfBirth.getFullYear();
+    const age = calculateAge(birthdate);
 
     if(age > 60){
         return pricesData.over60
