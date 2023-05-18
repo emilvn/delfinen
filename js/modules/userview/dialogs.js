@@ -1,6 +1,6 @@
 "use strict";
 import { submitCompetitiveTime, submitDelete, submitNewTrainingTime, submitUpdate, submitUser } from "./submit.js";
-import { getOneUser, getTrainingTime } from "../../rest/fetch.js";
+import { getOneUser, getTrainingTimeBackstroke, getTrainingTimeBreaststroke, getTrainingTimeButterfly, getTrainingTimeCrawl } from "../../rest/fetch.js";
 
 export function showCreateDialog() {
   const form = document.querySelector("#post_user_form");
@@ -108,7 +108,6 @@ export function showTrainingTimeDialog(event) {
     if (event.key === "Escape") closeTrainingDialog();
   });
   dialog.showModal();
-  getMembersTrainingTimeForEach();
 }
 function closeTrainingDialog() {
   const form = document.querySelector("#add_training_time_form");
@@ -118,10 +117,12 @@ function closeTrainingDialog() {
   form.reset();
 }
 
-async function getMembersTrainingTimeForEach(category, id) {
-  const membersTrainingTime = await getTrainingTime(id);
+async function getMembersTrainingTimeForEach(id) {
+  const membersTrainingTimeCrawl = await getTrainingTimeCrawl(id);
+  
+   
 
-  membersTrainingTime.ForEach(showMembersTrainingTime);
+  membersTrainingTimeCrawl.ForEach(showMembersTrainingTime);
 }
 
 export function showMembersTrainingTime(category, id) {
@@ -145,7 +146,8 @@ export function showMembersTrainingTime(category, id) {
 }
 
 function enFunktion() {
-  console.log("hej");
+  console.log("Hej");
+  getTrainingTimeCrawl();
 }
 
 window.enFunktion = enFunktion;

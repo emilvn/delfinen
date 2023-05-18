@@ -121,10 +121,54 @@ async function getPriceData() {
     return {};
 }
 
-async function getTrainingTime(category, id) {
+async function getTrainingTimeBreaststroke(id) {
     id = document.querySelector(".add-trainingtime-btn").dataset.id;
 
-    const uri = `trainingtimes/${category}/${id}.json`;
+    const uri = `trainingtimes/brystsvømning/${id}.json`;
+    const response = await sendFetchToDB(uri, "GET");
+
+    if (response.ok) {
+        console.log("training time read");
+        const trainingTimeMember = await response.json()
+        return trainingTimeMember;
+    } 
+
+    
+}
+async function getTrainingTimeCrawl(id) {
+    id = document.querySelector(".add-trainingtime-btn").dataset.id;
+
+    const uri = `trainingtimes/crawl/${id}.json`;
+    const response = await sendFetchToDB(uri, "GET");
+
+    if (response.ok) {
+        console.log("training time read");
+        const trainingTimeMember = await response.json()
+        return trainingTimeMember;
+    } 
+
+   
+
+    
+}
+async function getTrainingTimeBackstroke(id) {
+    id = document.querySelector(".add-trainingtime-btn").dataset.id;
+
+    const uri = `trainingtimes/rygcrawl/${id}.json`;
+    const response = await sendFetchToDB(uri, "GET");
+
+    if (response.ok) {
+        console.log("training time read");
+        const trainingTimeMember = await response.json()
+        return trainingTimeMember;
+    } 
+
+    
+}
+async function getTrainingTimeButterfly(id) {
+    id = document.querySelector(".add-trainingtime-btn").dataset.id;
+
+    const uri = `trainingtimes/butterfly/${id}.json`;
     const response = await sendFetchToDB(uri, "GET");
 
     if (response.ok) {
@@ -136,4 +180,4 @@ async function getTrainingTime(category, id) {
     
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getTrainingTime};
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getTrainingTimeBreaststroke, getTrainingTimeBackstroke, getTrainingTimeButterfly, getTrainingTimeCrawl};
