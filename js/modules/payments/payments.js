@@ -1,4 +1,4 @@
-import { getAllUsers, getPriceData } from "../rest/fetch.js";
+import { getAllUsers, getPriceData } from "../../rest/fetch.js";
 
 window.addEventListener('load', main);
 
