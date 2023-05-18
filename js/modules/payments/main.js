@@ -1,4 +1,4 @@
-import {getAllUsers, getAlreadyExistingUserPayments, getPriceData,} from "../../rest/fetch.js";
+import {getAllUsers, getAlreadyExistingUserPayments} from "../../rest/fetch.js";
 import {displayUsers} from "./display.js";
 import {calculateAndDisplayPayments} from "./calculation.js";
 import {sortUsersNameAlphabetically} from "../helpers/formatting";
