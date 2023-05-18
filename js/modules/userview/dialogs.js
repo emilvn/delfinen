@@ -1,6 +1,6 @@
 "use strict";
 import { submitCompetitiveTime, submitDelete, submitNewTrainingTime, submitUpdate, submitUser } from "./submit.js";
-import { getOneUser, getTrainingTimeByCategory} from "../../rest/fetch.js";
+import { getOneUser, getTrainingTimeByCategory, getCompetitionTimeByCategory} from "../../rest/fetch.js";
 
 export function showCreateDialog() {
   const form = document.querySelector("#post_user_form");
@@ -124,7 +124,7 @@ function closeTrainingDialog() {
 async function showTrainingTimes(uid) {
   const trainingTimeArr = await getTrainingTimesByUid(uid);
   console.log(trainingTimeArr);
-  
+
   for (let i = 0; i < trainingTimeArr.length; i++) {
     showTrainingTime(trainingTimeArr[i]);
   }
@@ -146,7 +146,7 @@ async function getTrainingTimesByUid(uid) {
 
 //chr: tilpas denne funktion. Har ikke ændret i den, udover at sørge for at du får den rigtige parameter med. Jeg har omnavngivet den så den passer bedre til resten af navngivningen.
 export function showTrainingTime(trainingTimeObj) {
-  //chr: hvad er en "hr?" 
+  //chr: hvad er en "hr?"
   const myHtml = /*html*/ `
     <hr>
     <br>
@@ -154,12 +154,15 @@ export function showTrainingTime(trainingTimeObj) {
     <table>
     <tr>
     <th>Diciplin</th>
+    <br>
     <th>Dato</th>
+    <br>
     <th>Tid</th>
+    <br>
     </tr>
-    <td>${category}</td>
-    <td>${id.date}</td>
-    <td>Sek: ${id.time}</td>
+    <td>${trainingTimeObj.category}</td>
+    <td>${trainingTimeObj.date}</td>
+    <td>Sek: ${trainingTimeObj.time}</td>
     </table>
     `;
 
@@ -172,6 +175,8 @@ export function showCompetitionDialog(event) {
   const competitionForm = document.querySelector("#post_competitive_form");
 
   competitionForm.dataset.id = competitionBtn.dataset.id;
+
+  showCompetetionTimes(competitionForm.dataset.id)
 
   document.querySelector("#post_competitive_dialog").showModal();
 
@@ -187,4 +192,50 @@ export function closeCompetitiveDialog(event) {
   form.removeEventListener("submit", submitCompetitiveTime);
   form.parentElement.close();
   form.reset();
+}
+
+async function showCompetetionTimes(uid) {
+  const competitionTimeArr = await getCompetitionTimesByUid(uid);
+  console.log(competitionTimeArr);
+
+  for (let i = 0; i < competitionTimeArr.length; i++) {
+    showCompetitionTime(competitionTimeArr[i]);
+  }
+}
+
+async function getCompetitionTimesByUid(uid) {
+  const categories = ["brystsvømning", "butterfly", "crawl", "rygcrawl"];
+  const trainingTimeArr = [];
+  for (let i = 0; i < categories.length; i++) {
+    const trainingTime = await getCompetitionTimeByCategory(categories[i], uid);
+    if (trainingTime) {
+      trainingTime.category = categories[i];
+      trainingTimeArr.push(trainingTime);
+    }
+  }
+  return trainingTimeArr;
+}
+
+export function showCompetitionTime(trainingTimeObj) {
+  //chr: hvad er en "hr?"
+  const myHtml = /*html*/ `
+    <hr>
+    <br>
+    <br>
+    <table>
+    <tr>
+    <th>Diciplin</th>
+    <br>
+    <th>Dato</th>
+    <br>
+    <th>Tid</th>
+    <br>
+    </tr>
+    <td>${trainingTimeObj.category}</td>
+    <td>${trainingTimeObj.date}</td>
+    <td>Sek: ${trainingTimeObj.time}</td>
+    </table>
+    `;
+
+  document.querySelector("#add_training_time").insertAdjacentHTML("beforeend", myHtml);
 }
