@@ -195,6 +195,7 @@ export function closeCompetitiveDialog(event) {
 }
 
 async function showCompetetionTimes(uid) {
+  console.log();
   const competitionTimeArr = await getCompetitionTimesByUid(uid);
   console.log(competitionTimeArr);
 
@@ -205,19 +206,18 @@ async function showCompetetionTimes(uid) {
 
 async function getCompetitionTimesByUid(uid) {
   const categories = ["brystsvømning", "butterfly", "crawl", "rygcrawl"];
-  const trainingTimeArr = [];
+  const competitionTimeArr = [];
   for (let i = 0; i < categories.length; i++) {
-    const trainingTime = await getCompetitionTimeByCategory(categories[i], uid);
-    if (trainingTime) {
-      trainingTime.category = categories[i];
-      trainingTimeArr.push(trainingTime);
+    const competitionTime = await getCompetitionTimeByCategory(categories[i], uid);
+    if (competitionTime) {
+      competitionTime.category = categories[i];
+      competitionTimeArr.push(competitionTime);
     }
   }
-  return trainingTimeArr;
+  return competitionTimeArr;
 }
 
-export function showCompetitionTime(trainingTimeObj) {
-  //chr: hvad er en "hr?"
+export function showCompetitionTime(competitionTimeObejct) {
   const myHtml = /*html*/ `
     <hr>
     <br>
@@ -231,9 +231,9 @@ export function showCompetitionTime(trainingTimeObj) {
     <th>Tid</th>
     <br>
     </tr>
-    <td>${trainingTimeObj.category}</td>
-    <td>${trainingTimeObj.date}</td>
-    <td>Sek: ${trainingTimeObj.time}</td>
+    <td>${competitionTimeObejct.category}</td>
+    <td>Position: ${competitionTimeObejct.position}</td>
+    <td>Sek: ${competitionTimeObejct.time}</td>
     </table>
     `;
 

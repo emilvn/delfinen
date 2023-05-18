@@ -126,12 +126,9 @@ async function getTrainingTimeByCategory(category, id) {
 }
 
 async function getCompetitionTimeByCategory(category, id) {
-  const uri = `competitiontimes/${category}/${id}.json`;
+  const uri = `competitiontimes/Aarhus Open 2023/${category}/${id}.json`;
   const response = await sendFetchToDB(uri, "GET");
-
-  console.log(category);
-
-  
+  console.log(response)
 
   if (response.ok) {
     console.log("competitiontime read");
