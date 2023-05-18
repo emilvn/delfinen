@@ -108,6 +108,7 @@ export function showTrainingTimeDialog(event) {
     if (event.key === "Escape") closeTrainingDialog();
   });
   dialog.showModal();
+  getMembersTrainingTimeForEach();
 }
 function closeTrainingDialog() {
   const form = document.querySelector("#add_training_time_form");
@@ -117,8 +118,8 @@ function closeTrainingDialog() {
   form.reset();
 }
 
-async function getMembersTrainingTimeForEach() {
-  const membersTrainingTime = await getTrainingTime();
+async function getMembersTrainingTimeForEach(category, id) {
+  const membersTrainingTime = await getTrainingTime(id);
 
   membersTrainingTime.ForEach(showMembersTrainingTime);
 }
@@ -142,6 +143,12 @@ export function showMembersTrainingTime(category, id) {
 
   document.querySelector("#add_training_time").insertAdjacentHTML("beforeend", myHtml);
 }
+
+function enFunktion() {
+  console.log("hej");
+}
+
+window.enFunktion = enFunktion;
 
 /* ========== Comp time ========== */
 export function showCompetitionDialog(event) {

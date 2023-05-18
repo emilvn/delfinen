@@ -122,7 +122,7 @@ async function getPriceData() {
 }
 
 async function getTrainingTime(category, id) {
-    id = document.querySelector("#id").dataset.id;
+    id = document.querySelector(".add-trainingtime-btn").dataset.id;
 
     const uri = `trainingtimes/${category}/${id}.json`;
     const response = await sendFetchToDB(uri, "GET");
