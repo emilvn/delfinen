@@ -74,7 +74,7 @@ async function updateUser(uid, userData){
     }
 }
 async function addTrainingtime (category, trainingtimeData, id){
-    const uri = `trainingstimes/${category}/${id}.json`;
+    const uri = `trainingtimes/${category}/${id}.json`;
     const response = await sendFetchToDB(uri, 'PUT', trainingtimeData);
     if (response.ok){
         console.log('Training time added');
@@ -120,64 +120,17 @@ async function getPriceData() {
 
     return {};
 }
-
-async function getTrainingTimeBreaststroke(id) {
-    id = document.querySelector(".add-trainingtime-btn").dataset.id;
-
-    const uri = `trainingtimes/brystsvømning/${id}.json`;
+//chr: jeg har slettet de 4 forskellige funktioner du har lavet og lavet én generel funktion med category som parameter.
+async function getTrainingTimeByCategory(category, id) {
+    //chr: id = document.querySelector(".add-trainingtime-btn").dataset.id; Slet den her linje, du sender allerede ID med, så skal vi ikke sætte det i funktionen også
+    const uri = `trainingtimes/${category}/${id}.json`;
     const response = await sendFetchToDB(uri, "GET");
 
-    if (response.ok) {
+    if (response.ok) {  
         console.log("training time read");
         const trainingTimeMember = await response.json()
         return trainingTimeMember;
     } 
-
-    
-}
-async function getTrainingTimeCrawl(id) {
-    id = document.querySelector(".add-trainingtime-btn").dataset.id;
-
-    const uri = `trainingtimes/crawl/${id}.json`;
-    const response = await sendFetchToDB(uri, "GET");
-
-    if (response.ok) {
-        console.log("training time read");
-        const trainingTimeMember = await response.json()
-        return trainingTimeMember;
-    } 
-
-   
-
-    
-}
-async function getTrainingTimeBackstroke(id) {
-    id = document.querySelector(".add-trainingtime-btn").dataset.id;
-
-    const uri = `trainingtimes/rygcrawl/${id}.json`;
-    const response = await sendFetchToDB(uri, "GET");
-
-    if (response.ok) {
-        console.log("training time read");
-        const trainingTimeMember = await response.json()
-        return trainingTimeMember;
-    } 
-
-    
-}
-async function getTrainingTimeButterfly(id) {
-    id = document.querySelector(".add-trainingtime-btn").dataset.id;
-
-    const uri = `trainingtimes/butterfly/${id}.json`;
-    const response = await sendFetchToDB(uri, "GET");
-
-    if (response.ok) {
-        console.log("training time read");
-        const trainingTimeMember = await response.json()
-        return trainingTimeMember;
-    } 
-
-    
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getTrainingTimeBreaststroke, getTrainingTimeBackstroke, getTrainingTimeButterfly, getTrainingTimeCrawl};
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getTrainingTimeByCategory};

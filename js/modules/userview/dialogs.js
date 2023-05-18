@@ -1,6 +1,6 @@
 "use strict";
 import { submitCompetitiveTime, submitDelete, submitNewTrainingTime, submitUpdate, submitUser } from "./submit.js";
-import { getOneUser, getTrainingTimeBackstroke, getTrainingTimeBreaststroke, getTrainingTimeButterfly, getTrainingTimeCrawl } from "../../rest/fetch.js";
+import { getOneUser, getTrainingTimeByCategory} from "../../rest/fetch.js";
 
 export function showCreateDialog() {
   const form = document.querySelector("#post_user_form");
@@ -98,9 +98,12 @@ async function fillUpdateForm(uid) {
 
 /* =========== Training time ========== */
 export function showTrainingTimeDialog(event) {
+  const uid = event.target.dataset.id;
   const form = document.querySelector("#add_training_time_form");
-  form.dataset.id = event.target.dataset.id;
+  form.dataset.id = uid;
   const dialog = document.querySelector("#add_training_time");
+  //chr: her laver jeg kode til at sætte tiderne. Her bliver userId også sat.
+  showTrainingTimes(uid);
 
   form.addEventListener("submit", submitNewTrainingTime);
   document.querySelector("#training-time-close-button").addEventListener("click", closeTrainingDialog);
@@ -117,15 +120,33 @@ function closeTrainingDialog() {
   form.reset();
 }
 
-async function getMembersTrainingTimeForEach(id) {
-  const membersTrainingTimeCrawl = await getTrainingTimeCrawl(id);
+//har lavet denne til at vise alle tider
+async function showTrainingTimes(uid) {
+  const trainingTimeArr = await getTrainingTimesByUid(uid);
+  console.log(trainingTimeArr);
   
-   
-
-  membersTrainingTimeCrawl.ForEach(showMembersTrainingTime);
+  for (let i = 0; i < trainingTimeArr.length; i++) {
+    showTrainingTime(trainingTimeArr[i]);
+  }
 }
 
-export function showMembersTrainingTime(category, id) {
+//chr: Denne henter alle træningstider på et medlem.
+async function getTrainingTimesByUid(uid) {
+  const categories = ["brystsvømning", "butterfly", "crawl", "rygcrawl"];
+  const trainingTimeArr = [];
+  for (let i = 0; i < categories.length; i++) {
+    const trainingTime = await getTrainingTimeByCategory(categories[i], uid);
+    if (trainingTime) {
+      trainingTime.category = categories[i];
+      trainingTimeArr.push(trainingTime);
+    }
+  }
+  return trainingTimeArr;
+}
+
+//chr: tilpas denne funktion. Har ikke ændret i den, udover at sørge for at du får den rigtige parameter med. Jeg har omnavngivet den så den passer bedre til resten af navngivningen.
+export function showTrainingTime(trainingTimeObj) {
+  //chr: hvad er en "hr?" 
   const myHtml = /*html*/ `
     <hr>
     <br>
@@ -144,13 +165,6 @@ export function showMembersTrainingTime(category, id) {
 
   document.querySelector("#add_training_time").insertAdjacentHTML("beforeend", myHtml);
 }
-
-function enFunktion() {
-  console.log("Hej");
-  getTrainingTimeCrawl();
-}
-
-window.enFunktion = enFunktion;
 
 /* ========== Comp time ========== */
 export function showCompetitionDialog(event) {
