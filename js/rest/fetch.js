@@ -121,4 +121,16 @@ async function getPriceData() {
     return {};
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData};
+async function getAlreadyExistingUserPayments() {
+  const paymentsURI = `payments.json`;
+  const response = await sendFetchToDB(paymentsURI, "GET");
+
+  if (response.ok) {
+    const paymentsData = await response.json();
+    return paymentsData;
+  }
+
+  return {};
+}
+
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getAlreadyExistingUserPayments};
