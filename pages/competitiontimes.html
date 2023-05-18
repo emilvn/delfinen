@@ -7,17 +7,69 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Svømmeklubben Delfinen - Konkurrence</title>
         <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/pagestyles/competition.css">
         <link rel="shortcut icon" href="#" type="image/x-icon">
     </head>
     <body>
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main>
-
+        <main id="competition-main">
+            <div class="competition-header">
+                <h1 id="competition-category__header">Vælg et stævne</h1>
+            </div>
+            <div id="competition-category__div">
+                <div>
+                    <label for="competition-competition__select">Stævne</label>
+                    <select name="competition" id="competition-competition__select"></select>
+                </div>
+                <div>
+                    <label for="competition-category__select">Disciplin</label>
+                    <select name="category" id="competition-category__select" disabled></select>
+                </div>
+                <form id="competition-team-select">
+                    <label for="competition-team-select__junior">Junior</label>
+                    <input type="radio" name="teamselect" id="competition-team-select__junior" value="junior" disabled>
+                    <label for="competition-team-select__senior">Senior</label>
+                    <input type="radio" name="teamselect" id="competition-team-select__senior" value="senior" checked>
+                </form>
+            </div>
+            <div id="competition-times-container">
+                <div id="competitor-number-5">
+                    <div id="competitor-number-5__competitor" class="competitor"></div>
+                    <div class="pedestal">
+                        <div id="competitor-number-5__pedestal"></div>
+                    </div>
+                </div>
+                <div id="competitor-number-3">
+                    <div id="competitor-number-3__competitor" class="competitor"></div>
+                    <div class="pedestal">
+                        <div id="competitor-number-3__pedestal"></div>
+                    </div>
+                </div>
+                <div id="competitor-number-1">
+                    <div id="competitor-number-1__competitor" class="competitor"></div>
+                    <div class="pedestal">
+                        <div id="competitor-number-1__pedestal"></div>
+                    </div>
+                </div>
+                <div id="competitor-number-2">
+                    <div id="competitor-number-2__competitor" class="competitor"></div>
+                    <div class="pedestal">
+                        <div id="competitor-number-2__pedestal"></div>
+                    </div>
+                </div>
+                <div id="competitor-number-4">
+                    <div id="competitor-number-4__competitor" class="competitor"></div>
+                    <div class="pedestal">
+                        <div id="competitor-number-4__pedestal"></div>
+                    </div>
+                </div>
+            </div>
             <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
             <div id="toast-container"></div>
         </main>
         <!--main script-->
         <script type="module" src="../js/main.js"></script>
+        <script type="module" src="../js/modules/competitiontimes/main.js"></script>
     </body>
 </html>

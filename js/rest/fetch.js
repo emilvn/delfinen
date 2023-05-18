@@ -18,7 +18,7 @@ async function sendFetchToDB(uri, method, data) {
     return response;  
 }
 
-/* ========== USERVIEW ========== */
+/* ========== MEMBERS ========== */
 async function getAllUsers(){
     const response = await sendFetchToDB("users.json", "GET");
     if (response.ok){
@@ -73,9 +73,11 @@ async function updateUser(uid, userData){
         showToastMessage(`Kunne ikke opdatere medlem. ${response.status} ${response.statusText}`, "error");
     }
 }
-async function addTrainingtime (category, trainingtimeData){
-    const uri = `trainingstimes/${category}.json`;
-    const response = await sendFetchToDB(uri, 'POST', trainingtimeData);
+
+/* ========== TRAINING TIMES ========== */
+async function addTrainingtime (category, trainingtimeData, id){
+    const uri = `trainingstimes/${category}/${id}.json`;
+    const response = await sendFetchToDB(uri, 'PUT', trainingtimeData);
     if (response.ok){
         console.log('Training time added');
         showToastMessage("Trænings tid tilføjet!", "success");
@@ -100,14 +102,27 @@ async function getCoaches(){
     }
 }
 
-async function postCompetitiveTime(eventName, discipline, timeData) {
-    const postCompetitiveTimeURL = `competitiontimes/${eventName}/${discipline}.json`;
+/* ========== COMPETITIVE TIMES ========== */
+async function postCompetitiveTime(eventName, discipline, timeData, id) {
+    const postCompetitiveTimeURL = `competitiontimes/${eventName}/${discipline}/${id}.json`;
 
-    const eventResponse = await sendFetchToDB(postCompetitiveTimeURL, "POST", timeData);
+    const eventResponse = await sendFetchToDB(postCompetitiveTimeURL, "PUT", timeData);
     return eventResponse;
 }
 
+async function getCompetitionData(){
+    const uri = `competitiontimes.json`;
+    const response = await sendFetchToDB(uri, "GET");
+    if(response.ok){
+        console.log("competition data retrieved successfully!");
+        return await response.json();
+    }
+    else {
+        throw new Error(`Bad response at getCompetitionTimes: ${response.status} ${response.statusText}`);
+    }
+}
 
+/* ========== PRICE AND PAYMENT ========== */
 async function getPriceData() {
     const getPricesURI = `memberships.json`;
     const response = await sendFetchToDB(getPricesURI, "GET");
@@ -133,4 +148,4 @@ async function getAlreadyExistingUserPayments() {
   return {};
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getAlreadyExistingUserPayments};
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getAlreadyExistingUserPayments, getCompetitionData};

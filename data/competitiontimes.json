@@ -1,0 +1,300 @@
+{
+  "Aarhus Open 2023": {
+    "crawl": {
+      "member5": {
+        "time": 48,
+        "position": 1
+      },
+      "member14": {
+        "time": 47,
+        "position": 2
+      },
+      "member6": {
+        "time": 49,
+        "position": 3
+      },
+      "member1": {
+        "time": 50,
+        "position": 4
+      },
+      "member9": {
+        "time": 51,
+        "position": 5
+      },
+      "member4": {
+        "time": 52,
+        "position": 6
+      },
+      "member15": {
+        "time": 53,
+        "position": 7
+      },
+      "member16": {
+        "time": 55,
+        "position": 8
+      },
+      "member19": {
+        "time": 46,
+        "position": 9
+      },
+      "member2": {
+        "time": 53,
+        "position": 10
+      }
+    },
+    "backcrawl": {
+      "member8": {
+        "time": 57,
+        "position": 1
+      },
+      "member11": {
+        "time": 59,
+        "position": 2
+      },
+      "member12": {
+        "time": 61,
+        "position": 3
+      },
+      "member18": {
+        "time": 62,
+        "position": 4
+      },
+      "member21": {
+        "time": 65,
+        "position": 5
+      },
+      "member22": {
+        "time": 59,
+        "position": 6
+      },
+      "member23": {
+        "time": 58,
+        "position": 7
+      },
+      "member26": {
+        "time": 64,
+        "position": 8
+      },
+      "member27": {
+        "time": 63,
+        "position": 9
+      },
+      "member32": {
+        "time": 60,
+        "position": 10
+      }
+    },
+    "breaststroke": {
+      "member3": {
+        "time": 55,
+        "position": 1
+      },
+      "member9": {
+        "time": 56,
+        "position": 2
+      },
+      "member14": {
+        "time": 58,
+        "position": 3
+      },
+      "member19": {
+        "time": 59,
+        "position": 4
+      },
+      "member23": {
+        "time": 61,
+        "position": 5
+      },
+      "member24": {
+        "time": 60,
+        "position": 6
+      },
+      "member29": {
+        "time": 57,
+        "position": 7
+      },
+      "member34": {
+        "time": 62,
+        "position": 8
+      },
+      "member35": {
+        "time": 63,
+        "position": 9
+      },
+      "member30": {
+        "time": 65,
+        "position": 10
+      }
+    },
+    "butterfly": {
+      "member1": {
+        "time": 52,
+        "position": 1
+      },
+      "member5": {
+        "time": 54,
+        "position": 2
+      },
+      "member10": {
+        "time": 56,
+        "position": 3
+      },
+      "member16": {
+        "time": 58,
+        "position": 4
+      },
+      "member21": {
+        "time": 60,
+        "position": 5
+      },
+      "member22": {
+        "time": 57,
+        "position": 6
+      },
+      "member27": {
+        "time": 59,
+        "position": 7
+      },
+      "member32": {
+        "time": 61,
+        "position": 8
+      },
+      "member37": {
+        "time": 62,
+        "position": 9
+      },
+      "member40": {
+        "time": 65,
+        "position": 10
+      }
+    }
+  },
+  "Copenhagen Invitational 2022": {
+    "crawl": {
+      "member2": {
+        "time": 47,
+        "position": 1
+      },
+      "member6": {
+        "time": 49,
+        "position": 2
+      },
+      "member9": {
+        "time": 51,
+        "position": 3
+      },
+      "member13": {
+        "time": 53,
+        "position": 4
+      },
+      "member17": {
+        "time": 50,
+        "position": 5
+      },
+      "member23": {
+        "time": 52,
+        "position": 6
+      },
+      "member26": {
+        "time": 54,
+        "position": 7
+      },
+      "member29": {
+        "time": 56,
+        "position": 8
+      },
+      "member34": {
+        "time": 55,
+        "position": 9
+      },
+      "member39": {
+        "time": 57,
+        "position": 10
+      }
+    },
+    "backcrawl": {
+      "member2": {
+        "time": 53,
+        "position": 1
+      },
+      "member6": {
+        "time": 55,
+        "position": 2
+      },
+      "member9": {
+        "time": 52,
+        "position": 3
+      },
+      "member13": {
+        "time": 54,
+        "position": 4
+      },
+      "member17": {
+        "time": 56,
+        "position": 5
+      },
+      "member23": {
+        "time": 51,
+        "position": 6
+      },
+      "member26": {
+        "time": 58,
+        "position": 7
+      },
+      "member29": {
+        "time": 57,
+        "position": 8
+      },
+      "member34": {
+        "time": 59,
+        "position": 9
+      },
+      "member39": {
+        "time": 60,
+        "position": 10
+      }
+    },
+    "breaststroke": {
+      "member3": {
+        "time": 58,
+        "position": 1
+      },
+      "member7": {
+        "time": 59,
+        "position": 2
+      },
+      "member12": {
+        "time": 56,
+        "position": 3
+      },
+      "member16": {
+        "time": 60,
+        "position": 4
+      },
+      "member20": {
+        "time": 57,
+        "position": 5
+      },
+      "member22": {
+        "time": 61,
+        "position": 6
+      },
+      "member27": {
+        "time": 55,
+        "position": 7
+      },
+      "member31": {
+        "time": 62,
+        "position": 8
+      },
+      "member35": {
+        "time": 54,
+        "position": 9
+      },
+      "member40": {
+        "time": 63,
+        "position": 10
+      }
+    }
+  }
+}

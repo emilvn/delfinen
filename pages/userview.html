@@ -19,11 +19,23 @@
             <dialog id="post_user_dialog">
                 <button id="post-close-button" class="close-button">X</button>
                 <form id="post_user_form">
-                    <label for="post_user_name">Navn:</label><input type="text" id="post_user_name" name="post_user_name" required>
-                    <label for="post_user_email">E-mail:</label><input type="email" id="post_user_email" name="post_user_email" required>
-                    <label for="post_user_phone">Tlf nr.:</label><input type="text" id="post_user_phone" name="post_user_phone">
-                    <label for="post_user_age">Alder:</label><input type="number" id="post_user_age" name="post_user_age">
-                    <label for="post_user_competitive">Konkurrencesvømmer: </label><input type="checkbox" id="post_user_competitive" name="competitive">
+                    <label for="post_user_name">Navn:</label>
+                    <input type="text" id="post_user_name" name="post_user_name" required>
+                    <label for="post_user_email">E-mail:</label>
+                    <input type="email" id="post_user_email" name="post_user_email" required>
+                    <label for="post_user_phone">Tlf nr.:</label>
+                    <input type="text" id="post_user_phone" name="post_user_phone">
+                    <label for="post_user_birthdate">Fødselsdato:</label>
+                    <input type="date" id="post_user_birthdate" name="post_user_birthdate" min="1900-01-01" required>
+                    <label for="post_user_competitive">Konkurrencesvømmer: </label>
+                    <input type="checkbox" id="post_user_competitive" name="competitive">
+                    <fieldset class="user_fieldset">
+                        <legend>Vælg disciplin(er): </legend>
+                        <label for="post_user_breaststroke">Brystsvømning: </label><input type="checkbox" id="post_user_breaststroke" name="post_user_categories" value="Brystsvømning">
+                        <label for="post_user_butterfly">Butterfly: </label><input type="checkbox" id="post_user_butterfly" name="post_user_categories" value="Butterfly">
+                        <label for="post_user_crawl">Crawl: </label><input type="checkbox" id="post_user_crawl" name="post_user_categories" value="Crawl">
+                        <label for="post_user_back_crawl">Rygcrawl: </label><input type="checkbox" id="post_user_back_crawl" name="post_user_categories" value="Rygcrawl">
+                    </fieldset>
                     <input type="submit" id="post_user_btn_submit" value="Opret medlem">
                     <input type="reset" value="Ryd form">
                 </form>
@@ -39,12 +51,19 @@
                     <input type="email" id="update_user_email" name="email" required>
                     <label for="update_user_phone">Tlf nr.:</label>
                     <input type="text" id="update_user_phone" name="phone">
-                    <label for="update_user_age">Alder:</label>
-                    <input type="number" id="update_user_age" name="age">
-                    <label for="update_user_competitive">Konkurrencesvømmer: </label>
-                    <input type="checkbox" id="update_user_competitive" name="competitive">
+                    <label for="update_user_birthdate">Fødselsdato:</label>
+                    <input type="date" id="update_user_birthdate" name="birthdate" min="1900-01-01" required>
                     <label for="update_user_membershippassive">Passivt medlemskab</label>
                     <input type="checkbox" id="update_user_membershippassive" name="membershippassive">
+                    <label for="update_user_competitive">Konkurrencesvømmer: </label>
+                    <input type="checkbox" id="update_user_competitive" name="competitive">
+                    <fieldset class="user_fieldset">
+                        <legend>Vælg disciplin(er): </legend>
+                        <label for="update_user_breaststroke">Brystsvømning: </label><input type="checkbox" id="update_user_breaststroke" name="categories" value="Brystsvømning">
+                        <label for="update_user_butterfly">Butterfly: </label><input type="checkbox" id="update_user_butterfly" name="categories" value="Butterfly">
+                        <label for="update_user_crawl">Crawl: </label><input type="checkbox" id="update_user_crawl" name="categories" value="Crawl">
+                        <label for="update_user_back_crawl">Rygcrawl: </label><input type="checkbox" id="update_user_back_crawl" name="categories" value="Rygcrawl">
+                    </fieldset>
                     <input type="submit" id="update_user_btn_submit" value="Opdater medlem">
                     <input type="reset" value="Ryd form">
                 </form>
@@ -80,14 +99,13 @@
                  <form id="add_training_time_form">
                     <label for="training-time-category">Vælg en disciplin:</label>
                     <select name="category" id="training-time-category" >
-                        <option value="Crawl">Crawl</option>
-                        <option value="Butterfly">Butterfly</option>
-                        <option value="Brystsvøming">Brystsvøming</option>
-                        <option value="rygcrawl">rygcrawl</option>
+                        <option value="crawl">Crawl</option>
+                        <option value="butterfly">Butterfly</option>
+                        <option value="breaststroke">Brystsvøming</option>
+                        <option value="backcrawl">rygcrawl</option>
                     </select>
-
                     <label for="date-time">Select date and time:</label>
-                    <input type="date" id="date-time" name="date-time">
+                    <input type="date" id="date-time" name="date-time" min="1900-01-01">
 
                     <label for="training-time-seconds" >Tid</label>
                     <input type="seconds" id="training-time-seconds" name="seconds" required placeholder="tid i sekunder">
@@ -115,7 +133,7 @@
                         <option value="breaststroke">Brystsvømning</option>
                         <option value="butterfly">Butterfly</option>
                         <option value="crawl">Crawl</option>
-                        <option value="back_crawl">Rygcrawl</option>
+                        <option value="backcrawl">Rygcrawl</option>
                     </select>
                     <label for="competitive_time">Tid: </label><input type="text" id="competitive_time" name="competitive_time" placeholder="i sekunder" required>
                     <label for="competitive_position">Placering: </label><input type="text" id="competitive_position" name="competitive_position" maxlength="2" required>

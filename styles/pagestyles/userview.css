@@ -99,6 +99,12 @@ form input[type=checkbox]{
     gap: 5px;
 }
 
+.user_fieldset {
+    grid-column: 1 / span 2;
+    display:none;
+    grid-template-columns: 1fr 1fr;
+}
+
 #post_user_dialog_open {
     position:fixed;
     top:15vh;

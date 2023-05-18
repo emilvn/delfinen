@@ -1,4 +1,5 @@
 import {getPriceData, getAllUsers} from "../../rest/fetch.js";
+import {calculateAge} from "../helpers/helpers.js";
 
 async function updateIncomeGrid() {
     const pricesData = await getPriceData();
@@ -19,17 +20,18 @@ function calculateExpectedIncomePerMembershipType(pricesData, userArr) {
     };
 
     for (let i = 0; i < userArr.length; i++) {
+        const currentUserAge = calculateAge(userArr[i].birthdate);
         if (userArr[i].membershipPassive) {
             expectedIncomeObject.passive += pricesData.passive;
         } else {
             switch (true) {
-                case (userArr[i].age > 60):
+                case (currentUserAge > 60):
                     expectedIncomeObject.over60 += pricesData.over60;
                     break;
-                case (userArr[i].age > 18):
+                case (currentUserAge > 18):
                     expectedIncomeObject.over18 += pricesData.over18;
                     break;
-                case (userArr[i].age <= 18):
+                case (currentUserAge <= 18):
                     expectedIncomeObject.under18 += pricesData.under18;
                     break;
                 default:

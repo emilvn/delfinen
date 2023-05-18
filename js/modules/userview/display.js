@@ -1,5 +1,6 @@
 import {getAllUsers} from "../../rest/fetch.js";
 import {showCompetitionDialog, showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
+import {calculateAge} from "../helpers/helpers.js";
 
 export let userArr;
 
@@ -16,15 +17,18 @@ export function showUsers(users){
 }
 
 function showUser(user){
+	const userAge = calculateAge(user["birthdate"]);
+	const categoryHTML = generateCategoryHTML(user["categories"]);
 	const myHTML = /*html*/`
 	<article>
 		<div>
 			<h3>${user["name"]}</h3>
 			<p>Email: ${user["email"]}</p>
 			<p>${(user["phone"])?`Telefon: ${user["phone"]}`:""}</p>
-			<p>${user["age"]} år</p>
+			<p>${userAge} år</p>
 			<p>Medlemskab: ${(user["membershipPassive"])?"Passiv":"Aktiv"}</p>
 			<p>${(user["competitive"])?"Konkurrencesvømmer":"Motionist"}</p>
+			${categoryHTML?? ""} 
 		</div>
 		<div class="user-btns">
 			<div>		
@@ -55,10 +59,22 @@ function showUser(user){
 	if(user["competitive"]){
 		currentUserArticle.querySelector(".user-competitiontime-btn-div")
 			.innerHTML = `
-				<button class="add-competitiontime-btn" data-id="${user[" id"]}">Redigér stævne tider</button>
+				<button class="add-competitiontime-btn" data-id="${user["id"]}">Redigér stævne tider</button>
 			`;
 		const competitionBtn = currentUserArticle.querySelector(".add-competitiontime-btn");
 		competitionBtn.addEventListener("click", showCompetitionDialog);
+	}
+}
+
+function generateCategoryHTML(categories) {
+	if(categories) {
+		let categoryHTML = /* html */ `<p>Aktive discipliner: </p>`
+		for (const category in categories) {
+			categoryHTML += /* html */ `
+				<p>${category}</p>
+			`
+		}
+		return categoryHTML;
 	}
 }
 

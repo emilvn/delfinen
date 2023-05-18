@@ -1,6 +1,6 @@
 import {addTrainingtime, createUser, deleteUser, postCompetitiveTime, updateUser} from "../../rest/fetch.js";
 import {checkTrainingTimeFields} from "./validate.js";
-import {closeCompetitiveDialog} from "./dialogs.js";
+import {closeCompetitiveDialog, closeCreateDialog} from "./dialogs.js";
 
 async function submitUser(event) {
     event.preventDefault();
@@ -11,12 +11,24 @@ async function submitUser(event) {
         name: event.target.post_user_name.value,
         email: event.target.post_user_email.value,
         phone: event.target.post_user_phone.value,
-        age: Number(event.target.post_user_age.value),
+        birthdate: event.target.post_user_birthdate.value,
         membershipPassive: false,
         competitive: event.target.post_user_competitive.checked,
     }
+
+    if (event.target.post_user_competitive.checked) {
+        const categories = document.querySelectorAll("input[name='post_user_categories']");
+        userData.categories = {};
+        for (let i = 0; i < categories.length; i++) {
+            if (categories[i].checked) {
+                const category = categories[i].value;
+                userData.categories[`${category}`] = category;
+            }
+        }
+    }
+
     createUser(userData);
-    event.target.parentElement.close();
+    closeCreateDialog();
 }
 
 function submitDelete(event) {
@@ -38,9 +50,19 @@ function submitUpdate(event){
         name: form["name"].value,
         email: form["email"].value,
         phone: form["phone"].value,
-        age: Number(form["age"].value),
+        birthdate: form["birthdate"].value,
         competitive: form["competitive"].checked,
         membershipPassive: form["membershippassive"].checked
+    }
+    if (form["competitive"].checked) {
+        const categories = form.querySelectorAll("input[name='categories']");
+        user.categories = {};
+        for (let i = 0; i < categories.length; i++) {
+            if (categories[i].checked) {
+                const category = categories[i].value;
+                user.categories[`${category}`] = category;
+            }
+        }
     }
     updateUser(uid, user);
     form.parentElement.close();
@@ -61,11 +83,10 @@ function submitNewTrainingTime(event) {
     if (fieldsValid) {
         form.removeEventListener("submit", submitNewTrainingTime);
         const newTrainingTime = {
-            uid: uid,
             date: datetime,
-            time: seconds
+            time: Number(seconds)
         };
-        addTrainingtime(category, newTrainingTime);
+        addTrainingtime(category, newTrainingTime, uid);
         form.reset();
         form.parentElement.close();
     }
@@ -78,12 +99,11 @@ function submitCompetitiveTime(event) {
     const discipline = event.target.competitive_discipline.value;
     const eventName = event.target.competitive_event.value;
     const timeData = {
-        uid: event.target.dataset.id,
-        time: event.target.competitive_time.value,
-        position: event.target.competitive_position.value,
+        time: Number(event.target.competitive_time.value),
+        position: Number(event.target.competitive_position.value)
     }
-
-    postCompetitiveTime(eventName.toLowerCase(), discipline, timeData);
+    console.log(event.target.dataset.id);
+    postCompetitiveTime(eventName.toLowerCase(), discipline, timeData, event.target.dataset.id);
 
     closeCompetitiveDialog();
 }

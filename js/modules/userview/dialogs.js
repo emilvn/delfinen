@@ -12,14 +12,15 @@ export function showCreateDialog(){
 
     form.parentElement.showModal();
 }
-function closeCreateDialog(){
+
+export function closeCreateDialog(){
     const form = document.querySelector("#post_user_form");
     document.querySelector("#post-close-button").removeEventListener("click", closeCreateDialog);
     form.removeEventListener("submit", submitUser);
+    form.querySelector("fieldset").style.display = "none";
     form.parentElement.close();
     form.reset();
 }
-
 
 export function showDeleteDialog(event) {
     const deleteBtn = event.target;
@@ -34,6 +35,15 @@ export function showDeleteDialog(event) {
         if(event.key === "Escape") closeDelete();
     });
 }
+
+export function toggleCategoryFieldset(event) {
+    if (event.target.checked) {
+        event.target.parentElement.querySelector("fieldset").style.display = "grid";
+    } else {
+        event.target.parentElement.querySelector("fieldset").style.display = "none";
+    }
+}
+
 function closeDelete() {
     const form = document.querySelector("#form_delete_user");
     document.querySelector("#deleteCanceled").removeEventListener("click", closeDelete);
@@ -70,9 +80,20 @@ async function fillUpdateForm(uid){
     form["name"].value = user["name"];
     form["email"].value = user["email"];
     form["phone"].value = user["phone"]?user["phone"]:"";
-    form["age"].value = user["age"];
-    form["competitive"].checked = user["competitive"];
+    form["birthdate"].value = user["birthdate"];
     form["membershippassive"].checked = user["membershipPassive"];
+    form["competitive"].checked = user["competitive"];
+
+    if (user["competitive"]) {
+        form.querySelector("fieldset").style.display = "grid";
+        for (const category in user["categories"]) {
+            for (let i = 0; i < form["categories"].length; i++) {
+                if (user["categories"][category] === form["categories"][i].value) {
+                    form["categories"][i].checked = true;
+                }
+            }
+        }
+    }
 }
 
 /* =========== Training time ========== */
