@@ -124,7 +124,7 @@ function closeTrainingDialog() {
 async function showTrainingTimes(uid) {
   const trainingTimeArr = await getTrainingTimesByUid(uid);
   console.log(trainingTimeArr);
-
+  document.querySelector("#training_time_members").innerHTML = "";
   for (let i = 0; i < trainingTimeArr.length; i++) {
     showTrainingTime(trainingTimeArr[i]);
   }
@@ -150,7 +150,6 @@ export function showTrainingTime(trainingTimeObj) {
   const myHtml = /*html*/ `
     <hr>
     <br>
-    <br>
     <table>
     <tr>
     <th>Diciplin</th>
@@ -166,7 +165,7 @@ export function showTrainingTime(trainingTimeObj) {
     </table>
     `;
 
-  document.querySelector("#add_training_time").insertAdjacentHTML("beforeend", myHtml);
+  document.querySelector("#training_time_members").insertAdjacentHTML("beforeend", myHtml);
 }
 
 /* ========== Comp time ========== */
@@ -198,6 +197,7 @@ async function showCompetetionTimes(uid) {
   console.log();
   const competitionTimeArr = await getCompetitionTimesByUid(uid);
   console.log(competitionTimeArr);
+  document.querySelector("#competitvie_time_members").innerHTML = "";
 
   for (let i = 0; i < competitionTimeArr.length; i++) {
     showCompetitionTime(competitionTimeArr[i]);
@@ -221,7 +221,6 @@ export function showCompetitionTime(competitionTimeObejct) {
   const myHtml = /*html*/ `
     <hr>
     <br>
-    <br>
     <table>
     <tr>
     <th>Diciplin</th>
@@ -237,5 +236,5 @@ export function showCompetitionTime(competitionTimeObejct) {
     </table>
     `;
 
-  document.querySelector("#add_training_time").insertAdjacentHTML("beforeend", myHtml);
+  document.querySelector("#competitvie_time_members").insertAdjacentHTML("beforeend", myHtml);
 }
