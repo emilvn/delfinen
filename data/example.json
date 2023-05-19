@@ -32,10 +32,19 @@
   "competitiontimes": {
     "Aarhus Open 2023": {
       "crawl": {
-        "00": {
-          "uid": "aefaefafae",
+        "member1": {
           "time": 50,
           "position": 4
+        },
+        "member2": {
+          "time": 45,
+          "position": 3
+        }
+      },
+      "breaststroke": {
+        "member3": {
+          "time": 51,
+          "position": 1
         }
       }
     }

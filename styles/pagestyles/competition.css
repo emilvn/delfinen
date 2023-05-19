@@ -1,0 +1,133 @@
+#competition-main{
+    min-height: 100%;
+}
+
+/* ========== SELECT BAR ========== */
+#competition-category__div{
+    position: fixed;
+    gap: 0.5em;
+    top: 14vh;
+    background-color: rgb(108, 180, 238);
+    padding: 1em;
+    max-width: 100vw;
+    border-radius: 0 0 1em 0;
+    z-index: 999;
+    filter: drop-shadow(0 0 2px black);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    user-select: none;
+}
+#competition-category__select, #competition-competition__select{
+    width: 15em;
+    height: 2em;
+}
+@media (max-width: 500px) {
+    #competition-category__div{
+        width: 100%;
+        border-radius: 0;
+    }
+}
+.competition-header{
+    width: 100%;
+    text-align: center;
+    margin-top: 25vh;
+}
+
+/* ========== COMPETITOR DISPLAY ========== */
+#competition-times-container{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    min-height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: flex-end;
+}
+#competition-times-container h3{
+    text-align: center;
+}
+/* pedestals */
+.pedestal{
+    background-color: #5696ce;
+    width: 100%;
+    outline: 1px solid white;
+    background-size: contain;
+}
+#competitor-number-1__pedestal{
+    height: 50vh;
+    background-image: url("../../data/images/one.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#competitor-number-2__pedestal{
+    height: 45vh;
+    background-image: url("../../data/images/two.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#competitor-number-3__pedestal{
+    height: 40vh;
+    background-image: url("../../data/images/three.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#competitor-number-4__pedestal{
+    height: 35vh;
+    background-image: url("../../data/images/four.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#competitor-number-5__pedestal{
+    height: 30vh;
+    background-image: url("../../data/images/five.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@media (max-width: 1000px) {
+    #competition-times-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        align-items: unset;
+        justify-content: right;
+        margin-top: 5vh;
+    }
+    #competitor-number-1__pedestal,
+    #competitor-number-2__pedestal,
+    #competitor-number-3__pedestal,
+    #competitor-number-4__pedestal,
+    #competitor-number-5__pedestal{
+        height: 12vh;
+        background-size: contain;
+    }
+    #competitor-number-1__pedestal{
+        width: 50vw;
+    }
+    #competitor-number-2__pedestal{
+        width: 45vw;
+    }
+    #competitor-number-3__pedestal{
+        width: 40vw;
+    }
+    #competitor-number-4__pedestal{
+        width: 35vw;
+    }
+    #competitor-number-5__pedestal{
+        width: 30vw;
+    }
+    #competition-times-container>div{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr auto;
+        justify-items: right;
+    }
+    .competitor{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 530px) {
+    .competition-header{
+        margin-top: 30vh;
+    }
+}

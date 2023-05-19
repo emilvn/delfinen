@@ -18,14 +18,15 @@ async function sendFetchToDB(uri, method, data) {
   return response;
 }
 
-/* ========== USERVIEW ========== */
-async function getAllUsers() {
-  const response = await sendFetchToDB("users.json", "GET");
-  if (response.ok) {
-    return prepareData(await response.json());
-  } else {
-    throw new Error(`Bad response at getAllUsers: ${response.status} ${response.statusText}`);
-  }
+/* ========== MEMBERS ========== */
+async function getAllUsers(){
+    const response = await sendFetchToDB("users.json", "GET");
+    if (response.ok){
+        return prepareData(await response.json());
+    }
+    else {
+        throw new Error(`Bad response at getAllUsers: ${response.status} ${response.statusText}`);
+    }
 }
 async function getOneUser(uid) {
   const response = await sendFetchToDB(`users/${uid}.json`, "GET");
@@ -69,16 +70,19 @@ async function updateUser(uid, userData) {
     showToastMessage(`Kunne ikke opdatere medlem. ${response.status} ${response.statusText}`, "error");
   }
 }
-async function addTrainingtime(category, trainingtimeData, id) {
-  const uri = `trainingtimes/${category}/${id}.json`;
-  const response = await sendFetchToDB(uri, "PUT", trainingtimeData);
-  if (response.ok) {
-    console.log("Training time added");
-    showToastMessage("Trænings tid tilføjet!", "success");
-  } else {
-    console.error(`Bad response at addTrainingtime: ${response.status} ${response.statusText}`);
-    showToastMessage(`Kunne ikke tilføje træningstid. ${response.status} ${response.statusText}`, "error");
-  }
+
+/* ========== TRAINING TIMES ========== */
+async function addTrainingtime (category, trainingtimeData, id){
+    const uri = `trainingstimes/${category}/${id}.json`;
+    const response = await sendFetchToDB(uri, 'PUT', trainingtimeData);
+    if (response.ok){
+        console.log('Training time added');
+        showToastMessage("Trænings tid tilføjet!", "success");
+    }
+    else {
+        console.error(`Bad response at addTrainingtime: ${response.status} ${response.statusText}`);
+        showToastMessage(`Kunne ikke tilføje træningstid. ${response.status} ${response.statusText}`, "error");
+    }
 }
 
 /* ======== COACHES ========== */
@@ -93,6 +97,7 @@ async function getCoaches() {
   }
 }
 
+/* ========== COMPETITIVE TIMES ========== */
 async function postCompetitiveTime(eventName, discipline, timeData, id) {
   const postCompetitiveTimeURL = `competitiontimes/${eventName}/${discipline}/${id}.json`;
 
@@ -100,6 +105,19 @@ async function postCompetitiveTime(eventName, discipline, timeData, id) {
   return eventResponse;
 }
 
+async function getCompetitionData(){
+    const uri = `competitiontimes.json`;
+    const response = await sendFetchToDB(uri, "GET");
+    if(response.ok){
+        console.log("competition data retrieved successfully!");
+        return await response.json();
+    }
+    else {
+        throw new Error(`Bad response at getCompetitionTimes: ${response.status} ${response.statusText}`);
+    }
+}
+
+/* ========== PRICE AND PAYMENT ========== */
 async function getPriceData() {
   const getPricesURI = `memberships.json`;
   const response = await sendFetchToDB(getPricesURI, "GET");
@@ -125,16 +143,16 @@ async function getTrainingTimeByCategory(category, id) {
   }
 }
 
-async function getCompetitionTimeByCategory(category, id) {
-  const uri = `competitiontimes/Aarhus Open 2023/${category}/${id}.json`;
-  const response = await sendFetchToDB(uri, "GET");
-  console.log(response)
+async function getAlreadyExistingUserPayments() {
+  const paymentsURI = `payments.json`;
+  const response = await sendFetchToDB(paymentsURI, "GET");
 
   if (response.ok) {
-    console.log("competitiontime read");
-    const competitionTimeMember = await response.json();
-    return competitionTimeMember;
+    const paymentsData = await response.json();
+    return paymentsData;
   }
+
+  return {};
 }
 
-export { createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getTrainingTimeByCategory, getCompetitionTimeByCategory };
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getAlreadyExistingUserPayments, getCompetitionData};

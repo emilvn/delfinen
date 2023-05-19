@@ -1,0 +1,25 @@
+
+#user-name {
+  width: 50%;
+}
+
+#user-name th,
+#user-name td {
+  padding: 7px;
+  text-align: left;
+  border-bottom: 1px solid grey;
+}
+
+#user-name th {
+  background-color: #f2f2f2;
+}
+
+.restance input[type="number"] {
+  width: 60px;
+  padding: 4px;
+}
+
+.name {
+  font-weight: bold;
+}
+

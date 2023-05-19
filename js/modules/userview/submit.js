@@ -84,7 +84,7 @@ function submitNewTrainingTime(event) {
         form.removeEventListener("submit", submitNewTrainingTime);
         const newTrainingTime = {
             date: datetime,
-            time: seconds
+            time: Number(seconds)
         };
         addTrainingtime(category, newTrainingTime, uid);
         form.reset();
@@ -99,8 +99,8 @@ function submitCompetitiveTime(event) {
     const discipline = event.target.competitive_discipline.value;
     const eventName = event.target.competitive_event.value;
     const timeData = {
-        time: event.target.competitive_time.value,
-        position: event.target.competitive_position.value,
+        time: Number(event.target.competitive_time.value),
+        position: Number(event.target.competitive_position.value)
     }
     console.log(event.target.dataset.id);
     postCompetitiveTime(eventName.toLowerCase(), discipline, timeData, event.target.dataset.id);
