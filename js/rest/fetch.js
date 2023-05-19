@@ -76,7 +76,7 @@ async function updateUser(uid, userData){
 
 /* ========== TRAINING TIMES ========== */
 async function addTrainingtime (category, trainingtimeData, id){
-    const uri = `trainingstimes/${category}/${id}.json`;
+    const uri = `trainingtimes/${category}/${id}.json`;
     const response = await sendFetchToDB(uri, 'PUT', trainingtimeData);
     if (response.ok){
         console.log('Training time added');
