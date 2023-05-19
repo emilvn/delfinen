@@ -1,6 +1,8 @@
 "use strict";
 import { submitCompetitiveTime, submitDelete, submitNewTrainingTime, submitUpdate, submitUser } from "./submit.js";
-import { getOneUser, getTrainingTimeByCategory, getCompetitionTimeByCategory} from "../../rest/fetch.js";
+import { getOneUser, getTrainingTimeByCategory, getCompetitionData } from "../../rest/fetch.js";
+import { categoriesInDanish } from "../competitiontimes/options.js";
+import { capitalize } from "../helpers/formatting.js";
 
 export function showCreateDialog() {
   const form = document.querySelector("#post_user_form");
@@ -132,7 +134,7 @@ async function showTrainingTimes(uid) {
 
 //chr: Denne henter alle træningstider på et medlem.
 async function getTrainingTimesByUid(uid) {
-  const categories = ["brystsvømning", "butterfly", "crawl", "rygcrawl"];
+  const categories = ["breaststroke", "butterfly", "crawl", "backcrawl"];
   const trainingTimeArr = [];
   for (let i = 0; i < categories.length; i++) {
     const trainingTime = await getTrainingTimeByCategory(categories[i], uid);
@@ -146,23 +148,19 @@ async function getTrainingTimesByUid(uid) {
 
 //chr: tilpas denne funktion. Har ikke ændret i den, udover at sørge for at du får den rigtige parameter med. Jeg har omnavngivet den så den passer bedre til resten af navngivningen.
 export function showTrainingTime(trainingTimeObj) {
+  console.log(trainingTimeObj);
   //chr: hvad er en "hr?"
   const myHtml = /*html*/ `
-    <hr>
-    <br>
-    <table>
     <tr>
-    <th>Diciplin</th>
-    <br>
-    <th>Dato</th>
-    <br>
-    <th>Tid</th>
-    <br>
+     <th>Diciplin</th>
+     <th>Dato</th>
+     <th>Tid</th>      
     </tr>
-    <td>${trainingTimeObj.category}</td>
-    <td>${trainingTimeObj.date}</td>
-    <td>Sek: ${trainingTimeObj.time}</td>
-    </table>
+    <tr>
+     <td>${capitalize(categoriesInDanish[trainingTimeObj.category])}</td>
+     <td>${trainingTimeObj.date}</td>
+     <td>Sek: ${trainingTimeObj.time}</td>
+    </tr>
     `;
 
   document.querySelector("#training_time_members").insertAdjacentHTML("beforeend", myHtml);
@@ -175,7 +173,7 @@ export function showCompetitionDialog(event) {
 
   competitionForm.dataset.id = competitionBtn.dataset.id;
 
-  showCompetetionTimes(competitionForm.dataset.id)
+  showCompetitionTimes(competitionForm.dataset.id);
 
   document.querySelector("#post_competitive_dialog").showModal();
 
@@ -193,11 +191,11 @@ export function closeCompetitiveDialog(event) {
   form.reset();
 }
 
-async function showCompetetionTimes(uid) {
+async function showCompetitionTimes(uid) {
   console.log();
   const competitionTimeArr = await getCompetitionTimesByUid(uid);
   console.log(competitionTimeArr);
-  document.querySelector("#competitvie_time_members").innerHTML = "";
+  document.querySelector("#competitive_time_members").innerHTML = "";
 
   for (let i = 0; i < competitionTimeArr.length; i++) {
     showCompetitionTime(competitionTimeArr[i]);
@@ -205,36 +203,40 @@ async function showCompetetionTimes(uid) {
 }
 
 async function getCompetitionTimesByUid(uid) {
-  const categories = ["brystsvømning", "butterfly", "crawl", "rygcrawl"];
-  const competitionTimeArr = [];
-  for (let i = 0; i < categories.length; i++) {
-    const competitionTime = await getCompetitionTimeByCategory(categories[i], uid);
-    if (competitionTime) {
-      competitionTime.category = categories[i];
-      competitionTimeArr.push(competitionTime);
+  const competitionData = await getCompetitionData();
+  const memberTimes = [];
+  for (const competition in competitionData) {
+    const competitionObj = competitionData[competition];
+    for (const category in competitionObj) {
+      const categoryObj = competitionObj[category];
+      for (const memberId in categoryObj) {
+        if (memberId === uid) {
+          const memberTime = categoryObj[memberId];
+          memberTime["category"] = category;
+          memberTime["competition"] = competition;
+          memberTimes.push(memberTime);
+        }
+      }
     }
   }
-  return competitionTimeArr;
+  return memberTimes;
 }
 
 export function showCompetitionTime(competitionTimeObejct) {
   const myHtml = /*html*/ `
-    <hr>
-    <br>
-    <table>
     <tr>
-    <th>Diciplin</th>
-    <br>
-    <th>Dato</th>
-    <br>
-    <th>Tid</th>
-    <br>
+     <th>Stævne</th>
+     <th>Diciplin</th>
+     <th>Placering</th>
+     <th>Tid</th>
     </tr>
-    <td>${competitionTimeObejct.category}</td>
-    <td>Position: ${competitionTimeObejct.position}</td>
-    <td>Sek: ${competitionTimeObejct.time}</td>
-    </table>
+    <tr> 
+     <td>${competitionTimeObejct.competition}</td>
+     <td>${competitionTimeObejct.category}</td>
+     <td>Position: ${competitionTimeObejct.position}</td>
+     <td>Sek: ${competitionTimeObejct.time}</td>
+    </tr>
     `;
 
-  document.querySelector("#competitvie_time_members").insertAdjacentHTML("beforeend", myHtml);
+  document.querySelector("#competitive_time_members").insertAdjacentHTML("beforeend", myHtml);
 }

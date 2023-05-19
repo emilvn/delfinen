@@ -92,6 +92,20 @@ form input[type=checkbox]{
   background-color: #6c0202;
   color: white;
 }
+
+#post_competitive_dialog, #add_training_time {
+    max-height: 50vh;
+    overflow: auto;
+    width: 40vw;
+}
+
+#post_competitive_dialog table, #add_training_time table {
+    width: 100%;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 0 0.5em;
+    
+}
 /* ========== POST USER STYLING ========== */
 #post_user_form, #update_user_form {
     display:grid;
