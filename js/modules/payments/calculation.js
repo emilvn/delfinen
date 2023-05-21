@@ -1,14 +1,16 @@
 import {getPriceData} from "../../rest/fetch.js";
 import {calculateAge} from "../helpers/helpers.js";
 
-
 export async function calculateAndDisplayPayments(users, payments) {
     const prices = await getPriceData();
     for (const user of users) {
         const userPrice = calculateUserPrice(user.birthdate, user.membershipPassive, prices);
         const inputElement = document.querySelector(`input[name="restance"][data-user="${user.id}"]`);
         const userPayment = payments[user.id] ? payments[user.id]["payment"] : 0;
-        inputElement.value = userPrice - userPayment;
+        const arrears = userPrice - userPayment;
+        inputElement.dataset.arrears = arrears;
+        inputElement.dataset.price = userPrice;
+        inputElement.value = arrears;
     }
 }
 

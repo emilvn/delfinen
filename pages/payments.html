@@ -1,33 +1,29 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Svømmeklubben Delfinen - Betalinger</title>
-        <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/pagestyles/payments.css">
-        <link rel="shortcut icon" href="#" type="image/x-icon">
-    </head>
-    <body>
-
-        <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main>
-            
-         <table id="user-name"> 
-            <tr>
-                <th>Navn</th> 
-                <th>Restance</th>
-            </tr>
-        </table>
-
-
-            <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
-            <div id="toast-container"></div>
-        </main>
-        <!--main script-->
-        <script type="module" src="../js/main.js"></script>
-        <script type="module" src="../js/modules/payments/main.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Svømmeklubben Delfinen - Betalinger</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/pagestyles/payments.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+</head>
+<body>
+    <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
+    <main>
+        <section id="grid-container">
+            <span class="grid-header">Navn</span>
+            <span class="grid-header">Restance</span>
+            <span></span>
+            <span></span>
+        </section>
+        <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
+        <div id="toast-container"></div>
+    </main>
+    <!--main script-->
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/modules/payments/main.js"></script>
+</body>
 </html>

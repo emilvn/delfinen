@@ -148,4 +148,19 @@ async function getAlreadyExistingUserPayments() {
   return {};
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getAlreadyExistingUserPayments, getCompetitionData};
+async function updatePayment(paymentData, uid) {
+    const paymentURI = `payments/${uid}.json`;
+    const response = await sendFetchToDB(paymentURI, "PUT", paymentData);
+
+    if (response.ok){
+        console.log('Training time added');
+        showToastMessage("Restance opdateret!", "success");
+        return await response.json();
+    }
+    else {
+        console.error(`Bad response at submitArrears: ${response.status} ${response.statusText}`);
+        showToastMessage(`Kunne ikke opdatere restance. ${response.status}: ${response.statusText}`, "error");
+    }
+}
+
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getAlreadyExistingUserPayments, getCompetitionData, updatePayment};
