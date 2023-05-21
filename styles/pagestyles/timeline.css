@@ -55,3 +55,29 @@
   background: #005792; 
 }
 
+@media screen and (max-width: 768px) {
+  .timeline {
+    margin: 20px 0;
+  }
+
+  .timeline:before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding: 10px;
+  }
+
+  .timeline-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    float: none;
+  }
+
+  .timeline-item:nth-child(even) .timeline-date {
+    left: auto;
+  }
+}
