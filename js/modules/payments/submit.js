@@ -7,10 +7,9 @@ export async function submitArrears(event) {
     const paymentData = {
         payment
     }
-
     const response = await updatePayment(paymentData, uid);
 
     if(response) {
-        event.target["restance"].dataset.arrears = event.target["restance"].value;        
+        event.target["restance"].dataset.arrears = event.target["restance"].value;
     }
 }

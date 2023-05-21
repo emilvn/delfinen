@@ -153,7 +153,6 @@ async function updatePayment(paymentData, uid) {
     const response = await sendFetchToDB(paymentURI, "PUT", paymentData);
 
     if (response.ok){
-        console.log('Training time added');
         showToastMessage("Restance opdateret!", "success");
         return await response.json();
     }
