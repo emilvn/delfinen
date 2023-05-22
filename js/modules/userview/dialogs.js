@@ -104,7 +104,6 @@ export function showTrainingTimeDialog(event) {
   const form = document.querySelector("#add_training_time_form");
   form.dataset.id = uid;
   const dialog = document.querySelector("#add_training_time");
-  //chr: her laver jeg kode til at sætte tiderne. Her bliver userId også sat.
   showTrainingTimes(uid);
 
   form.addEventListener("submit", submitNewTrainingTime);
@@ -146,11 +145,6 @@ async function getTrainingTimesByUid(uid) {
 
 export function showTrainingTime(trainingTimeObj) {
   const myHtml = /*html*/ `
-    <tr>
-     <th>Diciplin</th>
-     <th>Dato</th>
-     <th>Tid</th>      
-    </tr>
     <tr>
      <td>${capitalize(categoriesInDanish[trainingTimeObj.category])}</td>
      <td>${trainingTimeObj.date}</td>
@@ -217,19 +211,13 @@ async function getCompetitionTimesByUid(uid) {
   return memberTimes;
 }
 
-export function showCompetitionTime(competitionTimeObejct) {
+export function showCompetitionTime(competitionTimeObject) {
   const myHtml = /*html*/ `
-    <tr>
-     <th>Stævne</th>
-     <th>Diciplin</th>
-     <th>Placering</th>
-     <th>Tid</th>
-    </tr>
     <tr> 
-     <td>${competitionTimeObejct.competition}</td>
-     <td>${competitionTimeObejct.category}</td>
-     <td>Position: ${competitionTimeObejct.position}</td>
-     <td>Sek: ${competitionTimeObejct.time}</td>
+     <td>${competitionTimeObject.competition}</td>
+     <td>${capitalize(categoriesInDanish[competitionTimeObject.category])}</td>
+     <td>${competitionTimeObject.position}</td>
+     <td>Sek: ${competitionTimeObject.time}</td>
     </tr>
     `;
 

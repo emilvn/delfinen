@@ -111,7 +111,16 @@
 
           <input type="submit" id="training-time-submit" value="Opret tid" />
         </form>
-        <table id="training_time_members"></table>
+        <table>
+          <thead>
+            <tr>
+              <th>Disciplin</th>
+              <th>Dato</th>
+              <th>Tid</th>
+            </tr>
+          </thead>
+          <tbody id="training_time_members"></tbody>
+        </table>
       </dialog>
       <!--delete dialog-->
       <dialog id="dialog_delete_user">
@@ -137,7 +146,17 @@
           <label for="competitive_position">Placering: </label><input type="text" id="competitive_position" name="competitive_position" maxlength="2" required placeholder="Placering" />
           <input type="submit" value="Opret Tid" />
         </form>
-        <table id="competitive_time_members"></table>
+        <table>
+          <thead>
+            <tr>
+                <th>Stævne</th>
+                <th>Disciplin</th>
+                <th>Placering</th>
+                <th>Tid</th>
+            </tr>
+          </thead>
+          <tbody id="competitive_time_members"></tbody>
+        </table>
       </dialog>
 
       <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
