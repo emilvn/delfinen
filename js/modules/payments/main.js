@@ -7,10 +7,11 @@ import {paymentSearchChanged} from "./search.js";
 window.addEventListener('load', main);
 
 export let users;
+export let payments;
 
 async function main(){
     users = await getAllUsers();
-    const payments = await getAlreadyExistingUserPayments();
+    payments = await getAlreadyExistingUserPayments();
     sortUsersNameAlphabetically(users);
     displayUsers(users);
     calculateAndDisplayPayments(users, payments);
