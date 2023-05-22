@@ -11,5 +11,7 @@ export async function submitArrears(event) {
 
     if(response) {
         event.target["restance"].dataset.arrears = event.target["restance"].value;
+        event.target.querySelector("input[type='button']").disabled = true;
+        event.target.querySelector("input[type='submit']").disabled = true;
     }
 }
