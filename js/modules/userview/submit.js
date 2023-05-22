@@ -66,6 +66,7 @@ function submitUpdate(event){
     }
     updateUser(uid, user);
     form.parentElement.close();
+    form.reset();
 }
 
 /* ========== Training time ========== */

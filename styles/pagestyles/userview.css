@@ -165,6 +165,9 @@ form input[type=checkbox]{
     filter: drop-shadow(0 0 1px black);
     padding: 1em;
 }
+#userGrid article a{
+    color: black;
+}
 #userGrid article h3{
     text-align: center;
 }

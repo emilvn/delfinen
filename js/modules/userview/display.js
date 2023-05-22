@@ -24,8 +24,8 @@ function showUser(user){
 	<article>
 		<div>
 			<h3>${user["name"]}</h3>
-			<p>Email: ${user["email"]}</p>
-			<p>${(user["phone"])?`Telefon: ${user["phone"]}`:""}</p>
+			<p>Email: <a href="mailto:${user["email"]}">${user["email"]}</a></p>
+			<p>${(user["phone"])?`Telefon: <a href="tel:+45${user["phone"]}">${user["phone"]}</a>`:""}</p>
 			<p>${userAge} år</p>
 			<p>Medlemskab: ${(user["membershipPassive"])?"Passiv":"Aktiv"}</p>
 			<p>${(user["competitive"])?"Konkurrencesvømmer":"Motionist"}</p>
