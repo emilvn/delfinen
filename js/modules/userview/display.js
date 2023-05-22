@@ -1,6 +1,7 @@
 import {getAllUsers} from "../../rest/fetch.js";
 import {showCompetitionDialog, showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
 import {calculateAge} from "../helpers/helpers.js";
+import {categoriesInDanish} from "../competitiontimes/options.js";
 
 export let userArr;
 
@@ -68,13 +69,16 @@ function showUser(user){
 
 function generateCategoryHTML(categories) {
 	if(categories) {
-		let categoryHTML = /* html */ `<p>Aktive discipliner: </p>`
-		for (const category in categories) {
-			categoryHTML += /* html */ `
-				<p>${category}</p>
-			`
+		let categoryString = /* html */ `Aktive discipliner: `
+		for (let i = 0; i<categories.length; i++) {
+			if(i !== categories.length-1){
+				categoryString += categoriesInDanish[categories[i]] + ", ";
+			}
+			else{
+				categoryString += categoriesInDanish[categories[i]] + "."
+			}
 		}
-		return categoryHTML;
+		return /*html*/`<p>${categoryString}</p>`;
 	}
 }
 
