@@ -88,13 +88,18 @@ async function fillUpdateForm(uid) {
 	if (user["competitive"]) {
 		form.querySelector("fieldset").style.display = "grid";
 		if(user["categories"]){
-			for (const category of user["categories"]) {
-				for (let i = 0; i < form["categories"].length; i++) {
-					if (category === form["categories"][i].value) {
-						form["categories"][i].checked = true;
-					}
-				}
+			for(let i = 0; i<form.categories.length; i++){
+				form.categories[i].checked = false;
 			}
+			for (const category of user["categories"]) {
+				form.querySelector(`#update_user_${category}`).checked = true;
+			}
+		}
+	}
+	else {
+		form.querySelector("fieldset").style.display = "none";
+		for(let i = 0; i<form.categories.length; i++){
+			form.categories[i].checked = false;
 		}
 	}
 }
