@@ -148,7 +148,7 @@ export function showTrainingTime(trainingTimeObj) {
     <tr>
      <td>${capitalize(categoriesInDanish[trainingTimeObj.category])}</td>
      <td>${trainingTimeObj.date}</td>
-     <td>Sek: ${trainingTimeObj.time}</td>
+     <td>${trainingTimeObj.time}s</td>
     </tr>
     `;
 
@@ -217,7 +217,7 @@ export function showCompetitionTime(competitionTimeObject) {
      <td>${competitionTimeObject.competition}</td>
      <td>${capitalize(categoriesInDanish[competitionTimeObject.category])}</td>
      <td>${competitionTimeObject.position}</td>
-     <td>Sek: ${competitionTimeObject.time}</td>
+     <td>${competitionTimeObject.time}s</td>
     </tr>
     `;
 
