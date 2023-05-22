@@ -56,11 +56,11 @@ function submitUpdate(event){
     }
     if (form["competitive"].checked) {
         const categories = form.querySelectorAll("input[name='categories']");
-        user.categories = {};
+        user.categories = [];
         for (let i = 0; i < categories.length; i++) {
             if (categories[i].checked) {
                 const category = categories[i].value;
-                user.categories[`${category}`] = category;
+                user.categories.push(category);
             }
         }
     }

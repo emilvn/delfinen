@@ -87,10 +87,12 @@ async function fillUpdateForm(uid) {
 
 	if (user["competitive"]) {
 		form.querySelector("fieldset").style.display = "grid";
-		for (const category in user["categories"]) {
-			for (let i = 0; i < form["categories"].length; i++) {
-				if (user["categories"][category] === form["categories"][i].value) {
-					form["categories"][i].checked = true;
+		if(user["categories"]){
+			for (const category of user["categories"]) {
+				for (let i = 0; i < form["categories"].length; i++) {
+					if (category === form["categories"][i].value) {
+						form["categories"][i].checked = true;
+					}
 				}
 			}
 		}
