@@ -122,7 +122,6 @@ function closeTrainingDialog() {
 
 async function showTrainingTimes(uid) {
 	const trainingTimeArr = await getTrainingTimesByUid(uid);
-	console.log(trainingTimeArr);
 	document.querySelector("#training_time_members").innerHTML = "";
 	for (let i = 0; i < trainingTimeArr.length; i++) {
 		showTrainingTime(trainingTimeArr[i]);
@@ -180,9 +179,7 @@ export function closeCompetitiveDialog(event) {
 }
 
 async function showCompetitionTimes(uid) {
-	console.log();
 	const competitionTimeArr = await getCompetitionTimesByUid(uid);
-	console.log(competitionTimeArr);
 	document.querySelector("#competitive_time_members").innerHTML = "";
 
 	for (let i = 0; i < competitionTimeArr.length; i++) {
