@@ -59,30 +59,35 @@
     background-image: url("../../data/images/one.png");
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
 }
 #competitor-number-2__pedestal{
     height: 45vh;
     background-image: url("../../data/images/two.png");
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
 }
 #competitor-number-3__pedestal{
     height: 40vh;
     background-image: url("../../data/images/three.png");
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
 }
 #competitor-number-4__pedestal{
     height: 35vh;
     background-image: url("../../data/images/four.png");
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
 }
 #competitor-number-5__pedestal{
     height: 30vh;
     background-image: url("../../data/images/five.png");
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
 }
 @media (max-width: 1000px) {
     #competition-times-container{
