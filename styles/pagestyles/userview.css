@@ -28,7 +28,7 @@ form.valid {
 }
 #add_training_time_form, #update_user_form {
   display: grid;
-  grid-template-columns: 20rem 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-row-gap: 1rem;
   grid-column-gap: 2rem;
 }
@@ -96,7 +96,7 @@ form input[type=checkbox]{
 #post_competitive_dialog, #add_training_time {
     max-height: 50vh;
     overflow: auto;
-    width: 40vw;
+    min-width: 40vw;
 }
 
 #post_competitive_dialog table, #add_training_time table {
