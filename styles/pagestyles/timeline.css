@@ -1,3 +1,7 @@
+body{
+  background-color: #6CB4EE;
+}
+
 .timeline {
   position: relative;
   margin: 40px 0;
@@ -55,29 +59,29 @@
   background: #005792; 
 }
 
-@media screen and (max-width: 768px) {
-  .timeline {
-    margin: 20px 0;
-  }
+/* Media Queries */
 
-  .timeline:before {
-    left: 20px;
-  }
-
-  .timeline-item {
-    padding: 10px;
-  }
-
+/* 1280x570 */
+@media (max-width: 1280px) {
   .timeline-content {
     width: 100%;
+    margin-top: 20px; 
+  }
+}
+
+/* 1920x1080 */
+@media (min-width: 1281px) and (max-width: 1920px) {
+  .timeline-content {
+    width: 50%;
+    margin-top: 20px; 
+  }
+}
+
+/* iPhone */
+@media (max-width: 480px) {
+  .timeline-content {
+    width: 90%;
     padding: 10px;
-  }
-
-  .timeline-item:nth-child(even) .timeline-content {
-    float: none;
-  }
-
-  .timeline-item:nth-child(even) .timeline-date {
-    left: auto;
+    margin-top: 20px; 
   }
 }
