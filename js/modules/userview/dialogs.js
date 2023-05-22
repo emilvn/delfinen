@@ -1,4 +1,3 @@
-"use strict";
 import { submitCompetitiveTime, submitDelete, submitNewTrainingTime, submitUpdate, submitUser } from "./submit.js";
 import { getOneUser, getTrainingTimeByCategory, getCompetitionData } from "../../rest/fetch.js";
 import { categoriesInDanish } from "../competitiontimes/options.js";
