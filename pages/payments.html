@@ -7,17 +7,27 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Svømmeklubben Delfinen - Betalinger</title>
         <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/pagestyles/payments.css">
         <link rel="shortcut icon" href="#" type="image/x-icon">
     </head>
     <body>
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
         <main>
+            
+         <table id="user-name"> 
+            <tr>
+                <th>Navn</th> 
+                <th>Restance</th>
+            </tr>
+        </table>
+
 
             <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
             <div id="toast-container"></div>
         </main>
         <!--main script-->
         <script type="module" src="../js/main.js"></script>
+        <script type="module" src="../js/modules/payments/main.js"></script>
     </body>
 </html>

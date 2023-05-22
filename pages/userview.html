@@ -1,150 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Svømmeklubben Delfinen - Brugere</title>
-        <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/pagestyles/userview.css">
-        <link rel="shortcut icon" href="#" type="image/x-icon">
-    </head>
-    <body>
-        <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main>
-            <!-- Create User Button -->
-            <div id="post_user_dialog_open" class="btn">Opret medlem</div>
-            <!-- Create User Dialog -->
-            <dialog id="post_user_dialog">
-                <button id="post-close-button" class="close-button">X</button>
-                <form id="post_user_form">
-                    <label for="post_user_name">Navn:</label>
-                    <input type="text" id="post_user_name" name="post_user_name" required>
-                    <label for="post_user_email">E-mail:</label>
-                    <input type="email" id="post_user_email" name="post_user_email" required>
-                    <label for="post_user_phone">Tlf nr.:</label>
-                    <input type="text" id="post_user_phone" name="post_user_phone">
-                    <label for="post_user_birthdate">Fødselsdato:</label>
-                    <input type="date" id="post_user_birthdate" name="post_user_birthdate" min="1900-01-01" required>
-                    <label for="post_user_competitive">Konkurrencesvømmer: </label>
-                    <input type="checkbox" id="post_user_competitive" name="competitive">
-                    <fieldset class="user_fieldset">
-                        <legend>Vælg disciplin(er): </legend>
-                        <label for="post_user_breaststroke">Brystsvømning: </label><input type="checkbox" id="post_user_breaststroke" name="post_user_categories" value="Brystsvømning">
-                        <label for="post_user_butterfly">Butterfly: </label><input type="checkbox" id="post_user_butterfly" name="post_user_categories" value="Butterfly">
-                        <label for="post_user_crawl">Crawl: </label><input type="checkbox" id="post_user_crawl" name="post_user_categories" value="Crawl">
-                        <label for="post_user_back_crawl">Rygcrawl: </label><input type="checkbox" id="post_user_back_crawl" name="post_user_categories" value="Rygcrawl">
-                    </fieldset>
-                    <input type="submit" id="post_user_btn_submit" value="Opret medlem">
-                    <input type="reset" value="Ryd form">
-                </form>
-            </dialog>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Svømmeklubben Delfinen - Brugere</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/pagestyles/userview.css" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+  </head>
+  <body>
+    <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
+    <main>
+      <!-- Create User Button -->
+      <div id="post_user_dialog_open" class="btn">Opret medlem</div>
+      <!-- Create User Dialog -->
+      <dialog id="post_user_dialog">
+        <button id="post-close-button" class="close-button">X</button>
+        <form id="post_user_form">
+          <label for="post_user_name">Navn:</label>
+          <input type="text" id="post_user_name" name="post_user_name" required />
+          <label for="post_user_email">E-mail:</label>
+          <input type="email" id="post_user_email" name="post_user_email" required />
+          <label for="post_user_phone">Tlf nr.:</label>
+          <input type="text" id="post_user_phone" name="post_user_phone" />
+          <label for="post_user_birthdate">Fødselsdato:</label>
+          <input type="date" id="post_user_birthdate" name="post_user_birthdate" min="1900-01-01" required />
+          <label for="post_user_competitive">Konkurrencesvømmer: </label>
+          <input type="checkbox" id="post_user_competitive" name="competitive" />
+          <fieldset class="user_fieldset">
+            <legend>Vælg disciplin(er):</legend>
+            <label for="post_user_breaststroke">Brystsvømning: </label><input type="checkbox" id="post_user_breaststroke" name="post_user_categories" value="Brystsvømning" />
+            <label for="post_user_butterfly">Butterfly: </label><input type="checkbox" id="post_user_butterfly" name="post_user_categories" value="Butterfly" />
+            <label for="post_user_crawl">Crawl: </label><input type="checkbox" id="post_user_crawl" name="post_user_categories" value="Crawl" /> <label for="post_user_back_crawl">Rygcrawl: </label
+            ><input type="checkbox" id="post_user_back_crawl" name="post_user_categories" value="Rygcrawl" />
+          </fieldset>
+          <input type="submit" id="post_user_btn_submit" value="Opret medlem" />
+          <input type="reset" value="Ryd form" />
+        </form>
+      </dialog>
 
-            <!--Update user dialog-->
-            <dialog id="update_user_dialog">
-                <button id="update-close-button" class="close-button">X</button>
-                <form id="update_user_form">
-                    <label for="update_user_name">Navn:</label>
-                    <input type="text" id="update_user_name" name="name" required>
-                    <label for="update_user_email">E-mail:</label>
-                    <input type="email" id="update_user_email" name="email" required>
-                    <label for="update_user_phone">Tlf nr.:</label>
-                    <input type="text" id="update_user_phone" name="phone">
-                    <label for="update_user_birthdate">Fødselsdato:</label>
-                    <input type="date" id="update_user_birthdate" name="birthdate" min="1900-01-01" required>
-                    <label for="update_user_membershippassive">Passivt medlemskab</label>
-                    <input type="checkbox" id="update_user_membershippassive" name="membershippassive">
-                    <label for="update_user_competitive">Konkurrencesvømmer: </label>
-                    <input type="checkbox" id="update_user_competitive" name="competitive">
-                    <fieldset class="user_fieldset">
-                        <legend>Vælg disciplin(er): </legend>
-                        <label for="update_user_breaststroke">Brystsvømning: </label><input type="checkbox" id="update_user_breaststroke" name="categories" value="Brystsvømning">
-                        <label for="update_user_butterfly">Butterfly: </label><input type="checkbox" id="update_user_butterfly" name="categories" value="Butterfly">
-                        <label for="update_user_crawl">Crawl: </label><input type="checkbox" id="update_user_crawl" name="categories" value="Crawl">
-                        <label for="update_user_back_crawl">Rygcrawl: </label><input type="checkbox" id="update_user_back_crawl" name="categories" value="Rygcrawl">
-                    </fieldset>
-                    <input type="submit" id="update_user_btn_submit" value="Opdater medlem">
-                    <input type="reset" value="Ryd form">
-                </form>
-            </dialog>
+      <!--Update user dialog-->
+      <dialog id="update_user_dialog">
+        <button id="update-close-button" class="close-button">X</button>
+        <form id="update_user_form">
+          <label for="update_user_name">Navn:</label>
+          <input type="text" id="update_user_name" name="name" required />
+          <label for="update_user_email">E-mail:</label>
+          <input type="email" id="update_user_email" name="email" required />
+          <label for="update_user_phone">Tlf nr.:</label>
+          <input type="text" id="update_user_phone" name="phone" />
+          <label for="update_user_birthdate">Fødselsdato:</label>
+          <input type="date" id="update_user_birthdate" name="birthdate" min="1900-01-01" required />
+          <label for="update_user_membershippassive">Passivt medlemskab</label>
+          <input type="checkbox" id="update_user_membershippassive" name="membershippassive" />
+          <label for="update_user_competitive">Konkurrencesvømmer: </label>
+          <input type="checkbox" id="update_user_competitive" name="competitive" />
+          <fieldset class="user_fieldset">
+            <legend>Vælg disciplin(er):</legend>
+            <label for="update_user_breaststroke">Brystsvømning: </label><input type="checkbox" id="update_user_breaststroke" name="categories" value="Brystsvømning" />
+            <label for="update_user_butterfly">Butterfly: </label><input type="checkbox" id="update_user_butterfly" name="categories" value="Butterfly" /> <label for="update_user_crawl">Crawl: </label
+            ><input type="checkbox" id="update_user_crawl" name="categories" value="Crawl" /> <label for="update_user_back_crawl">Rygcrawl: </label
+            ><input type="checkbox" id="update_user_back_crawl" name="categories" value="Rygcrawl" />
+          </fieldset>
+          <input type="submit" id="update_user_btn_submit" value="Opdater medlem" />
+          <input type="reset" value="Ryd form" />
+        </form>
+      </dialog>
 
-            <!--search and filter-->
-            <section id="user-search-div">
-                <div>
-                    <label for="userSearch">Søg:</label>
-                    <input type="search" id="userSearch" name="search" placeholder="Søg efter navn">
-                </div>
-                <div>
-                    <div>
-                        <input type="checkbox" name="competitiveFilter" id="userCompetitiveFilter">
-                        <label for="userCompetitiveFilter">Konkurrencesvømmere</label>
-                    </div>
-                    <div>
-                        <select name="filter" id="userTeamFilter">
-                            <option value="all" selected>Alle</option>
-                            <option value="junior">Junior</option>
-                            <option value="senior">Senior</option>
-                        </select>
-                        <label for="userTeamFilter">Hold</label>
-                    </div>
-                </div>
-            </section>
-            <!--Insert users here with js-->
-            <section id="userGrid"></section>
+      <!--search and filter-->
+      <section id="user-search-div">
+        <div>
+          <label for="userSearch">Søg:</label>
+          <input type="search" id="userSearch" name="search" placeholder="Søg efter navn" />
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" name="competitiveFilter" id="userCompetitiveFilter" />
+            <label for="userCompetitiveFilter">Konkurrencesvømmere</label>
+          </div>
+          <div>
+            <select name="filter" id="userTeamFilter">
+              <option value="all" selected>Alle</option>
+              <option value="junior">Junior</option>
+              <option value="senior">Senior</option>
+            </select>
+            <label for="userTeamFilter">Hold</label>
+          </div>
+        </div>
+      </section>
+      <!--Insert users here with js-->
+      <section id="userGrid"></section>
 
-        <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-             <dialog id="add_training_time">
-                 <button id="training-time-close-button" class="close-button">X</button>
-                 <form id="add_training_time_form">
-                    <label for="training-time-category">Vælg en disciplin:</label>
-                    <select name="category" id="training-time-category" >
-                        <option value="Crawl">Crawl</option>
-                        <option value="Butterfly">Butterfly</option>
-                        <option value="Brystsvøming">Brystsvøming</option>
-                        <option value="rygcrawl">rygcrawl</option>
-                    </select>
-                    <label for="date-time">Select date and time:</label>
-                    <input type="date" id="date-time" name="date-time" min="1900-01-01">
+      <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
+      <dialog id="add_training_time">
+        <button id="training-time-close-button" class="close-button">X</button>
+        <form id="add_training_time_form">
+          <label for="training-time-category">Vælg en disciplin:</label>
+          <select name="category" id="training-time-category">
+            <option value="crawl">Crawl</option>
+            <option value="butterfly">Butterfly</option>
+            <option value="breaststroke">Brystsvøming</option>
+            <option value="backcrawl">rygcrawl</option>
+          </select>
+          <label for="date-time">Select date and time:</label>
+          <input type="date" id="date-time" name="date-time" min="1900-01-01" />
 
-                    <label for="training-time-seconds" >Tid</label>
-                    <input type="seconds" id="training-time-seconds" name="seconds" required placeholder="tid i sekunder">
+          <label for="training-time-seconds">Tid</label>
+          <input type="seconds" id="training-time-seconds" name="seconds" required placeholder="tid i sekunder" />
 
-                    <input type="submit" id="training-time-submit" value="Opret tid">
+          <input type="submit" id="training-time-submit" value="Opret tid" />
+        </form>
+        <table id="training_time_members"></table>
+      </dialog>
+      <!--delete dialog-->
+      <dialog id="dialog_delete_user">
+        <h2>Er du sikker på at du vil slette</h2>
+        <form id="form_delete_user">
+          <input id="deleteCanceled" type="button" class="btn-cancel" value="Annullér" />
+          <input type="submit" value="Ja" />
+        </form>
+      </dialog>
+      <!-- competitive time dialog -->
+      <dialog id="post_competitive_dialog">
+        <button id="competitive-time-close-button" class="close-button">X</button>
+        <form id="post_competitive_form">
+          <label for="competitive_event">Stævne: </label><input type="text" id="competitive_event" name="competitive_event" required placeholder="Stævne" />
+          <label for="competitive_discipline">Disciplin: </label>
+          <select type="email" id="competitive_discipline" name="competitive_discipline" required>
+            <option value="breaststroke">Brystsvømning</option>
+            <option value="butterfly">Butterfly</option>
+            <option value="crawl">Crawl</option>
+            <option value="backcrawl">Rygcrawl</option>
+          </select>
+          <label for="competitive_time">Tid: </label><input type="text" id="competitive_time" name="competitive_time" placeholder="Tid i sekunder" required />
+          <label for="competitive_position">Placering: </label><input type="text" id="competitive_position" name="competitive_position" maxlength="2" required placeholder="Placering" />
+          <input type="submit" value="Opret Tid" />
+        </form>
+        <table id="competitive_time_members"></table>
+      </dialog>
 
-                </form>
-
-            </dialog>
-            <!--delete dialog-->
-            <dialog id="dialog_delete_user">
-                <h2>Er du sikker på at du vil slette</h2>
-                <form id="form_delete_user">
-                    <input id="deleteCanceled" type="button" class="btn-cancel" value="Annullér">
-                    <input type="submit" value="Ja">
-                </form>
-            </dialog>
-          <!-- competitive time dialog -->
-            <dialog id="post_competitive_dialog">
-                <button id="competitive-time-close-button" class="close-button">X</button>
-                <form id="post_competitive_form">
-                    <label for="competitive_event">Stævne: </label><input type="text" id="competitive_event" name="competitive_event" required>
-                    <label for="competitive_discipline">Disciplin: </label>
-                    <select type="email" id="competitive_discipline" name="competitive_discipline" required>
-                        <option value="breaststroke">Brystsvømning</option>
-                        <option value="butterfly">Butterfly</option>
-                        <option value="crawl">Crawl</option>
-                        <option value="back_crawl">Rygcrawl</option>
-                    </select>
-                    <label for="competitive_time">Tid: </label><input type="text" id="competitive_time" name="competitive_time" placeholder="i sekunder" required>
-                    <label for="competitive_position">Placering: </label><input type="text" id="competitive_position" name="competitive_position" maxlength="2" required>
-                    <input type="submit" value="Opret Tid">
-                </form>
-            </dialog>
-            <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
-            <div id="toast-container"></div>
-        </main>
-    </body>
-    <!--main script-->
-    <script type="module" src="../js/main.js"></script>
-    <script type="module" src="../js/modules/userview/main.js"></script>
+      <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
+      <div id="toast-container"></div>
+    </main>
+  </body>
+  <!--main script-->
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/modules/userview/main.js"></script>
 </html>

@@ -29,6 +29,6 @@ function setMaxDates(){
 	/* Update and create forms */
 	setTodayAsMaxDate("post_user_birthdate");
 	setTodayAsMaxDate("update_user_birthdate");
-	/* training time form */
+	/* trainingtimes time form */
 	setTodayAsMaxDate("date-time");
 }
