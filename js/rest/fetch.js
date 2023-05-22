@@ -142,6 +142,15 @@ async function getTrainingTimeByCategory(category, id) {
   }
 }
 
+async function getTrainingTimesByCategory(category) {
+  const uri = `trainingtimes/${category}.json`;
+  const response = await sendFetchToDB(uri, "GET");
+
+  if (response.ok) {
+    return prepareData(await response.json());
+  }
+}
+
 async function getAlreadyExistingUserPayments() {
   const paymentsURI = `payments.json`;
   const response = await sendFetchToDB(paymentsURI, "GET");
@@ -168,4 +177,4 @@ async function updatePayment(paymentData, uid) {
     }
 }
 
-export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getAlreadyExistingUserPayments, getCompetitionData, updatePayment, getTrainingTimeByCategory};
+export {createUser, deleteUser, getAllUsers, updateUser, getOneUser, addTrainingtime, getCoaches, postCompetitiveTime, getPriceData, getAlreadyExistingUserPayments, getCompetitionData, updatePayment, getTrainingTimeByCategory, getTrainingTimesByCategory};

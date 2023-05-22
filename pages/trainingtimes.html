@@ -7,17 +7,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Svømmeklubben Delfinen - Træningstider</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/pagestyles/training.css">
     <link rel="shortcut icon" href="#" type="image/x-icon">
 </head>
     <body>
 
         <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-        <main>
+        <main id="training-main">
+            <div class="training-header">
 
+            </div>
+            <div id="training-category__div">
+                <div>
+                    <label for="training-category__select">Disciplin</label>
+                    <select name="category" id="training-category__select">
+                        <option value="breaststroke">Brystsvømning</option>
+                        <option value="butterfly">Fly</option>
+                        <option value="crawl">Crawl</option>
+                        <option value="backcrawl">Rygcrawl</option>
+                    </select>
+                </div>
+                <form id="training-team-select">
+                    <label for="training-team-select__junior">Junior</label>
+                    <input type="radio" name="teamselect" id="training-team-select__junior" value="junior">
+                    <label for="training-team-select__senior">Senior</label>
+                    <input type="radio" name="teamselect" id="training-team-select__senior" value="senior" checked>
+                </form>
+            </div>
+            
+            <section id="training-grid-container">
+                <div id="training-grid-head">
+                    <span></span>
+                </div>
+
+            </section>
+            
             <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
             <div id="toast-container"></div>
         </main>
         <!--main script-->
         <script type="module" src="../js/main.js"></script>
+        <script type="module" src="../js/modules/trainingtimes/main.js"></script>
     </body>
 </html>
