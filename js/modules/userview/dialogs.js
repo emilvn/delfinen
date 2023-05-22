@@ -122,7 +122,6 @@ function closeTrainingDialog() {
   form.reset();
 }
 
-//har lavet denne til at vise alle tider
 async function showTrainingTimes(uid) {
   const trainingTimeArr = await getTrainingTimesByUid(uid);
   console.log(trainingTimeArr);
@@ -132,7 +131,6 @@ async function showTrainingTimes(uid) {
   }
 }
 
-//chr: Denne henter alle træningstider på et medlem.
 async function getTrainingTimesByUid(uid) {
   const categories = ["breaststroke", "butterfly", "crawl", "backcrawl"];
   const trainingTimeArr = [];
@@ -146,10 +144,7 @@ async function getTrainingTimesByUid(uid) {
   return trainingTimeArr;
 }
 
-//chr: tilpas denne funktion. Har ikke ændret i den, udover at sørge for at du får den rigtige parameter med. Jeg har omnavngivet den så den passer bedre til resten af navngivningen.
 export function showTrainingTime(trainingTimeObj) {
-  console.log(trainingTimeObj);
-  //chr: hvad er en "hr?"
   const myHtml = /*html*/ `
     <tr>
      <th>Diciplin</th>
