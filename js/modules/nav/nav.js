@@ -36,6 +36,7 @@ function generateNavHTML() {
   document.querySelector(`#${activePage.replace(".", "-")}`).classList.add("active");
 }
 
+
 function displayOrdinaryUserNav() {
   document.querySelector("#userview-html").style.display = "none";
   document.querySelector("#payments-html").style.display = "none";
@@ -43,8 +44,15 @@ function displayOrdinaryUserNav() {
 }
 
 function displayCoachNav() {
+    const coachData = localStorage.getItem("username");
+    const paymentsNav = document.querySelector("#payments-html");
+    const incomeNav = document.querySelector("#income-html");
 
- 
+    if (coachData === "træner") {
+        console.log("der er hul igennem");
+        
+    }
+  
 }
 
-export { generateNavHTML};
+export { generateNavHTML, displayCoachNav};
