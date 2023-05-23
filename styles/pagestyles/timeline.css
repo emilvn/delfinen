@@ -24,7 +24,7 @@ body{
 }
 
 .timeline-animation {
-  animation: timeline-animation 10s linear 1;
+  animation: timeline-animation 8s linear 1;
 }
 
 @keyframes timeline-animation {
@@ -87,6 +87,10 @@ body{
    display: none;
   } 
 
+  .anchor{
+    display: none;
+  }
+
   .timeline-content1,
   .timeline-content2,
   .timeline-content3 {
@@ -95,5 +99,28 @@ body{
     width: 90%;
     margin: auto;
     padding: 0;
+  }
+}
+
+/*------------ anchor animation ------------ */
+
+.anchor {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-image: url(/data/images/drop-anchor.png);
+  background-size: cover;
+  animation: anchor-animation 10s linear 1;
+}
+
+@keyframes anchor-animation {
+  0% {
+    top: 15%;
+  }
+  100% {
+    top:92%;
   }
 }
