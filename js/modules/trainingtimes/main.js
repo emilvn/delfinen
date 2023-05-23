@@ -1,4 +1,4 @@
-import {displayTrainingTimes, setGlobalDisplayArray, globalDisplayArray} from "./display.js"
+import {displayTrainingTimes, setGlobalDisplayArray, globalTeamDisplayArray} from "./display.js"
 import { searchForName } from "./search.js";
 
 window.addEventListener("load", main);
@@ -18,6 +18,6 @@ function setEventListeners() {
         input.addEventListener('change', displayTrainingTimes);
     });
     document.querySelector("#training-time-search").addEventListener("keyup", (event) => {
-        searchForName(event, globalDisplayArray);
+        searchForName(event, globalTeamDisplayArray);
     });
 }
