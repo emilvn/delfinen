@@ -1,6 +1,8 @@
 import { showUser } from "../userview/display.js";
 
 function generateNavHTML() {
+  const currentUser = localStorage.getItem("username");
+  const loginText = currentUser ? "LOG UD" : "LOG IND";
   const navHTML = /* html */ `
         <nav>
             <div class="siteTitle">
@@ -28,7 +30,7 @@ function generateNavHTML() {
                     <a href="competitiontimes.html">KONKURRENCE</a>
                 </div>
                 <div class="navButton" id="login-html">
-                    <a href="login.html">LOG IND</a>
+                    <a href="login.html">${loginText}</a>
                 </div>
             </div>
         </nav>
@@ -45,31 +47,23 @@ function displayOrdinaryUserNav() {
 }
 
 function displayCoachNav() {
-  const coachData = localStorage.getItem("username");
-
-  if (coachData === "træner") {
-    console.log("der er hul igennem");
-    document.querySelector("#payments-html").style.display = "none";
-    document.querySelector("#income-html").style.display = "none";
+  document.querySelector("#payments-html").style.display = "none";
+  document.querySelector("#income-html").style.display = "none";
+  if (document.URL.includes("userview.html")) {
     removeButtonsInUserviewForTrainer();
-  } else if (coachData === "admin") {
-    console.log("Admin log in");
   }
 }
 
 function removeButtonsInUserviewForTrainer() {
-    console.log("funktionen kører");
-    const coachData = localStorage.getItem("username");
+  const deleteBtns = document.querySelectorAll(".delete-user-btn");
+  const editBtns = document.querySelectorAll(".edit-user-btn");
 
-    if (coachData === "træner") {
-    document.querySelector(".delete-user-btn").style.display = "none";
-    document.querySelector(".edit-user-btn").style.display = "none";
-    } else {
-        console.log("something went wrong");
-    }
-    
+  console.log(deleteBtns);
 
-    
+  for (let i = 0; i < deleteBtns.length; i++) {
+    deleteBtns[i].style.display = "none";
+    editBtns[i].style.display = "none";
+  }
 }
 
-export { generateNavHTML, displayCoachNav, displayOrdinaryUserNav};
+export { generateNavHTML, displayCoachNav, displayOrdinaryUserNav };

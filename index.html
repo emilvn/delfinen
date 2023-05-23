@@ -1,93 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Svømmeklubben Delfinen - Startside</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/pagestyles/timeline.css">
-    <link rel="stylesheet" href="styles/pagestyles/index.css">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/pagestyles/timeline.css" />
+    <link rel="stylesheet" href="styles/pagestyles/index.css" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+  </head>
+  <body>
     <!--KEEP THIS ON ALL PAGES-->
     <nav>
-        <div class="siteTitle">
-            <div class="siteLogo"></div>
-            <a href="index.html">Svømmeklubben <br> Delfinen</a>
+      <div class="siteTitle">
+        <div class="siteLogo"></div>
+        <a href="index.html"
+          >Svømmeklubben <br />
+          Delfinen</a
+        >
+      </div>
+      <div id="navExpandButton"></div>
+      <div class="navGrid">
+        <div id="userview-html" class="navButton">
+          <a href="pages/userview.html">MEDLEMMER</a>
         </div>
-        <div id="navExpandButton"></div>
-        <div class="navGrid">
-            <div class="navButton">
-                <a href="pages/userview.html">MEDLEMMER</a>
-            </div>
-            <div class="navButton">
-                <a href="pages/payments.html">BETALING</a>
-            </div>
-            <div class="navButton">
-                <a href="pages/income.html">INDTJENING</a>
-            </div>
-            <div class="navButton">
-                <a href="pages/coaches.html">TRÆNERE</a>
-            </div>
-            <div class="navButton">
-                <a href="pages/trainingtimes.html">TRÆNING</a>
-            </div>
-            <div class="navButton">
-                <a href="pages/competitiontimes.html">KONKURRENCE</a>
-            </div>
-            <div class="navButton" id="loginButton">
-                <a href="pages/login.html">LOG IND</a>
-            </div>
+        <div id="payments-html" class="navButton">
+          <a href="pages/payments.html">BETALING</a>
         </div>
+        <div id="income-html" class="navButton">
+          <a href="pages/income.html">INDTJENING</a>
+        </div>
+        <div id="coaches-html" class="navButton">
+          <a href="pages/coaches.html">TRÆNERE</a>
+        </div>
+        <div id="trainingtimes-html" class="navButton">
+          <a href="pages/trainingtimes.html">TRÆNING</a>
+        </div>
+        <div id="competitiontimes-html" class="navButton">
+          <a href="pages/competitiontimes.html">KONKURRENCE</a>
+        </div>
+        <div id="login-html" class="navButton">
+          <a href="pages/login.html">LOG IND</a>
+        </div>
+      </div>
     </nav>
 
     <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
     <main>
+      <section id="homeMainScreen">
+        <a class="goToAbout aboutArrows" href="#homeAboutScreen"></a>
+        <div class="content">
+          <h2>Svømmeklubben</h2>
+          <h2>Svømmeklubben</h2>
+          <h2>Delfinen</h2>
+          <h2>Delfinen</h2>
+        </div>
+      </section>
 
-       <section id="homeMainScreen">
-	        <a class="goToAbout aboutArrows" href="#homeAboutScreen"></a>
-           <div class="content">
-                <h2>Svømmeklubben</h2>
-                <h2>Svømmeklubben</h2>
-                <h2>Delfinen</h2>
-                <h2>Delfinen</h2>
+      <section id="homeAboutScreen">
+        <div class="homeAboutDiv">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Delfinens oprindelse</h3>
+                <p>
+                  Svømmeklubben Delfinen blev grundlagt af entusiastiske svømmere i en kystby. Med passion for vandet og delfiner ønskede de at skabe et fællesskab for alle aldre og
+                  færdighedsniveauer. Møder blev afholdt, og interessen spredte sig. Klubben blev opkaldt efter de elegante og legesyge delfiner, der symboliserede glæde og venskab. Med trænere og
+                  erfarne medlemmers hjælp blev Delfinen kendt for at forbedre svømmeteknikker og tilbyde svømmekurser til alle. Klubben blev berømt for sin inklusivitet og velkomst til alle. Delfinen
+                  blev et fantastisk sted for svømmere at udfolde sig og nyde vandet sammen.
+                </p>
+              </div>
             </div>
-        </section>
-
-        <section id="homeAboutScreen">
-            <div class="homeAboutDiv">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                        <h3>Delfinens oprindelse</h3>
-                        <p>Svømmeklubben Delfinen blev grundlagt af entusiastiske svømmere i en kystby. Med passion for vandet og delfiner ønskede de at skabe et fællesskab for alle aldre og færdighedsniveauer. Møder blev afholdt, og interessen spredte sig. Klubben blev opkaldt efter de elegante og legesyge delfiner, der symboliserede glæde og venskab. Med trænere og erfarne medlemmers hjælp blev Delfinen kendt for at forbedre svømmeteknikker og tilbyde svømmekurser til alle. Klubben blev berømt for sin inklusivitet og velkomst til alle. Delfinen blev et fantastisk sted for svømmere at udfolde sig og nyde vandet sammen.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                        <h3>Delfinens passion</h3>
-                        <p>Svømmeklubben Delfinens passion er at fremme glæden ved svømning og opbygge stærke venskaber. Vores ambition er at hjælpe medlemmer i alle aldre og færdighedsniveauer med at forbedre deres teknik og opnå deres svømmeambitioner. Delfinen er dedikeret til inklusivitet, samhørighed og skabe et positivt svømmemiljø.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                        <h3>Hvad kan du forvente af delfinen</h3>
-                        <p>Når man starter i svømmeklubben Delfinen, kan man forvente professionel træning, individuel opmærksomhed og et støttende fællesskab. Uanset om man er nybegynder eller erfaren svømmer, vil man blive hjulpet med at forbedre teknik, opbygge selvtillid og have det sjovt i vandet. Velkommen til en verden af svømmeeventyr!</p>
-                        </div>
-                    </div>
-                </div>                
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Delfinens passion</h3>
+                <p>
+                  Svømmeklubben Delfinens passion er at fremme glæden ved svømning og opbygge stærke venskaber. Vores ambition er at hjælpe medlemmer i alle aldre og færdighedsniveauer med at forbedre
+                  deres teknik og opnå deres svømmeambitioner. Delfinen er dedikeret til inklusivitet, samhørighed og skabe et positivt svømmemiljø.
+                </p>
+              </div>
             </div>
-            <a class="goBackFromAbout aboutArrows" href="#"></a>
-        </section>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Hvad kan du forvente af delfinen</h3>
+                <p>
+                  Når man starter i svømmeklubben Delfinen, kan man forvente professionel træning, individuel opmærksomhed og et støttende fællesskab. Uanset om man er nybegynder eller erfaren
+                  svømmer, vil man blive hjulpet med at forbedre teknik, opbygge selvtillid og have det sjovt i vandet. Velkommen til en verden af svømmeeventyr!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="goBackFromAbout aboutArrows" href="#"></a>
+      </section>
 
-        <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
-        <div id="toast-container"></div>
+      <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
+      <div id="toast-container"></div>
     </main>
     <!--main script-->
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/modules/index/main.js"></script>
-</body>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 import { showNavDropdown, showFullNav } from "./modules/nav/dropdown.js";
-import { generateNavHTML, displayCoachNav} from "./modules/nav/nav.js";
+import { generateNavHTML, displayCoachNav, displayOrdinaryUserNav} from "./modules/nav/nav.js";
 
 window.addEventListener("load", main);
 
@@ -7,11 +7,21 @@ function main() {
   if (!document.URL.includes("index.html") && document.URL.includes(".html")) {
     generateNavHTML();
   }
-  displayCoachNav();
+  checkCurrentUser();
   setEventListeners();
 }
 
 function setEventListeners() {
   document.querySelector("#navExpandButton").addEventListener("click", showNavDropdown);
   window.addEventListener("resize", showFullNav);
+}
+
+function checkCurrentUser() {
+  const currentUser = localStorage.getItem("username");
+
+  if (!currentUser) {
+    displayOrdinaryUserNav();
+  } else if (currentUser === "træner") {
+    displayCoachNav();
+  }
 }
