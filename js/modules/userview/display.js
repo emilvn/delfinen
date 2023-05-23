@@ -16,7 +16,7 @@ export function showUsers(users){
 	}
 }
 
-function showUser(user){
+export function showUser(user){
 	const userAge = calculateAge(user["birthdate"]);
 	const categoryHTML = generateCategoryHTML(user["categories"]);
 	const myHTML = /*html*/`

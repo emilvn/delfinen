@@ -1,3 +1,5 @@
+import { showUser } from "../userview/display.js";
+
 function generateNavHTML() {
   const navHTML = /* html */ `
         <nav>
@@ -36,7 +38,6 @@ function generateNavHTML() {
   document.querySelector(`#${activePage.replace(".", "-")}`).classList.add("active");
 }
 
-
 function displayOrdinaryUserNav() {
   document.querySelector("#userview-html").style.display = "none";
   document.querySelector("#payments-html").style.display = "none";
@@ -44,15 +45,21 @@ function displayOrdinaryUserNav() {
 }
 
 function displayCoachNav() {
-    const coachData = localStorage.getItem("username");
-    const paymentsNav = document.querySelector("#payments-html");
-    const incomeNav = document.querySelector("#income-html");
+  const coachData = localStorage.getItem("username");
 
-    if (coachData === "træner") {
-        console.log("der er hul igennem");
-        
-    }
-  
+  if (coachData === "træner") {
+    console.log("der er hul igennem");
+    document.querySelector("#payments-html").style.display = "none";
+    document.querySelector("#income-html").style.display = "none";
+  } else if (coachData === "admin") {
+    console.log("Admin");
+  }
 }
 
-export { generateNavHTML, displayCoachNav};
+function removeButtonsInUserview() {
+    console.log("funktion kører");
+    document.querySelector(".delete-user-btn").style.display = "none";
+    document.querySelector(".edit-user-btn").style.display = "none";
+}
+
+export { generateNavHTML, displayCoachNav, displayOrdinaryUserNav };
