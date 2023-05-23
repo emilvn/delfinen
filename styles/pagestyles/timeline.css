@@ -1,87 +1,66 @@
 body{
-  background-color: #6CB4EE;
+  background-color: var(--header-blue);
 }
 
 .timeline {
-  position: relative;
-  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 
+  "0" "0"
+  "1" "1"
+  "2" "2"
+  "3" "3";
+  grid-template-rows: 10% ;
+  
 }
 
-.timeline:before {
-  content: '';
+.timeline::before {
+  content: "";
   position: absolute;
+  top: 25%;
+  bottom: 10%;
   left: 50%;
-  width: 2px;
-  height: 100%;
-  background: #ccc;
+  width: 0.1%; 
+  background-color: black; 
+  transform: translateX(-50%);
 }
 
-.timeline-item {
-  position: relative;
-  padding: 20px 40px;
-  clear: both;
+.timeline-content1{
+  grid-area: 1;
+  margin-right: 55%;
+  margin-left: 5%;
+  background-color: white;
+}
+.timeline-content2{
+  grid-area: 2;
+  margin-left: 55%;
+  margin-right: 5%;
+  background-color: white;
+}
+.timeline-content3{
+  grid-area: 3;
+  margin-right: 55%;
+  margin-left: 5%;
+  background-color: white;
 }
 
-.timeline-content {
-  position: relative;
-  width: 45%;
-  padding: 20px;
-  background: #f5f5f5;
-  border-radius: 5px;
-}
 
-.timeline h3 {
-  font-family: fantasy;
-  margin-top: 0;
-  color: #fdb44b;
-}
-
-.timeline p {
-  margin: 10px 0 0;
-  color: white;
-}
-
-.timeline:before {
-  background: linear-gradient(to bottom, #ccc, #fff);
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-  float: right;
-}
-
-.timeline-item:nth-child(even) .timeline-date {
-  right: auto;
-  left: -150px;
-}
-
-.timeline-content {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background: #005792; 
-}
-
-/* Media Queries */
-
-/* 1280x570 */
-@media (max-width: 1280px) {
-  .timeline-content {
-    width: 100%;
-    margin-top: 20px; 
+@media screen and (max-width: 680px) {
+  .timeline {
+    grid-template-columns: "0" "0" "1" "1" "2" "2" "3" "3";
+    grid-template-rows: 10%;
   }
-}
 
-/* 1920x1080 */
-@media (min-width: 1281px) and (max-width: 1920px) {
-  .timeline-content {
-    width: 50%;
-    margin-top: 20px; 
-  }
-}
+  .timeline::before {
+   display: none;
+  } 
 
-/* iPhone */
-@media (max-width: 480px) {
-  .timeline-content {
+
+  .timeline-content1,
+  .timeline-content2,
+  .timeline-content3 {
+    margin-top: 20%;
+    margin: 0;
     width: 90%;
-    padding: 10px;
-    margin-top: 20px; 
+    margin: auto;
   }
 }
