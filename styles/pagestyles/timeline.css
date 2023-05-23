@@ -21,18 +21,18 @@ body{
   width: 0.1%;
   background-color: black;
   transform: translateX(-50%);
-  animation: timeline-animation 10s infinite linear;
+}
+
+.timeline-animation {
+  animation: timeline-animation 10s linear 1;
 }
 
 @keyframes timeline-animation {
   0% {
     height: 0%;
   }
-  50% {
-    height: 68%;
-  }
   100% {
-    height: 0%;
+    height: 68%;
   }
 }
 
@@ -41,8 +41,8 @@ body{
   margin-right: 55%;
   margin-left: 5%;
   background-image: url(/data/images/text-background-index-html.jpg);
-  background-size: contain;
-  color: black;
+  background-size: cover;
+  color: #654321;
   padding: 1%;
   border-radius: 5%;
 }
@@ -52,8 +52,8 @@ body{
   margin-left: 55%;
   margin-right: 5%;
    background-image: url(/data/images/text-background-index-html.jpg);
-  background-size: contain;
-  color: black;
+  background-size: cover;
+  color: #654321;
   padding: 1%;
   border-radius: 5%;
 }
@@ -63,8 +63,8 @@ body{
   margin-right: 55%;
   margin-left: 5%;
    background-image: url(/data/images/text-background-index-html.jpg);
-  background-size: contain;
-  color: black;
+  background-size: cover;
+  color: #654321;
   padding: 1%;
   border-radius: 5%;
 }
