@@ -2,7 +2,6 @@ import { showUser } from "../userview/display.js";
 
 function generateNavHTML() {
   const currentUser = localStorage.getItem("username");
-  const loginText = currentUser ? "LOG UD" : "LOG IND";
   const navHTML = /* html */ `
         <nav>
             <div class="siteTitle">
@@ -30,7 +29,7 @@ function generateNavHTML() {
                     <a href="competitiontimes.html">KONKURRENCE</a>
                 </div>
                 <div class="navButton" id="login-html">
-                    <a href="login.html">${loginText}</a>
+                    <a href="login.html">LOG IND</a>
                 </div>
             </div>
         </nav>
