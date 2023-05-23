@@ -15,7 +15,7 @@
     filter: drop-shadow(0 0 2px black);
     color: white;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr 2fr;
     user-select: none;
 }
 

@@ -3,7 +3,7 @@ import { calculateAge, categoriesInDanish, sortArrayByKeyAscending, sortArrayByK
 import { capitalize } from "../helpers/formatting.js";
 import { sortTrainingTimesByHeader } from "./sort.js";
 
-let globalDisplayArray = [];
+export let globalDisplayArray = [];
 
 export async function setGlobalDisplayArray() {
     globalDisplayArray = [];
@@ -26,6 +26,7 @@ export function displayTrainingTimes() {
     displayHeaderText();
     displayGridHeader("ascending", "ascending", "ascending", displayArray);
     displayGridBody(displayArray);
+    globalDisplayArray = displayArray;
 }
 
 function displayHeaderText() {
