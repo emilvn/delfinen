@@ -17,7 +17,7 @@ function setEventListeners() {
     document.querySelectorAll("input[name='teamselect']").forEach((input) => {
         input.addEventListener('change', displayTrainingTimes);
     });
-    document.querySelector("#training-time-search").addEventListener("search", (event) => {
+    document.querySelector("#training-time-search").addEventListener("keyup", (event) => {
         searchForName(event, globalDisplayArray);
     });
 }
