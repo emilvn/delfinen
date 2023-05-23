@@ -1,6 +1,6 @@
 import {findTop5Competitors} from "./filter.js";
 import {capitalize} from "../helpers/formatting.js";
-import {categoriesInDanish} from "./options.js";
+import {categoriesInDanish} from "../helpers/helpers.js";
 
 
 export async function displayTop5Competitors(category, competition, team){

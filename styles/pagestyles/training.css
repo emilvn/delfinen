@@ -18,16 +18,40 @@
     grid-template-columns: 1fr 1fr;
     user-select: none;
 }
+
 #training-category__select, #training-training__select{
     width: 15em;
     height: 2em;
 }
+
+.training-grid-container {
+    margin:10px;
+    padding:10px;
+    width:60em;
+}
+
+.training-grid-container div {
+    display: grid;
+    grid-template-columns: repeat(3, 20em);
+    gap:10px;
+    padding:10px;
+}
+.training-grid-container div:nth-child(even) {
+  background-color: rgb(240, 240, 240);
+}
+
+#training-grid-header {
+    font-weight: bold;
+}
+
+
 @media (max-width: 500px) {
     #training-category__div{
         width: 100%;
         border-radius: 0;
     }
 }
+
 .training-header{
     width: 100%;
     text-align: center;

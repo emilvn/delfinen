@@ -1,15 +1,9 @@
 import {getCompetitionData} from "../../rest/fetch.js";
 import {capitalize} from "../helpers/formatting.js";
 import {displayTop5Competitors} from "./display.js";
+import { categoriesInDanish } from "../helpers/helpers.js";
 
 export let competitionsObj;
-
-export const categoriesInDanish = {
-    breaststroke: "brystsvømning",
-    crawl: "crawl",
-    backcrawl: "rygcrawl",
-    butterfly: "fly"
-}
 
 /* =========== COMPETITION SELECT =========== */
 export async function generateCompetitionOptions(){

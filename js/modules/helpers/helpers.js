@@ -27,6 +27,13 @@ export function getTeamFromAge(age){
 	return "senior";
 }
 
+export const categoriesInDanish = {
+    breaststroke: "brystsvømning",
+    crawl: "crawl",
+    backcrawl: "rygcrawl",
+    butterfly: "fly"
+}
+
 export function setTodayAsMaxDate(inputId){
 	const inputField = document.querySelector(`#${inputId}`);
 
