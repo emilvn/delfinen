@@ -51,15 +51,25 @@ function displayCoachNav() {
     console.log("der er hul igennem");
     document.querySelector("#payments-html").style.display = "none";
     document.querySelector("#income-html").style.display = "none";
+    removeButtonsInUserviewForTrainer();
   } else if (coachData === "admin") {
-    console.log("Admin");
+    console.log("Admin log in");
   }
 }
 
-function removeButtonsInUserview() {
-    console.log("funktion kører");
+function removeButtonsInUserviewForTrainer() {
+    console.log("funktionen kører");
+    const coachData = localStorage.getItem("username");
+
+    if (coachData === "træner") {
     document.querySelector(".delete-user-btn").style.display = "none";
     document.querySelector(".edit-user-btn").style.display = "none";
+    } else {
+        console.log("something went wrong");
+    }
+    
+
+    
 }
 
-export { generateNavHTML, displayCoachNav, displayOrdinaryUserNav };
+export { generateNavHTML, displayCoachNav, displayOrdinaryUserNav};
