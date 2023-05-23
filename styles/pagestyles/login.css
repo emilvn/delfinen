@@ -56,3 +56,16 @@ form button[type=submit] {
 form button[type=submit]:hover {
     background-color: #3e8e41;
 }
+@media (max-width: 520px) {
+    #login_form>div{
+        grid-template-columns: 1fr;
+    }
+    form input{
+        grid-column: unset;
+    }
+}
+@media (max-width: 400px) {
+    .grid-container{
+        margin: 0;
+    }
+}
