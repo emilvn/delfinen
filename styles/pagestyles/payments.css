@@ -3,8 +3,8 @@
   padding: 4px;
 }
 input[type="button"], input[type="submit"]{
-  width: 2em;
-  height: 2em;
+  width: 2.5em;
+  height: 2.5em;
   display: flex;
   align-items: center;
   justify-content: center;
