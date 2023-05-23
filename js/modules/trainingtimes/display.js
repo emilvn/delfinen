@@ -1,6 +1,7 @@
 import { getOneUser, getTrainingTimesByCategory } from "../../rest/fetch.js";
-import { calculateAge, categoriesInDanish } from "../helpers/helpers.js";
+import { calculateAge, categoriesInDanish, sortArrayByKeyAscending, sortArrayByKeyDescending} from "../helpers/helpers.js";
 import { capitalize } from "../helpers/formatting.js";
+import { sortTrainingTimesByHeader } from "./sort.js";
 
 let globalDisplayArray = [];
 
@@ -15,33 +16,16 @@ export async function setGlobalDisplayArray() {
             age: calculateAge(user.birthdate),
             time: trainingTimesArray[i].time,
             date: new Date(trainingTimesArray[i].date).toLocaleDateString("en-GB"),
+            isodate: new Date(trainingTimesArray[i].date).toISOString(),
         };
     }
 }
 
 export function displayTrainingTimes() {
+    const displayArray = sortArrayByKeyAscending(getDisplayArray(), "time");
     displayHeaderText();
-    const displayArray = getDisplayArray();
-    console.log(displayArray);
-
-    document.querySelector(".training-grid-container").innerHTML = /* html */ `
-        <div id="training-grid-header">
-            <span>Navn</span>
-            <span>Dato</span>
-            <span>Tid</span>
-        </div>
-    `
-
-    for (let i = 0; i < displayArray.length; i++) {
-        const timeHTML = /* html */ `
-            <div>
-                <span>${displayArray[i].name}</span>
-                <span>${displayArray[i].date}</span>
-                <span>${displayArray[i].time} sek.</span>        
-            </div>
-        `
-        document.querySelector(".training-grid-container").insertAdjacentHTML("beforeend", timeHTML);
-    }
+    displayGridHeader("ascending", "ascending", "ascending", displayArray);
+    displayGridBody(displayArray);
 }
 
 function displayHeaderText() {
@@ -52,15 +36,67 @@ function displayHeaderText() {
     document.querySelector("#training-category__header").innerHTML = `${categoryInDanish} - ${team}`;
 }
 
+export function displayGridHeader(nameOrder, dateOrder, timeOrder, displayArray) {
+    document.querySelector(".training-grid-container").innerHTML = /* html */ `
+        <div id="training-grid-header">
+            <span class="training-grid-header__span" data-key="name" data-order=${nameOrder}>Navn </span>
+            <span class="training-grid-header__span" data-key="isodate" data-order=${dateOrder}>Dato </span>
+            <span class="training-grid-header__span" data-key="time" data-order=${timeOrder}>Tid </span>
+        </div>
+    `;
+    document.querySelectorAll(".training-grid-header__span").forEach((span) => {
+        span.addEventListener('mouseup', () => {    
+            sortTrainingTimesByHeader(displayArray, span.dataset.key, span.dataset.order);
+        });
+    });
+}
+
+export function displayGridBody(displayArray) {
+    for (let i = 0; i < displayArray.length; i++) {
+        const timeHTML = /* html */ `
+            <div>
+                <span>${displayArray[i].name}</span>
+                <span>${displayArray[i].date}</span>
+                <span>${displayArray[i].time} sek.</span>        
+            </div>
+        `;
+        document.querySelector(".training-grid-container").insertAdjacentHTML("beforeend", timeHTML);
+    }
+}
+
 function getDisplayArray() {
-    const team = document.querySelector('input[name="teamselect"]:checked').value;
+    const selectedTeam = document.querySelector('input[name="teamselect"]:checked').value;
     const displayArray = [];
     for (let i = 0; i < globalDisplayArray.length; i++) {
-        if (team === "junior" && globalDisplayArray[i].age <= 18) {
+        if (selectedTeam === "junior" && globalDisplayArray[i].age <= 18) {
             displayArray.push(globalDisplayArray[i]);
-        } else if (team === "senior" && globalDisplayArray[i].age > 18) {
+        } else if (selectedTeam === "senior" && globalDisplayArray[i].age > 18) {
             displayArray.push(globalDisplayArray[i]);
         }
     }
+    console.log(displayArray);
     return displayArray;
+}
+
+export function displaySortingArrow(header, order) {
+    let sortingArrowHTML;
+    
+    if(document.querySelector("#sorting-arrow")) {
+        document.querySelector("#sorting-arrow").remove();
+    }
+
+    const headers = document.querySelectorAll(".training-grid-header__span");
+
+    if (order === "ascending") {
+        sortingArrowHTML = /* html */ `<span id="sorting-arrow">↓</span>`;
+    } else {
+        sortingArrowHTML = /* html */ `<span id="sorting-arrow">↑</span>`;
+    }
+
+    for (let i = 0; i < headers.length; i++) {
+        if (headers[i].dataset.key === header) {
+            headers[i].insertAdjacentHTML("beforeend", sortingArrowHTML);
+        }
+    }
+
 }

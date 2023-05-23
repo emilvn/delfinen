@@ -46,3 +46,33 @@ export function setTodayAsMaxDate(inputId){
 
 	inputField.setAttribute("max", formattedDate);
 }
+
+export function sortArrayByKeyAscending(arr, key) {
+    arr.sort(function(a, b) {
+		var keyA = a[key];
+		var keyB = b[key];
+		if (keyA < keyB) {
+			return -1;
+		}
+		if (keyA > keyB) {
+			return 1;
+		}
+		return 0;
+	});
+	return arr;
+}
+
+export function sortArrayByKeyDescending(arr, key) {
+    arr.sort(function(a, b) {
+        var keyA = a[key];
+        var keyB = b[key];
+        if (keyA > keyB) {
+            return -1;
+        }
+        if (keyA < keyB) {
+            return 1;
+        }
+        return 0;
+    });
+    return arr;
+}
