@@ -1,17 +1,58 @@
-#login_form {
+.grid-container{
+    max-width: 100%;
+    height: 100%;
     display: grid;
-    position: absolute;
-    grid-template-columns: 1fr ;
-    margin: 0;
-    padding: 25px;
-    width: 500px;
-    border: solid black 2px;
-    gap: 15px;
-    top: 20%;
-    left: 33%;
-    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1em;
+    margin: 1em;
 }
-
-p {
+#login_form{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    max-width: 50vw;
+    box-shadow: 0 0 5px black;
+    padding: 5em;
+    border-radius: 5px;
+}
+h2{
     text-align: center;
+    margin-bottom: 2em;
+}
+@media (max-width: 600px){
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+    #login_form{
+        grid-column: 1/1;
+        max-width: unset;
+    }
+}
+form input {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 1px #ccc;
+    font-size: 1rem;
+    grid-column: 2 / -1;
+}
+#login_form>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1rem;
+    grid-column-gap: 2rem;
+}
+form button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+}
+form button[type=submit]:hover {
+    background-color: #3e8e41;
 }
