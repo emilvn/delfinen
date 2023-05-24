@@ -5,8 +5,10 @@ body{
 .timeline {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1em;
-  grid-template-rows: 20vh 20vh 20vh;
+  gap: 2em;
+  grid-template-rows: 25vh 20vh 20vh;
+  width: 100%;
+  padding: 1em;
 }
 
 .timeline::before {
@@ -23,6 +25,7 @@ body{
 .timeline-content1, .timeline-content2, .timeline-content3{
   background-image: url(/data/images/text-background-index-html.jpg);
   background-size: cover;
+  background-position: top right;
   color: #654321;
   padding: 1%;
   border-radius: 5%;
@@ -30,6 +33,7 @@ body{
   overflow: auto;
 }
 .timeline-content1{
+  max-height: 25vh;
   grid-row: 1/3;
 }
 .timeline-content2{
@@ -39,10 +43,12 @@ body{
   grid-row: 3/3;
 }
 
-.timeline-title::first-letter{
-  font-size: 2em;
-  font-family: fantasy;
-  font-weight: bold;
+@media (min-height: 800px) {
+  .timeline-title::first-letter{
+    font-size: 2em;
+    font-family: fantasy;
+    font-weight: bold;
+  }
 }
 
 /*------------ @media ------------ */
@@ -50,7 +56,6 @@ body{
 @media screen and (max-width: 790px) {
   .timeline {
     grid-template-columns: 1fr;
-    grid-template-rows: 20vh 20vh 20vh;
   }
 
   .timeline::before {
@@ -64,8 +69,8 @@ body{
   .timeline-content1,
   .timeline-content2,
   .timeline-content3 {
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    grid-column: 1/1;
   }
 }
 

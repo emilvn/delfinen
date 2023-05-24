@@ -171,7 +171,7 @@
 /* === ABOUT SCREEN === */
 #homeAboutScreen{
     padding-top: 14vh;
-    height: 90vh;
+    height: 86vh;
     background-color: var(--header-blue);
     display: flex;
     justify-content: center;
