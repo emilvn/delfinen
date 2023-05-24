@@ -4,14 +4,8 @@ export function addEventListener(){
 }
 
 function addAnimation() {
-  const styleElement = document.createElement('style');
-  styleElement.innerHTML = `
-    .timeline::before {
-      animation: timeline-animation 8s 1 linear;
-    }
-    .anchor {
-      animation: anchor-animation 8s 1 linear;
-    }
-  `;
-  document.head.appendChild(styleElement);
+    const timeline = document.querySelector(".timeline__line");
+    const anchor = document.querySelector(".anchor");
+    timeline.classList.add("timeline-animation");
+    anchor.classList.add("anchor-animation");
 }
