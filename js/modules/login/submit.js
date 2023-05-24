@@ -1,5 +1,6 @@
 import {validUser} from "./validate.js";
 import {reDirect} from "../helpers/helpers.js";
+import {showToastMessage} from "../helpers/toastmessages.js";
 
 export function submitLogin(event) {
   event.preventDefault();
@@ -11,8 +12,11 @@ export function submitLogin(event) {
     if (password === username) {
       login(username);
     } else {
-      document.querySelector("#result").innerHTML = "Error something went wrong";
+      showToastMessage("Ugyldigt password", "error");
     }
+  }
+  else{
+    showToastMessage("Ugyldig bruger", "error");
   }
 }
 
