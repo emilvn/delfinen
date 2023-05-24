@@ -10,7 +10,7 @@ function addAnimation() {
       animation: timeline-animation 8s 1 linear;
     }
     .anchor {
-      animation: anchor-animation 10s 1 linear;
+      animation: anchor-animation 8s 1 linear;
     }
   `;
   document.head.appendChild(styleElement);

@@ -76,10 +76,6 @@ body{
 
 /*------------ animations ------------ */
 
-.timeline-animation {
-  animation: timeline-animation 8s linear 1;
-}
-
 @keyframes timeline-animation {
   0% {
     height: 0;
@@ -98,14 +94,13 @@ body{
   height: 100px;
   background-image: url(/data/images/drop-anchor.png);
   background-size: cover;
-  animation: anchor-animation 10s linear 1;
 }
 
 @keyframes anchor-animation {
   0% {
-    top: 15%;
+    top: 22%;
   }
   100% {
-    top:92%;
+    top:90%;
   }
 }
