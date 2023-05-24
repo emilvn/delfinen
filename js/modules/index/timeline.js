@@ -1,10 +1,4 @@
-window.addEventListener('load', main);
-
-function main(){
-    addEventListener();
-}
-
-function addEventListener(){
+export function addEventListener(){
     const startAnimationButton = document.querySelector('#startTimeLineAnimationButton');
     startAnimationButton.addEventListener('click', addAnimation);
 }
