@@ -23,19 +23,6 @@ body{
   transform: translateX(-50%);
 }
 
-.timeline-animation {
-  animation: timeline-animation 8s linear 1;
-}
-
-@keyframes timeline-animation {
-  0% {
-    height: 0%;
-  }
-  100% {
-    height: 68%;
-  }
-}
-
 .timeline-content1{
   grid-area: 1;
   margin-right: 55%;
@@ -102,7 +89,20 @@ body{
   }
 }
 
-/*------------ anchor animation ------------ */
+/*------------ animations ------------ */
+
+.timeline-animation {
+  animation: timeline-animation 8s linear 1;
+}
+
+@keyframes timeline-animation {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 68%;
+  }
+}
 
 .anchor {
   position: absolute;
