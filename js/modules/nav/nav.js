@@ -56,8 +56,9 @@ function displayCoachNav() {
 function removeButtonsInUserviewForTrainer() {
   const deleteBtns = document.querySelectorAll(".delete-user-btn");
   const editBtns = document.querySelectorAll(".edit-user-btn");
+  const createBtn = document.querySelector("#post_user_dialog_open");
 
-  console.log(deleteBtns);
+  createBtn.style.display = "none";
 
   for (let i = 0; i < deleteBtns.length; i++) {
     deleteBtns[i].style.display = "none";
