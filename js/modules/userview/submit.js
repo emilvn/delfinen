@@ -18,11 +18,11 @@ async function submitUser(event) {
 
     if (event.target.post_user_competitive.checked) {
         const categories = document.querySelectorAll("input[name='post_user_categories']");
-        userData.categories = {};
+        userData.categories = [];
         for (let i = 0; i < categories.length; i++) {
             if (categories[i].checked) {
                 const category = categories[i].value;
-                userData.categories[`${category}`] = category;
+                userData.categories.push(category);
             }
         }
     }
@@ -56,16 +56,17 @@ function submitUpdate(event){
     }
     if (form["competitive"].checked) {
         const categories = form.querySelectorAll("input[name='categories']");
-        user.categories = {};
+        user.categories = [];
         for (let i = 0; i < categories.length; i++) {
             if (categories[i].checked) {
                 const category = categories[i].value;
-                user.categories[`${category}`] = category;
+                user.categories.push(category);
             }
         }
     }
     updateUser(uid, user);
     form.parentElement.close();
+    form.reset();
 }
 
 /* ========== Training time ========== */

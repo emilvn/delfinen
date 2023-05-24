@@ -104,7 +104,10 @@ form input[type=checkbox]{
     text-align: left;
     border-collapse: separate;
     border-spacing: 0 0.5em;
-    
+}
+#post_competitive_dialog table tr:nth-child(even),
+#add_training_time table tr:nth-child(even){
+    background-color: darkgray;
 }
 /* ========== POST USER STYLING ========== */
 #post_user_form, #update_user_form {
@@ -161,6 +164,9 @@ form input[type=checkbox]{
     border: 1px solid gray;
     filter: drop-shadow(0 0 1px black);
     padding: 1em;
+}
+#userGrid article a{
+    color: black;
 }
 #userGrid article h3{
     text-align: center;

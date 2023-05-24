@@ -1,33 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Svømmeklubben Delfinen - Login</title>
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/pagestyles/login.css" />
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
-  </head>
-  <body>
-    <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
-    <main>
-      <form id="login_form">
-        <h2>Login</h2>
-        <label for="user_name">Brugernavn</label>
-        <input type="text" id="user_name" name="user_name" placeholder="brugernavn" required />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Svømmeklubben Delfinen - Login</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/pagestyles/login.css">
+        <link rel="shortcut icon" href="#" type="image/x-icon">
+    </head>
+    <body>
+        <!--KEEP ALL CHANGES FROM PAGE TO PAGE IN MAIN-->
+        <main>
+            <section class="grid-container">
+                <form id="login_form">
+                    <h2>Log ind</h2>
+                    <div>
+                        <label for="user_name">Brugernavn</label>
+                        <input type="text" id="user_name" name="user_name" placeholder="brugernavn" required>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="password" required>
+                        <button type="submit">Log ind</button>
+                    </div>
+                </form>
+            </section>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="password" required />
-        <button type="submit">Login</button>
-        <input type="reset" id="btn-clearform" value="ClearForm" />
-        <p id="result">Velkommen</p>
-      </form>
-
-      <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
-      <div id="toast-container"></div>
-    </main>
-    <!--main script-->
+            <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->
+            <div id="toast-container"></div>
+        </main>
+        <!--main script-->
 
     <script type="module" src="../js/modules/login/main.js"></script>
     <script type="module" src="../js/main.js"></script>
