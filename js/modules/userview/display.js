@@ -1,7 +1,7 @@
 import {getAllUsers} from "../../rest/fetch.js";
 import {showCompetitionDialog, showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
 import {calculateAge} from "../helpers/helpers.js";
-import {categoriesInDanish} from "../competitiontimes/options.js";
+import {categoriesInDanish} from "../helpers/helpers.js";
 
 export let userArr;
 
