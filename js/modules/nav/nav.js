@@ -1,5 +1,8 @@
+import { showUser } from "../userview/display.js";
+
 function generateNavHTML() {
-	const navHTML = /* html */ `
+  const currentUser = localStorage.getItem("username");
+  const navHTML = /* html */ `
         <nav>
             <div class="siteTitle">
                 <div class="siteLogo"></div>
@@ -31,9 +34,36 @@ function generateNavHTML() {
             </div>
         </nav>
     `;
-	document.querySelector("body").insertAdjacentHTML("afterbegin", navHTML);
-    const activePage = window.location.href.split("/")[window.location.href.split("/").length-1];
-    document.querySelector(`#${activePage.replace(".","-")}`).classList.add("active");
+  document.querySelector("body").insertAdjacentHTML("afterbegin", navHTML);
+  const activePage = window.location.href.split("/")[window.location.href.split("/").length - 1];
+  document.querySelector(`#${activePage.replace(".", "-")}`).classList.add("active");
 }
 
-export { generateNavHTML };
+function displayOrdinaryUserNav() {
+  document.querySelector("#userview-html").style.display = "none";
+  document.querySelector("#payments-html").style.display = "none";
+  document.querySelector("#income-html").style.display = "none";
+}
+
+function displayCoachNav() {
+  document.querySelector("#payments-html").style.display = "none";
+  document.querySelector("#income-html").style.display = "none";
+  if (document.URL.includes("userview.html")) {
+    removeButtonsInUserviewForTrainer();
+  }
+}
+
+function removeButtonsInUserviewForTrainer() {
+  const deleteBtns = document.querySelectorAll(".delete-user-btn");
+  const editBtns = document.querySelectorAll(".edit-user-btn");
+  const createBtn = document.querySelector("#post_user_dialog_open");
+
+  createBtn.style.display = "none";
+
+  for (let i = 0; i < deleteBtns.length; i++) {
+    deleteBtns[i].style.display = "none";
+    editBtns[i].style.display = "none";
+  }
+}
+
+export { generateNavHTML, displayCoachNav, displayOrdinaryUserNav };

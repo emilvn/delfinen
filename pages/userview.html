@@ -30,10 +30,14 @@
           <input type="checkbox" id="post_user_competitive" name="competitive" />
           <fieldset class="user_fieldset">
             <legend>Vælg disciplin(er):</legend>
-            <label for="post_user_breaststroke">Brystsvømning: </label><input type="checkbox" id="post_user_breaststroke" name="post_user_categories" value="Brystsvømning" />
-            <label for="post_user_butterfly">Butterfly: </label><input type="checkbox" id="post_user_butterfly" name="post_user_categories" value="Butterfly" />
-            <label for="post_user_crawl">Crawl: </label><input type="checkbox" id="post_user_crawl" name="post_user_categories" value="Crawl" /> <label for="post_user_back_crawl">Rygcrawl: </label
-            ><input type="checkbox" id="post_user_back_crawl" name="post_user_categories" value="Rygcrawl" />
+            <label for="post_user_breaststroke">Brystsvømning: </label>
+            <input type="checkbox" id="post_user_breaststroke" name="post_user_categories" value="breaststroke" />
+            <label for="post_user_butterfly">Butterfly: </label>
+            <input type="checkbox" id="post_user_butterfly" name="post_user_categories" value="butterfly" />
+            <label for="post_user_crawl">Crawl: </label>
+            <input type="checkbox" id="post_user_crawl" name="post_user_categories" value="crawl" />
+            <label for="post_user_back_crawl">Rygcrawl: </label>
+            <input type="checkbox" id="post_user_back_crawl" name="post_user_categories" value="backcrawl" />
           </fieldset>
           <input type="submit" id="post_user_btn_submit" value="Opret medlem" />
           <input type="reset" value="Ryd form" />
@@ -58,10 +62,14 @@
           <input type="checkbox" id="update_user_competitive" name="competitive" />
           <fieldset class="user_fieldset">
             <legend>Vælg disciplin(er):</legend>
-            <label for="update_user_breaststroke">Brystsvømning: </label><input type="checkbox" id="update_user_breaststroke" name="categories" value="Brystsvømning" />
-            <label for="update_user_butterfly">Butterfly: </label><input type="checkbox" id="update_user_butterfly" name="categories" value="Butterfly" /> <label for="update_user_crawl">Crawl: </label
-            ><input type="checkbox" id="update_user_crawl" name="categories" value="Crawl" /> <label for="update_user_back_crawl">Rygcrawl: </label
-            ><input type="checkbox" id="update_user_back_crawl" name="categories" value="Rygcrawl" />
+            <label for="update_user_breaststroke">Brystsvømning: </label>
+            <input type="checkbox" id="update_user_breaststroke" name="categories" value="breaststroke" />
+            <label for="update_user_butterfly">Butterfly: </label>
+            <input type="checkbox" id="update_user_butterfly" name="categories" value="butterfly" />
+            <label for="update_user_crawl">Crawl: </label>
+            <input type="checkbox" id="update_user_crawl" name="categories" value="crawl" />
+            <label for="update_user_backcrawl">Rygcrawl: </label>
+            <input type="checkbox" id="update_user_backcrawl" name="categories" value="backcrawl" />
           </fieldset>
           <input type="submit" id="update_user_btn_submit" value="Opdater medlem" />
           <input type="reset" value="Ryd form" />
@@ -111,7 +119,16 @@
 
           <input type="submit" id="training-time-submit" value="Opret tid" />
         </form>
-        <table id="training_time_members"></table>
+        <table>
+          <thead>
+            <tr>
+              <th>Disciplin</th>
+              <th>Dato</th>
+              <th>Tid</th>
+            </tr>
+          </thead>
+          <tbody id="training_time_members"></tbody>
+        </table>
       </dialog>
       <!--delete dialog-->
       <dialog id="dialog_delete_user">
@@ -137,7 +154,17 @@
           <label for="competitive_position">Placering: </label><input type="text" id="competitive_position" name="competitive_position" maxlength="2" required placeholder="Placering" />
           <input type="submit" value="Opret Tid" />
         </form>
-        <table id="competitive_time_members"></table>
+        <table>
+          <thead>
+            <tr>
+                <th>Stævne</th>
+                <th>Disciplin</th>
+                <th>Placering</th>
+                <th>Tid</th>
+            </tr>
+          </thead>
+          <tbody id="competitive_time_members"></tbody>
+        </table>
       </dialog>
 
       <!-- ========== SUCCESS/ERROR TOAST MESSAGES ========== -->

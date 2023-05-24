@@ -1,6 +1,7 @@
 import {getAllUsers} from "../../rest/fetch.js";
 import {showCompetitionDialog, showDeleteDialog, showTrainingTimeDialog, showUpdateDialog} from "./dialogs.js";
 import {calculateAge} from "../helpers/helpers.js";
+import {categoriesInDanish} from "../competitiontimes/options.js";
 
 export let userArr;
 
@@ -16,15 +17,15 @@ export function showUsers(users){
 	}
 }
 
-function showUser(user){
+export function showUser(user){
 	const userAge = calculateAge(user["birthdate"]);
 	const categoryHTML = generateCategoryHTML(user["categories"]);
 	const myHTML = /*html*/`
 	<article>
 		<div>
 			<h3>${user["name"]}</h3>
-			<p>Email: ${user["email"]}</p>
-			<p>${(user["phone"])?`Telefon: ${user["phone"]}`:""}</p>
+			<p>Email: <a href="mailto:${user["email"]}">${user["email"]}</a></p>
+			<p>${(user["phone"])?`Telefon: <a href="tel:+45${user["phone"]}">${user["phone"]}</a>`:""}</p>
 			<p>${userAge} år</p>
 			<p>Medlemskab: ${(user["membershipPassive"])?"Passiv":"Aktiv"}</p>
 			<p>${(user["competitive"])?"Konkurrencesvømmer":"Motionist"}</p>
@@ -45,12 +46,18 @@ function showUser(user){
 	const usersGrid = document.querySelector("#userGrid");
 	usersGrid.insertAdjacentHTML("beforeend", myHTML);
 
-	/*Current user article*/
-	const currentUserArticle = usersGrid.querySelector("article:last-child");
-	/*current buttons*/
-	const deleteBtn = currentUserArticle.querySelector(".delete-user-btn");
-	const updateBtn = currentUserArticle.querySelector(".edit-user-btn");
-	const trainingBtn = currentUserArticle.querySelector(".add-trainingtime-btn");
+  	/*Current user article*/
+  	const currentUserArticle = usersGrid.querySelector("article:last-child");
+  	/*current buttons*/
+  	const deleteBtn = currentUserArticle.querySelector(".delete-user-btn");
+  	const updateBtn = currentUserArticle.querySelector(".edit-user-btn");
+  	const trainingBtn = currentUserArticle.querySelector(".add-trainingtime-btn");
+  	const currentUser = localStorage.getItem("username");
+
+  	if (currentUser === "træner") {
+    	deleteBtn.style.display = "none";
+    	updateBtn.style.display = "none";
+  	}
 
 	/*Event listeners*/
 	deleteBtn.addEventListener("click", showDeleteDialog);
@@ -68,13 +75,16 @@ function showUser(user){
 
 function generateCategoryHTML(categories) {
 	if(categories) {
-		let categoryHTML = /* html */ `<p>Aktive discipliner: </p>`
-		for (const category in categories) {
-			categoryHTML += /* html */ `
-				<p>${category}</p>
-			`
+		let categoryString = /* html */ `Aktive discipliner: `
+		for (let i = 0; i<categories.length; i++) {
+			if(i !== categories.length-1){
+				categoryString += categoriesInDanish[categories[i]] + ", ";
+			}
+			else{
+				categoryString += categoriesInDanish[categories[i]] + "."
+			}
 		}
-		return categoryHTML;
+		return /*html*/`<p>${categoryString}</p>`;
 	}
 }
 
