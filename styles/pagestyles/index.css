@@ -211,7 +211,7 @@ body{
 }
 
 .timeline-content1, .timeline-content2, .timeline-content3{
-    background-image: url(data/images/text-background.jpg);
+    background-image: url("../../data/images/text-background.jpg");
     background-size: cover;
     background-position: top right;
     color: #654321;
@@ -284,7 +284,7 @@ body{
     transform: translate(-50%, -50%);
     width: 100px;
     height: 100px;
-    background-image: url(data/images/drop-anchor.png);
+    background-image: url("../../data/images/drop-anchor.png");
     background-size: cover;
 }
 
