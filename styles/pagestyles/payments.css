@@ -51,8 +51,8 @@ input[type="submit"]:not(:disabled):hover{
   grid-template-columns: 1fr 1fr auto auto;
   row-gap:10px;
 }
-#grid-container form:nth-child(odd) span{
-  background-color: darkgray;
+#grid-container form:nth-child(odd) span, #grid-container form:nth-child(odd) input{
+  background-color: rgb(240, 240, 240);
 }
 
 .grid-header {

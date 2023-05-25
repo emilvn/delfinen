@@ -10,6 +10,7 @@ export async function calculateAndDisplayPayments(users, payments) {
         const userPayment = payments[user.id] ? payments[user.id]["payment"] : 0;
         const arrears = userPrice - userPayment;
         inputElement.dataset.arrears = arrears;
+        inputElement.dataset.price = userPrice;
         inputElement.value = arrears;
     }
 }

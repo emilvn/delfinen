@@ -2,6 +2,7 @@ import {updatePayment} from "../../rest/fetch.js";
 
 export async function submitArrears(event) {
     event.preventDefault();
+    debugger;
     const payment = event.target["restance"].dataset.price - event.target["restance"].value;
     const uid = event.target["restance"].dataset.user;
     const paymentData = {

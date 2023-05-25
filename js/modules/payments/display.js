@@ -8,8 +8,8 @@ export function displayUsers(users) {
             <form>
                 <span>${user.name}</span>
                 <input type="number" class="restance" name="restance" data-user="${user.id}">
-                <input type="button" value="↩️" disabled>
-                <input type="submit" value="🔄" disabled>
+                <input type="button" value="↺" disabled>
+                <input type="submit" value="✓" disabled>
             </form>
         `;
         document.querySelector("#grid-container").insertAdjacentHTML("beforeend", html);

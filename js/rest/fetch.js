@@ -168,6 +168,7 @@ async function updatePayment(paymentData, uid) {
     const response = await sendFetchToDB(paymentURI, "PUT", paymentData);
 
     if (response.ok){
+      //console.log(response);
         showToastMessage("Restance opdateret!", "success");
         return await response.json();
     }
