@@ -101,8 +101,15 @@ async function getCoaches() {
 async function postCompetitiveTime(eventName, discipline, timeData, id) {
   const postCompetitiveTimeURL = `competitiontimes/${eventName}/${discipline}/${id}.json`;
 
-  const eventResponse = await sendFetchToDB(postCompetitiveTimeURL, "PUT", timeData);
-  return eventResponse;
+  const response = await sendFetchToDB(postCompetitiveTimeURL, "PUT", timeData);
+  if(response.ok){
+      console.log("Competitive time added successfully!");
+      showToastMessage("Konkurrencetid tilføjet!", "success");
+  }
+  else{
+      console.error(`Bad response at postCompetitiveTime: ${response.status} ${response.statusText}`);
+      showToastMessage(`Kunne ikke oprette konkurrencetid, ${response.status} ${response.statusText}`);
+  }
 }
 
 async function getCompetitionData(){

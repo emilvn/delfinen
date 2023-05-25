@@ -164,7 +164,7 @@ export function showTrainingTime(trainingTimeObj) {
 export function showCompetitionDialog(event) {
 	const competitionBtn = event.target;
 	const competitionForm = document.querySelector("#post_competitive_form");
-
+	generateDatalistOptions();
 	competitionForm.dataset.id = competitionBtn.dataset.id;
 
 	showCompetitionTimes(competitionForm.dataset.id);
@@ -177,6 +177,17 @@ export function showCompetitionDialog(event) {
 		if (event.key === "Escape") closeCompetitiveDialog();
 	});
 }
+
+async function generateDatalistOptions(){
+	const competitionObj = await getCompetitionData();
+	const datalist = document.querySelector("#competition-datalist");
+	datalist.innerHTML = "";
+	for(const competition in competitionObj){
+		const myHTML = /*html*/`<option value="${competition}">${competition}</option>`
+		datalist.insertAdjacentHTML("beforeend", myHTML);
+	}
+}
+
 export function closeCompetitiveDialog(event) {
 	const form = document.querySelector("#post_competitive_form");
 	document.querySelector("#competitive-time-close-button").removeEventListener("click", closeCompetitiveDialog);
