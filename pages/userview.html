@@ -142,7 +142,9 @@
       <dialog id="post_competitive_dialog">
         <button id="competitive-time-close-button" class="close-button">X</button>
         <form id="post_competitive_form">
-          <label for="competitive_event">Stævne: </label><input type="text" id="competitive_event" name="competitive_event" required placeholder="Stævne" />
+          <label for="competitive_event">Stævne: </label>
+          <input list="competition-datalist" type="text" id="competitive_event" name="competitive_event" required placeholder="Stævne" />
+          <datalist id="competition-datalist"></datalist>
           <label for="competitive_discipline">Disciplin: </label>
           <select type="email" id="competitive_discipline" name="competitive_discipline" required>
             <option value="breaststroke">Brystsvømning</option>
@@ -150,8 +152,10 @@
             <option value="crawl">Crawl</option>
             <option value="backcrawl">Rygcrawl</option>
           </select>
-          <label for="competitive_time">Tid: </label><input type="text" id="competitive_time" name="competitive_time" placeholder="Tid i sekunder" required />
-          <label for="competitive_position">Placering: </label><input type="text" id="competitive_position" name="competitive_position" maxlength="2" required placeholder="Placering" />
+          <label for="competitive_time">Tid: </label>
+          <input type="text" id="competitive_time" name="competitive_time" placeholder="Tid i sekunder" required />
+          <label for="competitive_position">Placering: </label>
+          <input type="text" id="competitive_position" name="competitive_position" maxlength="2" required placeholder="Placering" />
           <input type="submit" value="Opret Tid" />
         </form>
         <table>
