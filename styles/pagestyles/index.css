@@ -211,7 +211,7 @@ body{
 }
 
 .timeline-content1, .timeline-content2, .timeline-content3{
-    background-image: url(/data/images/text-background-index-html.jpg);
+    background-image: url(/data/images/text-background.jpg);
     background-size: cover;
     background-position: top right;
     color: #654321;
