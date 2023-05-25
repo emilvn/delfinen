@@ -97,10 +97,10 @@ export async function filterUsers(){
 		userArr = userArr.filter(user => user["competitive"]);
 	}
 	if(teamFilter.value === "junior"){
-		userArr = userArr.filter(user => user["age"] < 18);
+		userArr = userArr.filter(user => calculateAge(user["birthdate"]) < 18);
 	}
 	else if(teamFilter.value === "senior"){
-		userArr = userArr.filter(user => user["age"] >= 18);
+		userArr = userArr.filter(user => calculateAge(user["birthdate"]) >= 18);
 	}
 	showUsers(userArr);
 }
