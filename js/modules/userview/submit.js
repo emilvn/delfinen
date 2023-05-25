@@ -104,7 +104,7 @@ function submitCompetitiveTime(event) {
         position: Number(event.target.competitive_position.value)
     }
     console.log(event.target.dataset.id);
-    postCompetitiveTime(eventName.toLowerCase(), discipline, timeData, event.target.dataset.id);
+    postCompetitiveTime(eventName, discipline, timeData, event.target.dataset.id);
 
     closeCompetitiveDialog();
 }
