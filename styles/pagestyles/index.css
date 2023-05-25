@@ -186,3 +186,117 @@
     max-width: 40vw;
     margin: 1em;
 }
+
+body{
+    background-color: var(--header-blue);
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    grid-template-rows: 25vh 20vh 20vh;
+    width: 100%;
+    padding: 1em;
+}
+
+.timeline__line {
+    position: absolute;
+    top: 25%;
+    bottom: 10%;
+    left: 50%;
+    width: 0.1%;
+    background-color: black;
+    transform: translateX(-50%);
+}
+
+.timeline-content1, .timeline-content2, .timeline-content3{
+    background-image: url(/data/images/text-background-index-html.jpg);
+    background-size: cover;
+    background-position: top right;
+    color: #654321;
+    padding: 1%;
+    border-radius: 5%;
+    max-height: 20vh;
+    overflow: auto;
+}
+.timeline-content1{
+    max-height: 25vh;
+    grid-row: 1/3;
+}
+.timeline-content2{
+    grid-row: 2/3;
+}
+.timeline-content3{
+    grid-row: 3/3;
+}
+
+@media (min-height: 800px) {
+    .timeline-title::first-letter{
+        font-size: 2em;
+        font-family: fantasy;
+        font-weight: bold;
+    }
+}
+
+/*------------ @media ------------ */
+
+@media screen and (max-width: 790px) {
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline__line {
+        display: none;
+    }
+
+    .anchor{
+        display: none;
+    }
+
+    .timeline-content1,
+    .timeline-content2,
+    .timeline-content3 {
+        width: 100%;
+        grid-column: 1/1;
+    }
+}
+
+/*------------ animations ------------ */
+
+.timeline-animation{
+    animation: timeline-animation 8s 1 linear;
+}
+
+@keyframes timeline-animation {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 68%;
+    }
+}
+
+.anchor {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-image: url(/data/images/drop-anchor.png);
+    background-size: cover;
+}
+
+.anchor-animation{
+    animation: anchor-animation 8s 1 linear;
+}
+
+@keyframes anchor-animation {
+    0% {
+        top: 22%;
+    }
+    100% {
+        top:90%;
+    }
+}
