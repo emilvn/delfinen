@@ -49,8 +49,8 @@ export function setTodayAsMaxDate(inputId){
 
 export function sortArrayByKeyAscending(arr, key) {
     arr.sort(function(a, b) {
-		var keyA = a[key];
-		var keyB = b[key];
+		const keyA = a[key];
+		const keyB = b[key];
 		if (keyA < keyB) {
 			return -1;
 		}
@@ -64,8 +64,8 @@ export function sortArrayByKeyAscending(arr, key) {
 
 export function sortArrayByKeyDescending(arr, key) {
     arr.sort(function(a, b) {
-        var keyA = a[key];
-        var keyB = b[key];
+        const keyA = a[key];
+        const keyB = b[key];
         if (keyA > keyB) {
             return -1;
         }
